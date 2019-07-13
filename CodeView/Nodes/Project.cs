@@ -8,26 +8,38 @@ using System.Windows.Forms;
 
 namespace CodeView.Nodes
 {
-	class Project : DataNode
+	public class Project : DataNode
 	{
-		public string ProjectName;
-		public List<Processor> Processors = new List<Processor>();
-		public List<Memory> Memory = new List<Memory>();
+		public byte[] Memory;
+		public Dictionary<int, Table> Tables = new Dictionary<int, Table>();
+		public Dictionary<int, Variable> Variables = new Dictionary<int, Variable>();
+		public Dictionary<int, Function> Functions = new Dictionary<int, Function>();
 
 		public override object GetProperties()
 		{
-			return new
-			{
-				ProjectName
-			};
+			return null;
 		}
 
 		public override void Reload()
 		{
 			Nodes.Clear();
 
-			Nodes.AddRange(Processors.ToArray());
-			Nodes.AddRange(Memory.ToArray());
+			var tables = new TreeNode("Tables");
+			var variables = new TreeNode("Variables");
+			var functions = new TreeNode("Functions");
+
+			foreach (var table in Tables)
+				tables.Nodes.Add(table.Value);
+
+			foreach (var variable in Variables)
+				variables.Nodes.Add(variable.Value);
+
+			foreach (var function in Functions)
+				functions.Nodes.Add(function.Value);
+
+			Nodes.Add(tables);
+			Nodes.Add(variables);
+			Nodes.Add(functions);
 		}
 	}
 }
