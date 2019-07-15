@@ -8,12 +8,13 @@ using System.Windows.Forms;
 
 namespace CodeView.Nodes
 {
-	public class Project : DataNode
+	public class Project : NotableNode
 	{
 		public byte[] Memory;
 		public Dictionary<int, Table> Tables = new Dictionary<int, Table>();
 		public Dictionary<int, Variable> Variables = new Dictionary<int, Variable>();
 		public Dictionary<int, Function> Functions = new Dictionary<int, Function>();
+		public string Description = string.Empty;
 
 		public override object GetProperties()
 		{

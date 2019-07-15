@@ -1,9 +1,14 @@
-﻿namespace CodeView.Nodes
+﻿using System.ComponentModel;
+using System.ComponentModel.Design;
+using System.Drawing.Design;
+
+namespace CodeView.Nodes
 {
-	public class Variable : DataNode
+	public class Variable : NotableNode
 	{
 		public Project Project;
 		public int Address;
+		public string Description = string.Empty;
 
 		public override object GetProperties()
 		{
@@ -22,6 +27,12 @@
 			{
 				get => Variable.Text;
 				set => Variable.Text = value;
+			}
+
+			public string Description
+			{
+				get => Variable.Description;
+				set => Variable.Description = value;
 			}
 
 			public string Address

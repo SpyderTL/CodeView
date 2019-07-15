@@ -5,12 +5,13 @@ using System.Windows.Forms;
 
 namespace CodeView.Nodes
 {
-	public class Function : DataNode
+	public class Function : NotableNode
 	{
 		public Project Project;
 		public int Address;
 		public int Length;
 		public byte Flags;
+		public string Description = string.Empty;
 
 		public override object GetProperties()
 		{
@@ -104,6 +105,11 @@ namespace CodeView.Nodes
 						next = current + 1;
 						break;
 
+					case 0x0b:
+						text = current.ToString("X6") + " PushDirectPage";
+						next = current + 1;
+						break;
+
 					case 0x0d:
 						address = Project.Memory[current + 1] | (Project.Memory[current + 2] << 8);
 						text = current.ToString("X6") + " OrAccumulatorWithAbsoluteAddress " + address.ToString("X4");
@@ -144,6 +150,14 @@ namespace CodeView.Nodes
 					case 0x1a:
 						text = current.ToString("X6") + " IncrementAccumulator";
 						next = current + 1;
+						break;
+
+					case 0x1e:
+						address = Project.Memory[current + 1] | (Project.Memory[current + 2] << 8);
+						text = current.ToString("X6") + " ShiftAbsoluteAddressPlusXIndexLeft " + address.ToString("X4");
+						instructionType = "Write";
+						addressType = "AbsoluteTable";
+						next = current + 3;
 						break;
 
 					case 0x20:
@@ -780,6 +794,14 @@ namespace CodeView.Nodes
 						next = current + 2;
 						break;
 
+					case 0xc6:
+						address = Project.Memory[current + 1];
+						text = current.ToString("X6") + " DecrementDirectAddress " + address.ToString("X2");
+						instructionType = "Write";
+						addressType = "Direct";
+						next = current + 2;
+						break;
+
 					case 0xc8:
 						text = current.ToString("X6") + " IncrementYIndex";
 						next = current + 1;
@@ -941,6 +963,14 @@ namespace CodeView.Nodes
 						next = current + 2;
 						break;
 
+					case 0xf9:
+						address = Project.Memory[current + 1] | (Project.Memory[current + 2] << 8);
+						text = current.ToString("X6") + " SubtractAbsoluteAddressPlusYIndexFromAccumulator " + address.ToString("X4");
+						instructionType = "Read";
+						addressType = "AbsoluteTable";
+						next = current + 3;
+						break;
+
 					case 0xfa:
 						text = current.ToString("X6") + " PullXIndex";
 						next = current + 1;
@@ -1081,6 +1111,12 @@ namespace CodeView.Nodes
 			{
 				get => Function.Text;
 				set => Function.Text = value;
+			}
+
+			public string Description
+			{
+				get => Function.Description;
+				set => Function.Description = value;
 			}
 
 			public string Address

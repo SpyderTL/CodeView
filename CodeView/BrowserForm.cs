@@ -9,6 +9,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 using CodeView.Nodes;
 
 namespace CodeView
@@ -35,7 +36,7 @@ namespace CodeView
 			LoadRom("../../Examples/StarFoxUsa10.bin");
 		}
 
-		private void treeView_AfterExpand(object sender, TreeViewEventArgs e)
+		private void treeView_BeforeExpand(object sender, TreeViewCancelEventArgs e)
 		{
 			if (e.Node is DataNode)
 			{
@@ -43,6 +44,10 @@ namespace CodeView
 				((DataNode)e.Node).Reload();
 				treeView.EndUpdate();
 			}
+		}
+
+		private void treeView_AfterExpand(object sender, TreeViewEventArgs e)
+		{
 		}
 
 		private void treeView_AfterSelect(object sender, TreeViewEventArgs e)
@@ -53,6 +58,17 @@ namespace CodeView
 			}
 			else
 				propertyGrid.SelectedObject = null;
+
+			if (e.Node is NotableNode)
+			{
+				notesTextBox.Text = ((NotableNode)e.Node).Notes;
+				notesTextBox.Enabled = true;
+			}
+			else
+			{
+				notesTextBox.Text = string.Empty;
+				notesTextBox.Enabled = false;
+			}
 		}
 
 		private void openToolStripMenuItem_Click(object sender, EventArgs e)
@@ -77,6 +93,48 @@ namespace CodeView
 
 		private void LoadProject(string fileName)
 		{
+			var document = XDocument.Load(fileName);
+
+			var project = new Project
+			{
+				Text = document.Root.Attribute("Name").Value,
+				Description = document.Root.Attribute("Description").Value,
+				Notes = document.Root.Nodes().OfType<XText>().Select(y => y.Value.Replace("\r\n", "\n").Replace("\n", Environment.NewLine)).FirstOrDefault() ?? string.Empty,
+				Tables = document.Root.Element("Tables").Elements("Table").Select(x => new Table
+				{
+					Text = x.Attribute("Name").Value,
+					Description = x.Attribute("Description").Value,
+					Address = int.Parse(x.Attribute("Address").Value, System.Globalization.NumberStyles.HexNumber),
+					Notes = x.Nodes().OfType<XText>().Select(y => y.Value.Replace("\r\n", "\n").Replace("\n", Environment.NewLine)).FirstOrDefault() ?? string.Empty
+				}).ToDictionary(x => x.Address),
+				Variables = document.Root.Element("Variables").Elements("Variable").Select(x => new Variable
+				{
+					Text = x.Attribute("Name").Value,
+					Description = x.Attribute("Description").Value,
+					Address = int.Parse(x.Attribute("Address").Value, System.Globalization.NumberStyles.HexNumber),
+					Notes = x.Nodes().OfType<XText>().Select(y => y.Value.Replace("\r\n", "\n").Replace("\n", Environment.NewLine)).FirstOrDefault() ?? string.Empty
+				}).ToDictionary(x => x.Address)
+			};
+
+			project.Functions = document.Root.Element("Functions").Elements("Function").Select(x => new Function
+			{
+				Text = x.Attribute("Name").Value,
+				Description = x.Attribute("Description").Value,
+				Address = int.Parse(x.Attribute("Address").Value, System.Globalization.NumberStyles.HexNumber),
+				Flags = byte.Parse(x.Attribute("Flags").Value, System.Globalization.NumberStyles.HexNumber),
+				Notes = x.Nodes().OfType<XText>().Select(y => y.Value.Replace("\r\n", "\n").Replace("\n", Environment.NewLine)).FirstOrDefault() ?? string.Empty,
+				Project = project
+			}).ToDictionary(x => x.Address);
+
+			treeView.Nodes.Clear();
+
+			treeView.Nodes.Add(project);
+			treeView.SelectedNode = project;
+			project.Expand();
+		}
+
+		private void LoadProject_old(string fileName)
+		{
 			using (var reader = File.OpenText(fileName))
 			{
 				var project = new Project();
@@ -93,8 +151,23 @@ namespace CodeView
 
 					var address = int.Parse(line, System.Globalization.NumberStyles.HexNumber);
 					var name = reader.ReadLine();
+					var description = reader.ReadLine();
+					var notes = string.Empty;
 
-					project.Tables.Add(address, new Table { Address = address, Text = name });
+					while (true)
+					{
+						line = reader.ReadLine();
+
+						if (line == "~")
+							break;
+
+						if (notes != string.Empty)
+							notes += Environment.NewLine;
+
+						notes += line;
+					}
+
+					project.Tables.Add(address, new Table { Address = address, Text = name, Description = description, Notes = notes });
 				}
 
 				while (true)
@@ -106,8 +179,23 @@ namespace CodeView
 
 					var address = int.Parse(line, System.Globalization.NumberStyles.HexNumber);
 					var name = reader.ReadLine();
+					var description = reader.ReadLine();
+					var notes = string.Empty;
 
-					project.Variables.Add(address, new Variable { Address = address, Text = name });
+					while (true)
+					{
+						line = reader.ReadLine();
+
+						if (line == "~")
+							break;
+
+						if (notes != string.Empty)
+							notes += Environment.NewLine;
+
+						notes += line;
+					}
+
+					project.Variables.Add(address, new Variable { Address = address, Text = name, Description = description, Notes = notes });
 				}
 
 				while (true)
@@ -120,8 +208,23 @@ namespace CodeView
 					var address = int.Parse(line, System.Globalization.NumberStyles.HexNumber);
 					var name = reader.ReadLine();
 					var flags = byte.Parse(reader.ReadLine(), System.Globalization.NumberStyles.HexNumber);
+					var description = reader.ReadLine();
+					var notes = string.Empty;
 
-					project.Functions.Add(address, new Function { Address = address, Text = name, Flags = flags, Project = project });
+					while (true)
+					{
+						line = reader.ReadLine();
+
+						if (line == "~")
+							break;
+
+						if (notes != string.Empty)
+							notes += Environment.NewLine;
+
+						notes += line;
+					}
+
+					project.Functions.Add(address, new Function { Address = address, Text = name, Flags = flags, Project = project, Description = description, Notes = notes });
 				}
 
 				treeView.Nodes.Clear();
@@ -136,6 +239,51 @@ namespace CodeView
 		{
 			var project = treeView.Nodes[0] as Project;
 
+			var document = new XDocument();
+
+			var root = new XElement("Project");
+
+			root.Add(new XAttribute("Name", project.Text));
+			root.Add(new XAttribute("Description", project.Description));
+			root.Add(new XText(project.Notes));
+
+			document.Add(root);
+
+			var tables = new XElement("Tables");
+			var variables = new XElement("Variables");
+			var functions = new XElement("Functions");
+
+			tables.Add(project.Tables
+				.Select(x => new XElement("Table",
+					new XAttribute("Name", x.Value.Text),
+					new XAttribute("Description", x.Value.Description),
+					new XAttribute("Address", x.Value.Address.ToString("X")),
+					new XText(x.Value.Notes))));
+
+			variables.Add(project.Variables
+				.Select(x => new XElement("Variable",
+					new XAttribute("Name", x.Value.Text),
+					new XAttribute("Description", x.Value.Description),
+					new XAttribute("Address", x.Value.Address.ToString("X")),
+					new XText(x.Value.Notes))));
+
+			functions.Add(project.Functions
+				.Select(x => new XElement("Function",
+					new XAttribute("Name", x.Value.Text),
+					new XAttribute("Description", x.Value.Description),
+					new XAttribute("Address", x.Value.Address.ToString("X")),
+					new XAttribute("Flags", x.Value.Flags.ToString("X")),
+					new XText(x.Value.Notes))));
+
+			root.Add(tables, variables, functions);
+
+			document.Save(fileName);
+		}
+
+		private void SaveProject_old(string fileName)
+		{
+			var project = treeView.Nodes[0] as Project;
+
 			using (var writer = File.CreateText(fileName))
 			{
 				writer.WriteLine(project.Text);
@@ -146,6 +294,9 @@ namespace CodeView
 				{
 					writer.WriteLine(table.Key.ToString("X"));
 					writer.WriteLine(table.Value.Text);
+					writer.WriteLine(table.Value.Description);
+					writer.WriteLine(table.Value.Notes);
+					writer.WriteLine("~");
 				}
 
 				writer.WriteLine();
@@ -154,6 +305,9 @@ namespace CodeView
 				{
 					writer.WriteLine(variable.Key.ToString("X"));
 					writer.WriteLine(variable.Value.Text);
+					writer.WriteLine(variable.Value.Description);
+					writer.WriteLine(variable.Value.Notes);
+					writer.WriteLine("~");
 				}
 
 				writer.WriteLine();
@@ -163,6 +317,9 @@ namespace CodeView
 					writer.WriteLine(function.Key.ToString("X"));
 					writer.WriteLine(function.Value.Text);
 					writer.WriteLine(function.Value.Flags.ToString("X"));
+					writer.WriteLine(function.Value.Description);
+					writer.WriteLine(function.Value.Notes);
+					writer.WriteLine("~");
 				}
 			}
 		}
@@ -364,6 +521,16 @@ namespace CodeView
 			project.Nodes[2].Nodes.Add(function);
 			treeView.SelectedNode = function;
 			function.BeginEdit();
+		}
+
+		private void notesTextBox_TextChanged(object sender, EventArgs e)
+		{
+			var notable = treeView.SelectedNode as NotableNode;
+
+			if (notable == null)
+				return;
+
+			notable.Notes = notesTextBox.Text;
 		}
 	}
 }

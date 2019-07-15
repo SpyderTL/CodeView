@@ -1,9 +1,10 @@
 ﻿namespace CodeView.Nodes
 {
-	public class Table : DataNode
+	public class Table : NotableNode
 	{
 		public Project Project;
 		public int Address;
+		public string Description = string.Empty;
 
 		public override object GetProperties()
 		{
@@ -22,6 +23,12 @@
 			{
 				get => Table.Text;
 				set => Table.Text = value;
+			}
+
+			public string Description
+			{
+				get => Table.Description;
+				set => Table.Description = value;
 			}
 
 			public string Address

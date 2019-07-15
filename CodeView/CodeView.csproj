@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -61,10 +62,10 @@
     <Compile Include="Nodes\DataNode.cs" />
     <Compile Include="Nodes\Fonts.cs" />
     <Compile Include="Nodes\Function.cs" />
+    <Compile Include="Nodes\INotable.cs" />
     <Compile Include="Nodes\TablePointer.cs" />
     <Compile Include="Nodes\Table.cs" />
     <Compile Include="Nodes\VariablePointer.cs" />
-    <Compile Include="Nodes\IReadable.cs" />
     <Compile Include="Nodes\Project.cs" />
     <Compile Include="Nodes\FunctionPointer.cs" />
     <Compile Include="Nodes\Variable.cs" />
