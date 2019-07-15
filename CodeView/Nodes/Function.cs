@@ -49,6 +49,23 @@ namespace CodeView.Nodes
 				var next = -1;
 				var branch = -1;
 
+				while(old.Contains(current))
+				{
+					if (branches.Count == 0)
+					{
+						read = false;
+						break;
+					}
+					else
+					{
+						current = branches.Pop();
+						flags = branchFlags.Pop();
+					}
+				}
+
+				if (!read)
+					break;
+
 				old.Add(current);
 
 				switch (instruction)
@@ -59,8 +76,11 @@ namespace CodeView.Nodes
 						next = current + 1;
 						break;
 
-					//case 0x02:
-
+					case 0x02:
+						text = current.ToString("X6") + " Coprocessor Enable";
+						instructionType = "Break";
+						next = current + 1;
+						break;
 
 					case 0x03:
 						address = (int)Project.Memory[current + 1];
@@ -431,6 +451,14 @@ namespace CodeView.Nodes
 						next = current + 1;
 						break;
 
+					case 0x7e:
+						address = Project.Memory[current + 1] | (Project.Memory[current + 2] << 8);
+						text = current.ToString("X6") + " RotateAbsoluteAddressPlusXIndexRight " + address.ToString("X4");
+						instructionType = "Write";
+						addressType = "AbsoluteTable";
+						next = current + 3;
+						break;
+
 					case 0x7f:
 						address = Project.Memory[current + 1] | Project.Memory[current + 2] << 8 | Project.Memory[current + 3] << 16;
 						text = current.ToString("X6") + " AddAbsoluteLongAddressPlusXIndexToAccumulator " + address.ToString("X6");
@@ -477,9 +505,18 @@ namespace CodeView.Nodes
 						break;
 
 					case 0x89:
-						value = Project.Memory[current + 1];
-						text = current.ToString("X6") + " TestImmediate " + value.ToString("X2");
-						next = current + 2;
+						if ((flags & 0x20) == 0)
+						{
+							value = Project.Memory[current + 1] | Project.Memory[current + 2] << 8;
+							text = current.ToString("X6") + " TestAndAccumulatorWithImmediate " + value.ToString("X4");
+							next = current + 3;
+						}
+						else
+						{
+							value = Project.Memory[current + 1];
+							text = current.ToString("X6") + " TestAndAccumulatorWithImmediate " + value.ToString("X2");
+							next = current + 2;
+						}
 						break;
 
 					case 0x8a:
@@ -532,9 +569,25 @@ namespace CodeView.Nodes
 						branch = address;
 						break;
 
+					case 0x94:
+						address = Project.Memory[current + 1];
+						text = current.ToString("X6") + " CopyYIndexToDirectAddressPlusXIndex " + address.ToString("X2");
+						instructionType = "Write";
+						addressType = "DirectTable";
+						next = current + 2;
+						break;
+
 					case 0x95:
 						address = Project.Memory[current + 1];
 						text = current.ToString("X6") + " CopyAccumulatorToDirectAddressPlusXIndex " + address.ToString("X2");
+						instructionType = "Write";
+						addressType = "DirectTable";
+						next = current + 2;
+						break;
+
+					case 0x96:
+						address = Project.Memory[current + 1];
+						text = current.ToString("X6") + " CopyXIndexToDirectAddressPlusYIndex " + address.ToString("X2");
 						instructionType = "Write";
 						addressType = "DirectTable";
 						next = current + 2;
@@ -851,6 +904,14 @@ namespace CodeView.Nodes
 						branch = address;
 						break;
 
+					case 0xd1:
+						address = Project.Memory[current + 1];
+						text = current.ToString("X6") + " CompareAccumulatorToDirectAddressPointerPlusYIndex  " + address.ToString("X2");
+						instructionType = "Read";
+						addressType = "DirectPointerTable";
+						next = current + 2;
+						break;
+
 					case 0xd4:
 						value = Project.Memory[current + 1];
 						text = current.ToString("X6") + " PushPointer " + value.ToString("X2");
@@ -882,6 +943,14 @@ namespace CodeView.Nodes
 						text = current.ToString("X6") + " SetImmediateFlags " + value.ToString("X2");
 						next = current + 2;
 						flags |= (byte)value;
+						break;
+
+					case 0xe3:
+						address = Project.Memory[current + 1];
+						text = current.ToString("X6") + " SubtractStackRelativeAddressFromAccumulator " + address.ToString("X2");
+						instructionType = "Read";
+						addressType = "Stack";
+						next = current + 2;
 						break;
 
 					case 0xe5:
@@ -1000,7 +1069,6 @@ namespace CodeView.Nodes
 					default:
 						text = current.ToString("X6") + " Unknown Instruction: " + instruction.ToString("X2");
 						instructionType = "Unknown";
-						System.Diagnostics.Debugger.Break();
 						break;
 				}
 
@@ -1010,6 +1078,7 @@ namespace CodeView.Nodes
 						switch (addressType)
 						{
 							case "DirectTable":
+							case "DirectPointerTable":
 							case "AbsoluteTable":
 							case "AbsoluteLongTable":
 								tableReads.Add(address);
@@ -1028,6 +1097,7 @@ namespace CodeView.Nodes
 						switch (addressType)
 						{
 							case "DirectTable":
+							case "DirectPointerTable":
 							case "AbsoluteTable":
 							case "AbsoluteLongTable":
 								tableWrites.Add(address);
@@ -1092,7 +1162,8 @@ namespace CodeView.Nodes
 						break;
 
 					case "Unknown":
-						System.Diagnostics.Debugger.Break();
+						read = false;
+						Nodes.Add(new TreeNode(text));
 						break;
 
 					default:
