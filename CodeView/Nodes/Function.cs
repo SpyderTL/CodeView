@@ -41,14 +41,6 @@ namespace CodeView.Nodes
 
 			while (read)
 			{
-				var instruction = Project.Memory[current];
-				var instructionType = string.Empty;
-				var address = 0;
-				var addressType = string.Empty;
-				var text = string.Empty;
-				var next = -1;
-				var branch = -1;
-
 				while(old.Contains(current))
 				{
 					if (branches.Count == 0)
@@ -67,6 +59,14 @@ namespace CodeView.Nodes
 					break;
 
 				old.Add(current);
+
+				var instruction = Project.Memory[current];
+				var instructionType = string.Empty;
+				var address = 0;
+				var addressType = string.Empty;
+				var text = string.Empty;
+				var next = -1;
+				var branch = -1;
 
 				switch (instruction)
 				{
@@ -1120,7 +1120,10 @@ namespace CodeView.Nodes
 							branchFlags.Push(flags);
 						}
 						current = next;
-						Nodes.Add(new TreeNode(text));
+						if(branch > current)
+							Nodes.Add(new TreeNode { Text = text, ForeColor = Color.Blue });
+						else
+							Nodes.Add(new TreeNode { Text = text, ForeColor = Color.Purple });
 						break;
 
 					case "Jump":

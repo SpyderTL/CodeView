@@ -16,6 +16,8 @@ namespace CodeView
 {
 	public partial class BrowserForm : Form
 	{
+		Stack<TreeNode> History = new Stack<TreeNode>();
+
 		public BrowserForm()
 		{
 			InitializeComponent();
@@ -368,7 +370,11 @@ namespace CodeView
 					pointer.Parent.Parent.Nodes.Add(function);
 				}
 				else
+				{
+					History.Push(e.Node);
+
 					treeView.SelectedNode = function;
+				}
 			}
 			else if (e.Node is VariablePointer)
 			{
@@ -385,7 +391,11 @@ namespace CodeView
 					pointer.Parent.Parent.Parent.Nodes[1].Nodes.Add(variable);
 				}
 				else
+				{
+					History.Push(e.Node);
+
 					treeView.SelectedNode = variable;
+				}
 			}
 			else if (e.Node is TablePointer)
 			{
@@ -402,7 +412,11 @@ namespace CodeView
 					pointer.Parent.Parent.Parent.Nodes[0].Nodes.Add(table);
 				}
 				else
+				{
+					History.Push(e.Node);
+
 					treeView.SelectedNode = table;
+				}
 			}
 		}
 
@@ -451,36 +465,49 @@ namespace CodeView
 		{
 		}
 
-		private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
+
+		private void treeView_KeyDown(object sender, KeyEventArgs e)
 		{
-			Delete();
+			if (e.KeyCode == Keys.Delete)
+				Delete();
+
+			if (e.KeyCode == Keys.OemMinus &&
+				e.Control &&
+				History.Count != 0)
+				treeView.SelectedNode = History.Pop();
 		}
 
 		private void Delete()
 		{
-			if (ActiveControl == splitContainer &&
-				splitContainer.ActiveControl == treeView)
+			if (treeView.SelectedNode is Table)
 			{
-				if (treeView.SelectedNode is Table)
-				{
-					var table = treeView.SelectedNode as Table;
+				var table = treeView.SelectedNode as Table;
 
-					table.Remove();
+				table.Remove();
 
-					var project = treeView.Nodes[0] as Project;
+				var project = treeView.Nodes[0] as Project;
 
-					project.Tables.Remove(table.Address);
-				}
-				else if (treeView.SelectedNode is Variable)
-				{
-					var variable = treeView.SelectedNode as Variable;
+				project.Tables.Remove(table.Address);
+			}
+			else if (treeView.SelectedNode is Variable)
+			{
+				var variable = treeView.SelectedNode as Variable;
 
-					variable.Remove();
+				variable.Remove();
 
-					var project = treeView.Nodes[0] as Project;
+				var project = treeView.Nodes[0] as Project;
 
-					project.Variables.Remove(variable.Address);
-				}
+				project.Variables.Remove(variable.Address);
+			}
+			else if (treeView.SelectedNode is Function)
+			{
+				var function = treeView.SelectedNode as Function;
+
+				function.Remove();
+
+				var project = treeView.Nodes[0] as Project;
+
+				project.Functions.Remove(function.Address);
 			}
 		}
 
