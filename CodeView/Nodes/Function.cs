@@ -233,6 +233,14 @@ namespace CodeView.Nodes
 						next = current + 1;
 						break;
 
+					case 0x2d:
+						address = Project.Memory[current + 1] | (Project.Memory[current + 2] << 8);
+						text = current.ToString("X6") + " AndAccumulatorWithAbsoluteAddress " + address.ToString("X4");
+						instructionType = "Read";
+						addressType = "Absolute";
+						next = current + 3;
+						break;
+
 					case 0x30:
 						address = current + 2 + (sbyte)Project.Memory[current + 1];
 						text = current.ToString("X6") + " BranchToRelativeIfNegative " + address.ToString("X6");
@@ -325,6 +333,14 @@ namespace CodeView.Nodes
 						instructionType = "Jump";
 						addressType = "Absolute";
 						next = address;
+						break;
+
+					case 0x4d:
+						address = Project.Memory[current + 1] | (Project.Memory[current + 2] << 8);
+						text = current.ToString("X6") + " ExclusiveOrAccumulatorWithAbsoluteAddress " + address.ToString("X4");
+						instructionType = "Read";
+						addressType = "Absolute";
+						next = current + 3;
 						break;
 
 					case 0x58:
@@ -481,6 +497,14 @@ namespace CodeView.Nodes
 						instructionType = "Jump";
 						addressType = "RelativeLong";
 						next = address;
+						break;
+
+					case 0x84:
+						address = Project.Memory[current + 1];
+						text = current.ToString("X6") + " CopyYIndexToDirectAddress " + address.ToString("X2");
+						instructionType = "Write";
+						addressType = "Direct";
+						next = current + 2;
 						break;
 
 					case 0x85:

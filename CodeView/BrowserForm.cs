@@ -108,14 +108,18 @@ namespace CodeView
 					Description = x.Attribute("Description").Value,
 					Address = int.Parse(x.Attribute("Address").Value, System.Globalization.NumberStyles.HexNumber),
 					Notes = x.Nodes().OfType<XText>().Select(y => y.Value.Replace("\r\n", "\n").Replace("\n", Environment.NewLine)).FirstOrDefault() ?? string.Empty
-				}).ToDictionary(x => x.Address),
+				})
+				.OrderBy(x => x.Text)
+				.ToDictionary(x => x.Address),
 				Variables = document.Root.Element("Variables").Elements("Variable").Select(x => new Variable
 				{
 					Text = x.Attribute("Name").Value,
 					Description = x.Attribute("Description").Value,
 					Address = int.Parse(x.Attribute("Address").Value, System.Globalization.NumberStyles.HexNumber),
 					Notes = x.Nodes().OfType<XText>().Select(y => y.Value.Replace("\r\n", "\n").Replace("\n", Environment.NewLine)).FirstOrDefault() ?? string.Empty
-				}).ToDictionary(x => x.Address)
+				})
+				.OrderBy(x => x.Text)
+				.ToDictionary(x => x.Address)
 			};
 
 			project.Functions = document.Root.Element("Functions").Elements("Function").Select(x => new Function
@@ -126,7 +130,9 @@ namespace CodeView
 				Flags = byte.Parse(x.Attribute("Flags").Value, System.Globalization.NumberStyles.HexNumber),
 				Notes = x.Nodes().OfType<XText>().Select(y => y.Value.Replace("\r\n", "\n").Replace("\n", Environment.NewLine)).FirstOrDefault() ?? string.Empty,
 				Project = project
-			}).ToDictionary(x => x.Address);
+			})
+			.OrderBy(x => x.Text)
+			.ToDictionary(x => x.Address);
 
 			treeView.Nodes.Clear();
 
