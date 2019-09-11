@@ -114,38 +114,41 @@
 			this.tabControl.Controls.Add(this.notesTab);
 			this.tabControl.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.tabControl.Location = new System.Drawing.Point(0, 0);
+			this.tabControl.Margin = new System.Windows.Forms.Padding(0);
 			this.tabControl.Name = "tabControl";
+			this.tabControl.Padding = new System.Drawing.Point(0, 0);
 			this.tabControl.SelectedIndex = 0;
 			this.tabControl.Size = new System.Drawing.Size(670, 705);
 			this.tabControl.TabIndex = 2;
 			// 
 			// propertiesTab
 			// 
+			this.propertiesTab.BackColor = System.Drawing.SystemColors.Control;
 			this.propertiesTab.Controls.Add(this.propertyGrid);
 			this.propertiesTab.Location = new System.Drawing.Point(4, 4);
+			this.propertiesTab.Margin = new System.Windows.Forms.Padding(0);
 			this.propertiesTab.Name = "propertiesTab";
-			this.propertiesTab.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
 			this.propertiesTab.Size = new System.Drawing.Size(662, 679);
 			this.propertiesTab.TabIndex = 0;
 			this.propertiesTab.Text = "Properties";
-			this.propertiesTab.UseVisualStyleBackColor = true;
 			// 
 			// propertyGrid
 			// 
 			this.propertyGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.propertyGrid.Location = new System.Drawing.Point(3, 3);
+			this.propertyGrid.Location = new System.Drawing.Point(0, 0);
+			this.propertyGrid.Margin = new System.Windows.Forms.Padding(0);
 			this.propertyGrid.Name = "propertyGrid";
-			this.propertyGrid.Size = new System.Drawing.Size(656, 673);
+			this.propertyGrid.Size = new System.Drawing.Size(662, 679);
 			this.propertyGrid.TabIndex = 3;
 			// 
 			// notesTab
 			// 
 			this.notesTab.Controls.Add(this.notesTextBox);
 			this.notesTab.Location = new System.Drawing.Point(4, 4);
-			this.notesTab.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+			this.notesTab.Margin = new System.Windows.Forms.Padding(2);
 			this.notesTab.Name = "notesTab";
-			this.notesTab.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-			this.notesTab.Size = new System.Drawing.Size(512, 512);
+			this.notesTab.Padding = new System.Windows.Forms.Padding(2);
+			this.notesTab.Size = new System.Drawing.Size(662, 679);
 			this.notesTab.TabIndex = 1;
 			this.notesTab.Text = "Notes";
 			this.notesTab.UseVisualStyleBackColor = true;
@@ -154,10 +157,10 @@
 			// 
 			this.notesTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.notesTextBox.Location = new System.Drawing.Point(2, 2);
-			this.notesTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+			this.notesTextBox.Margin = new System.Windows.Forms.Padding(2);
 			this.notesTextBox.Multiline = true;
 			this.notesTextBox.Name = "notesTextBox";
-			this.notesTextBox.Size = new System.Drawing.Size(508, 508);
+			this.notesTextBox.Size = new System.Drawing.Size(658, 675);
 			this.notesTextBox.TabIndex = 0;
 			this.notesTextBox.TextChanged += new System.EventHandler(this.notesTextBox_TextChanged);
 			// 
@@ -275,7 +278,7 @@
             this.newVariableToolStripMenuItem,
             this.newFunctionToolStripMenuItem});
 			this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
-			this.toolsToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
+			this.toolsToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
 			this.toolsToolStripMenuItem.Text = "&Tools";
 			// 
 			// customizeToolStripMenuItem

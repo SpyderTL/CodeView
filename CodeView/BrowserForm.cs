@@ -28,7 +28,7 @@ namespace CodeView
 				Text = "New Project"
 			};
 
-			project.Functions.Add(0xff96, new Function { Text = "_ResetInterruptHandler", Address = 0xff96, Project = project });
+			project.Functions.Add(0xff96, new Function { Text = "00FF96 ResetInterruptHandler", Address = 0xff96, Project = project });
 
 			treeView.Nodes.Add(project);
 
@@ -102,25 +102,19 @@ namespace CodeView
 				Text = document.Root.Attribute("Name").Value,
 				Description = document.Root.Attribute("Description").Value,
 				Notes = document.Root.Nodes().OfType<XText>().Select(y => y.Value.Replace("\r\n", "\n").Replace("\n", Environment.NewLine)).FirstOrDefault() ?? string.Empty,
-				Tables = document.Root.Element("Tables").Elements("Table").Select(x => new Table
-				{
-					Text = x.Attribute("Name").Value,
-					Description = x.Attribute("Description").Value,
-					Address = int.Parse(x.Attribute("Address").Value, System.Globalization.NumberStyles.HexNumber),
-					Notes = x.Nodes().OfType<XText>().Select(y => y.Value.Replace("\r\n", "\n").Replace("\n", Environment.NewLine)).FirstOrDefault() ?? string.Empty
-				})
-				.OrderBy(x => x.Text)
-				.ToDictionary(x => x.Address),
-				Variables = document.Root.Element("Variables").Elements("Variable").Select(x => new Variable
-				{
-					Text = x.Attribute("Name").Value,
-					Description = x.Attribute("Description").Value,
-					Address = int.Parse(x.Attribute("Address").Value, System.Globalization.NumberStyles.HexNumber),
-					Notes = x.Nodes().OfType<XText>().Select(y => y.Value.Replace("\r\n", "\n").Replace("\n", Environment.NewLine)).FirstOrDefault() ?? string.Empty
-				})
-				.OrderBy(x => x.Text)
-				.ToDictionary(x => x.Address)
+
 			};
+
+			project.Tables = document.Root.Element("Tables").Elements("Table").Select(x => new Table
+			{
+				Text = x.Attribute("Name").Value,
+				Description = x.Attribute("Description").Value,
+				Address = int.Parse(x.Attribute("Address").Value, System.Globalization.NumberStyles.HexNumber),
+				Notes = x.Nodes().OfType<XText>().Select(y => y.Value.Replace("\r\n", "\n").Replace("\n", Environment.NewLine)).FirstOrDefault() ?? string.Empty,
+				Project = project
+			})
+			.OrderBy(x => x.Text)
+			.ToDictionary(x => x.Address);
 
 			project.Functions = document.Root.Element("Functions").Elements("Function").Select(x => new Function
 			{
@@ -134,6 +128,17 @@ namespace CodeView
 			.OrderBy(x => x.Text)
 			.ToDictionary(x => x.Address);
 
+			project.Variables = document.Root.Element("Variables").Elements("Variable").Select(x => new Variable
+			{
+				Text = x.Attribute("Name").Value,
+				Description = x.Attribute("Description").Value,
+				Address = int.Parse(x.Attribute("Address").Value, System.Globalization.NumberStyles.HexNumber),
+				Notes = x.Nodes().OfType<XText>().Select(y => y.Value.Replace("\r\n", "\n").Replace("\n", Environment.NewLine)).FirstOrDefault() ?? string.Empty,
+				Project = project
+			})
+			.OrderBy(x => x.Text)
+			.ToDictionary(x => x.Address);
+				
 			treeView.Nodes.Clear();
 
 			treeView.Nodes.Add(project);
@@ -390,7 +395,7 @@ namespace CodeView
 
 				if (!project.Variables.TryGetValue(pointer.Address, out Variable variable))
 				{
-					variable = new Variable { Text = pointer.Address.ToString("X6"), Address = pointer.Address };
+					variable = new Variable { Text = pointer.Address.ToString("X6"), Address = pointer.Address, Project = project };
 
 					project.Variables.Add(pointer.Address, variable);
 
@@ -411,7 +416,7 @@ namespace CodeView
 
 				if (!project.Tables.TryGetValue(pointer.Address, out Table table))
 				{
-					table = new Table { Text = pointer.Address.ToString("X6"), Address = pointer.Address };
+					table = new Table { Text = pointer.Address.ToString("X6"), Address = pointer.Address, Project = project };
 
 					project.Tables.Add(pointer.Address, table);
 
@@ -456,6 +461,9 @@ namespace CodeView
 		private void treeView_BeforeLabelEdit(object sender, NodeLabelEditEventArgs e)
 		{
 			if (e.Node is Project)
+				return;
+
+			if (e.Node is Table)
 				return;
 
 			if (e.Node is Function)
@@ -519,9 +527,9 @@ namespace CodeView
 
 		private void newTableToolStripMenuItem_Click(object sender, EventArgs e)
 		{
-			var table = new Table { Text = "Table", Address = 0 };
-
 			var project = treeView.Nodes[0] as Project;
+
+			var table = new Table { Text = "Table", Address = 0, Project = project };
 
 			project.Tables.Add(table.Address, table);
 

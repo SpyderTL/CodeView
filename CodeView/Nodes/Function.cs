@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace CodeView.Nodes
@@ -36,6 +37,8 @@ namespace CodeView.Nodes
 			var old = new List<int>();
 			var calls = new List<int>();
 			var current = Address;
+
+			var nodes = new SortedDictionary<int, TreeNode>();
 
 			var read = true;
 
@@ -441,6 +444,14 @@ namespace CodeView.Nodes
 						next = current + 3;
 						break;
 
+					case 0x6e:
+						address = Project.Memory[current + 1] | (Project.Memory[current + 2] << 8);
+						text = current.ToString("X6") + " RotateAbsoluteAddressRight " + address.ToString("X4");
+						instructionType = "Write";
+						addressType = "Absolute";
+						next = current + 3;
+						break;
+
 					case 0x74:
 						address = Project.Memory[current + 1];
 						text = current.ToString("X6") + " SetDirectAddressPlusXIndexToZero " + address.ToString("X2");
@@ -465,6 +476,14 @@ namespace CodeView.Nodes
 					case 0x7a:
 						text = current.ToString("X6") + " PullYIndex";
 						next = current + 1;
+						break;
+
+					case 0x7c:
+						address = Project.Memory[current + 1] | (Project.Memory[current + 2] << 8);
+						text = current.ToString("X6") + " JumpToAbsoluteAddressPlusXIndexPointer " + address.ToString("X4");
+						instructionType = "Jump";
+						addressType = "AbsoluteTable";
+						next = current + 3;
 						break;
 
 					case 0x7e:
@@ -702,6 +721,14 @@ namespace CodeView.Nodes
 						}
 						break;
 
+					case 0xa4:
+						address = Project.Memory[current + 1];
+						text = current.ToString("X6") + " CopyDirectAddressToYIndex " + address.ToString("X2");
+						instructionType = "Read";
+						addressType = "Direct";
+						next = current + 2;
+						break;
+
 					case 0xa5:
 						address = Project.Memory[current + 1];
 						text = current.ToString("X6") + " CopyDirectAddressToAccumulator " + address.ToString("X2");
@@ -845,13 +872,13 @@ namespace CodeView.Nodes
 						if ((flags & 0x10) == 0)
 						{
 							value = Project.Memory[current + 1] | Project.Memory[current + 2] << 8;
-							text = current.ToString("X6") + " CompareYIndexToImmediate " + value.ToString("X4");
+							text = current.ToString("X6") + " TestSubtractImmediateFromYIndex " + value.ToString("X4");
 							next = current + 3;
 						}
 						else
 						{
 							value = Project.Memory[current + 1];
-							text = current.ToString("X6") + " CompareYIndexToImmediate " + value.ToString("X2");
+							text = current.ToString("X6") + " TestSubtractImmediateFromYIndex " + value.ToString("X2");
 							next = current + 2;
 						}
 						break;
@@ -865,7 +892,7 @@ namespace CodeView.Nodes
 
 					case 0xc5:
 						address = Project.Memory[current + 1];
-						text = current.ToString("X6") + " CompareAccumulatorToDirectAddress " + address.ToString("X2");
+						text = current.ToString("X6") + " TestSubtractDirectAddressFromAccumulator " + address.ToString("X2");
 						instructionType = "Read";
 						addressType = "Direct";
 						next = current + 2;
@@ -888,13 +915,13 @@ namespace CodeView.Nodes
 						if ((flags & 0x20) == 0)
 						{
 							value = Project.Memory[current + 1] | Project.Memory[current + 2] << 8;
-							text = current.ToString("X6") + " CompareAccumulatorToImmediate " + value.ToString("X4");
+							text = current.ToString("X6") + " TestSubtractImmediateFromAccumulator " + value.ToString("X4");
 							next = current + 3;
 						}
 						else
 						{
 							value = Project.Memory[current + 1];
-							text = current.ToString("X6") + " CompareAccumulatorToImmediate " + value.ToString("X2");
+							text = current.ToString("X6") + " TestSubtractImmediateFromAccumulator " + value.ToString("X2");
 							next = current + 2;
 						}
 						break;
@@ -906,7 +933,7 @@ namespace CodeView.Nodes
 
 					case 0xcd:
 						address = Project.Memory[current + 1] | (Project.Memory[current + 2] << 8);
-						text = current.ToString("X6") + " CompareAccumulatorToAbsoluteAddress " + address.ToString("X4");
+						text = current.ToString("X6") + " TestSubtractAbsoluteAddressFromAccumulator " + address.ToString("X4");
 						instructionType = "Read";
 						addressType = "Absolute";
 						next = current + 3;
@@ -922,7 +949,7 @@ namespace CodeView.Nodes
 
 					case 0xd0:
 						address = current + 2 + (sbyte)Project.Memory[current + 1];
-						text = current.ToString("X6") + " BranchToRelativeIfNotEqual " + address.ToString("X6");
+						text = current.ToString("X6") + " BranchToRelativeIfNotZero " + address.ToString("X6");
 						instructionType = "Branch";
 						next = current + 2;
 						branch = address;
@@ -930,7 +957,7 @@ namespace CodeView.Nodes
 
 					case 0xd1:
 						address = Project.Memory[current + 1];
-						text = current.ToString("X6") + " CompareAccumulatorToDirectAddressPointerPlusYIndex  " + address.ToString("X2");
+						text = current.ToString("X6") + " TestSubtractDirectAddressPointerPlusYIndexFromAccumulator  " + address.ToString("X2");
 						instructionType = "Read";
 						addressType = "DirectPointerTable";
 						next = current + 2;
@@ -939,6 +966,14 @@ namespace CodeView.Nodes
 					case 0xd4:
 						value = Project.Memory[current + 1];
 						text = current.ToString("X6") + " PushPointer " + value.ToString("X2");
+						next = current + 2;
+						break;
+
+					case 0xd5:
+						address = Project.Memory[current + 1];
+						text = current.ToString("X6") + " TestSubtractDirectAddressPlusXIndexFromAccumulator " + address.ToString("X2");
+						instructionType = "Read";
+						addressType = "DirectTable";
 						next = current + 2;
 						break;
 
@@ -951,13 +986,13 @@ namespace CodeView.Nodes
 						if ((flags & 0x10) == 0)
 						{
 							value = Project.Memory[current + 1] | Project.Memory[current + 2] << 8;
-							text = current.ToString("X6") + " CompareXIndexToImmediate " + value.ToString("X4");
+							text = current.ToString("X6") + " TestSubtractImmediateFromXIndex " + value.ToString("X4");
 							next = current + 3;
 						}
 						else
 						{
 							value = Project.Memory[current + 1];
-							text = current.ToString("X6") + " CompareXIndexToImmediate " + value.ToString("X2");
+							text = current.ToString("X6") + " TestSubtractImmediateFromXIndex " + value.ToString("X2");
 							next = current + 2;
 						}
 						break;
@@ -1013,6 +1048,11 @@ namespace CodeView.Nodes
 						}
 						break;
 
+					case 0xea:
+						text = current.ToString("X6") + " NoOperation";
+						next = current + 1;
+						break;
+
 					case 0xeb:
 						text = current.ToString("X6") + " ExchangeAccumulators";
 						next = current + 1;
@@ -1020,7 +1060,15 @@ namespace CodeView.Nodes
 
 					case 0xec:
 						address = Project.Memory[current + 1] | (Project.Memory[current + 2] << 8);
-						text = current.ToString("X6") + " CompareIndexXToAbsoluteAddress " + address.ToString("X4");
+						text = current.ToString("X6") + " TestSubtractAbsoluteAddressFromIndexX " + address.ToString("X4");
+						instructionType = "Read";
+						addressType = "Absolute";
+						next = current + 3;
+						break;
+
+					case 0xed:
+						address = Project.Memory[current + 1] | (Project.Memory[current + 2] << 8);
+						text = current.ToString("X6") + " SubtractAbsoluteAddressFromAccumulator " + address.ToString("X4");
 						instructionType = "Read";
 						addressType = "Absolute";
 						next = current + 3;
@@ -1036,7 +1084,7 @@ namespace CodeView.Nodes
 
 					case 0xf0:
 						address = current + 2 + (sbyte)Project.Memory[current + 1];
-						text = current.ToString("X6") + " BranchToRelativeIfEqual " + address.ToString("X6");
+						text = current.ToString("X6") + " BranchToRelativeIfZero " + address.ToString("X6");
 						instructionType = "Branch";
 						next = current + 2;
 						branch = address;
@@ -1106,14 +1154,22 @@ namespace CodeView.Nodes
 							case "AbsoluteTable":
 							case "AbsoluteLongTable":
 								tableReads.Add(address);
-								Nodes.Add(new TablePointer { Text = text, ForeColor = Color.Green, NodeFont = Fonts.Bold, Address = address });
+
+								if(Project.Tables.TryGetValue(address, out Table table))
+									nodes.Add(current, new TablePointer { Text = text + " [" + table.Text + "]", ForeColor = Color.Green, NodeFont = Fonts.Bold, Address = address });
+								else
+									nodes.Add(current, new TablePointer { Text = text, ForeColor = Color.Green, NodeFont = Fonts.Bold, Address = address });
 								break;
 
 							default:
 								reads.Add(address);
-								Nodes.Add(new VariablePointer { Text = text, ForeColor = Color.Green, Address = address });
+								if (Project.Variables.TryGetValue(address, out Variable variable))
+									nodes.Add(current, new VariablePointer { Text = text + " [" + variable.Text + "]", ForeColor = Color.Green, Address = address });
+								else
+									nodes.Add(current, new VariablePointer { Text = text, ForeColor = Color.Green, Address = address });
 								break;
 						}
+
 						current = next;
 						break;
 
@@ -1125,32 +1181,57 @@ namespace CodeView.Nodes
 							case "AbsoluteTable":
 							case "AbsoluteLongTable":
 								tableWrites.Add(address);
-								Nodes.Add(new TablePointer { Text = text, ForeColor = Color.Red, NodeFont = Fonts.Bold, Address = address });
+								if (Project.Tables.TryGetValue(address, out Table table))
+									nodes.Add(current, new TablePointer { Text = text + " [" + table.Text + "]", ForeColor = Color.Red, NodeFont = Fonts.Bold, Address = address });
+								else
+									nodes.Add(current, new TablePointer { Text = text, ForeColor = Color.Red, NodeFont = Fonts.Bold, Address = address });
 								break;
 
 							default:
 								writes.Add(address);
-								Nodes.Add(new VariablePointer { Text = text, ForeColor = Color.Red, Address = address });
+								if (Project.Variables.TryGetValue(address, out Variable variable))
+									nodes.Add(current, new VariablePointer { Text = text + " [" + variable.Text + "]", ForeColor = Color.Red, Address = address });
+								else
+									nodes.Add(current, new VariablePointer { Text = text, ForeColor = Color.Red, Address = address });
 								break;
 						}
 						current = next;
 						break;
 
 					case "Branch":
+						if(branch > current)
+							nodes.Add(current, new TreeNode { Text = text, ForeColor = Color.Blue });
+						else
+							nodes.Add(current, new TreeNode { Text = text, ForeColor = Color.Purple });
+
 						if (!branches.Contains(branch) &&
 							!old.Contains(branch))
 						{
 							branches.Push(branch);
 							branchFlags.Push(flags);
 						}
+
 						current = next;
-						if(branch > current)
-							Nodes.Add(new TreeNode { Text = text, ForeColor = Color.Blue });
-						else
-							Nodes.Add(new TreeNode { Text = text, ForeColor = Color.Purple });
 						break;
 
 					case "Jump":
+						switch (addressType)
+						{
+							case "AbsoluteTable":
+								if (Project.Tables.TryGetValue(address, out Table table))
+									nodes.Add(current, new TablePointer { Text = text + " [" + table.Text + "]", NodeFont = Fonts.Bold, Address = address });
+								else
+									nodes.Add(current, new TablePointer { Text = text, NodeFont = Fonts.Bold, Address = address });
+								break;
+
+							default:
+								if (Project.Functions.TryGetValue(address, out Function function))
+									nodes.Add(current, new FunctionPointer { Text = text + " [" + function.Text + "]", NodeFont = Fonts.Bold, Address = address, Flags = flags });
+								else
+									nodes.Add(current, new FunctionPointer { Text = text, NodeFont = Fonts.Bold, Address = address, Flags = flags });
+								break;
+						}
+
 						while (read && old.Contains(current))
 						{
 							if (branches.Count == 0)
@@ -1161,15 +1242,32 @@ namespace CodeView.Nodes
 								flags = branchFlags.Pop();
 							}
 						}
-						Nodes.Add(new FunctionPointer { Text = text, NodeFont = Fonts.Bold, Address = address, Flags = flags });
 						break;
 
 					case "Call":
+						switch (addressType)
+						{
+							case "AbsoluteTable":
+								if (Project.Tables.TryGetValue(address, out Table table))
+									nodes.Add(current, new TablePointer { Text = text + " [" + table.Text + "]", NodeFont = Fonts.Bold, Address = address });
+								else
+									nodes.Add(current, new TablePointer { Text = text, NodeFont = Fonts.Bold, Address = address });
+								break;
+
+							default:
+								if (Project.Functions.TryGetValue(address, out Function function))
+									nodes.Add(current, new FunctionPointer { Text = text + " [" + function.Text + "]", NodeFont = Fonts.Bold, Address = address, Flags = flags });
+								else
+									nodes.Add(current, new FunctionPointer { Text = text, NodeFont = Fonts.Bold, Address = address, Flags = flags });
+								break;
+						}
+
 						current = next;
-						Nodes.Add(new FunctionPointer { Text = text, NodeFont = Fonts.Bold, Address = address, Flags = flags });
 						break;
 
 					case "Return":
+						nodes.Add(current, new TreeNode(text));
+
 						while (read && old.Contains(current))
 						{
 							if (branches.Count == 0)
@@ -1180,25 +1278,26 @@ namespace CodeView.Nodes
 								flags = branchFlags.Pop();
 							}
 						}
-						Nodes.Add(new TreeNode(text));
 						break;
 
 					case "Break":
+						nodes.Add(current, new TreeNode(text));
 						read = false;
-						Nodes.Add(new TreeNode(text));
 						break;
 
 					case "Unknown":
+						nodes.Add(current, new TreeNode(text));
 						read = false;
-						Nodes.Add(new TreeNode(text));
 						break;
 
 					default:
+						nodes.Add(current, new TreeNode(text));
 						current = next;
-						Nodes.Add(new TreeNode(text));
 						break;
 				}
 			}
+
+			Nodes.AddRange(nodes.Select(x => x.Value).ToArray());
 		}
 
 		public class FunctionProperties

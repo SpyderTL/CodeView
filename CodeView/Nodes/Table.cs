@@ -36,7 +36,7 @@
 				get => Table.Address.ToString("X");
 				set
 				{
-					Table.Project.Functions.Remove(Table.Address);
+					Table.Project.Tables.Remove(Table.Address);
 
 					Table.Address = int.Parse(value, System.Globalization.NumberStyles.HexNumber);
 
