@@ -34,8 +34,8 @@ namespace CodeView
 
 			treeView.SelectedNode = project;
 
-			LoadProject("../../Examples/StarFoxUsa10.cvproj");
-			LoadRom("../../Examples/StarFoxUsa10.bin");
+			//LoadProject("../../Examples/StarFoxUsa10.cvproj");
+			//LoadRom("../../Examples/StarFoxUsa10.bin");
 		}
 
 		private void treeView_BeforeExpand(object sender, TreeViewCancelEventArgs e)

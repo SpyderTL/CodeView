@@ -93,6 +93,14 @@ namespace CodeView.Nodes
 						next = current + 2;
 						break;
 
+					case 0x05:
+						address = (int)Project.Memory[current + 1];
+						text = current.ToString("X6") + " OrAccumulatorWithDirectAddress " + address.ToString("X2");
+						instructionType = "Read";
+						addressType = "Direct";
+						next = current + 2;
+						break;
+
 					case 0x06:
 						address = (int)Project.Memory[current + 1];
 						text = current.ToString("X6") + " ShiftDirectAddressLeft " + address.ToString("X2");
