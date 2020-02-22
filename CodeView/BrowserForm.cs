@@ -36,6 +36,8 @@ namespace CodeView
 
 			//LoadProject("../../Examples/StarFoxUsa10.cvproj");
 			//LoadRom("../../Examples/StarFoxUsa10.bin");
+			LoadProject("../../Examples/StarFoxUsa12.cvproj");
+			LoadRom("../../Examples/StarFoxUsa12.bin");
 		}
 
 		private void treeView_BeforeExpand(object sender, TreeViewCancelEventArgs e)
@@ -146,108 +148,6 @@ namespace CodeView
 			project.Expand();
 		}
 
-		private void LoadProject_old(string fileName)
-		{
-			using (var reader = File.OpenText(fileName))
-			{
-				var project = new Project();
-
-				project.Text = reader.ReadLine();
-				reader.ReadLine();
-
-				while (true)
-				{
-					var line = reader.ReadLine();
-
-					if (string.IsNullOrWhiteSpace(line))
-						break;
-
-					var address = int.Parse(line, System.Globalization.NumberStyles.HexNumber);
-					var name = reader.ReadLine();
-					var description = reader.ReadLine();
-					var notes = string.Empty;
-
-					while (true)
-					{
-						line = reader.ReadLine();
-
-						if (line == "~")
-							break;
-
-						if (notes != string.Empty)
-							notes += Environment.NewLine;
-
-						notes += line;
-					}
-
-					project.Tables.Add(address, new Table { Address = address, Text = name, Description = description, Notes = notes });
-				}
-
-				while (true)
-				{
-					var line = reader.ReadLine();
-
-					if (string.IsNullOrWhiteSpace(line))
-						break;
-
-					var address = int.Parse(line, System.Globalization.NumberStyles.HexNumber);
-					var name = reader.ReadLine();
-					var description = reader.ReadLine();
-					var notes = string.Empty;
-
-					while (true)
-					{
-						line = reader.ReadLine();
-
-						if (line == "~")
-							break;
-
-						if (notes != string.Empty)
-							notes += Environment.NewLine;
-
-						notes += line;
-					}
-
-					project.Variables.Add(address, new Variable { Address = address, Text = name, Description = description, Notes = notes });
-				}
-
-				while (true)
-				{
-					var line = reader.ReadLine();
-
-					if (string.IsNullOrWhiteSpace(line))
-						break;
-
-					var address = int.Parse(line, System.Globalization.NumberStyles.HexNumber);
-					var name = reader.ReadLine();
-					var flags = byte.Parse(reader.ReadLine(), System.Globalization.NumberStyles.HexNumber);
-					var description = reader.ReadLine();
-					var notes = string.Empty;
-
-					while (true)
-					{
-						line = reader.ReadLine();
-
-						if (line == "~")
-							break;
-
-						if (notes != string.Empty)
-							notes += Environment.NewLine;
-
-						notes += line;
-					}
-
-					project.Functions.Add(address, new Function { Address = address, Text = name, Flags = flags, Project = project, Description = description, Notes = notes });
-				}
-
-				treeView.Nodes.Clear();
-
-				treeView.Nodes.Add(project);
-				treeView.SelectedNode = project;
-				project.Expand();
-			}
-		}
-
 		private void SaveProject(string fileName)
 		{
 			var project = treeView.Nodes[0] as Project;
@@ -291,50 +191,6 @@ namespace CodeView
 			root.Add(tables, variables, functions);
 
 			document.Save(fileName);
-		}
-
-		private void SaveProject_old(string fileName)
-		{
-			var project = treeView.Nodes[0] as Project;
-
-			using (var writer = File.CreateText(fileName))
-			{
-				writer.WriteLine(project.Text);
-
-				writer.WriteLine();
-
-				foreach (var table in project.Tables)
-				{
-					writer.WriteLine(table.Key.ToString("X"));
-					writer.WriteLine(table.Value.Text);
-					writer.WriteLine(table.Value.Description);
-					writer.WriteLine(table.Value.Notes);
-					writer.WriteLine("~");
-				}
-
-				writer.WriteLine();
-
-				foreach (var variable in project.Variables)
-				{
-					writer.WriteLine(variable.Key.ToString("X"));
-					writer.WriteLine(variable.Value.Text);
-					writer.WriteLine(variable.Value.Description);
-					writer.WriteLine(variable.Value.Notes);
-					writer.WriteLine("~");
-				}
-
-				writer.WriteLine();
-
-				foreach (var function in project.Functions)
-				{
-					writer.WriteLine(function.Key.ToString("X"));
-					writer.WriteLine(function.Value.Text);
-					writer.WriteLine(function.Value.Flags.ToString("X"));
-					writer.WriteLine(function.Value.Description);
-					writer.WriteLine(function.Value.Notes);
-					writer.WriteLine("~");
-				}
-			}
 		}
 
 		private void LoadRom(string path)
@@ -435,6 +291,7 @@ namespace CodeView
 		{
 			Save();
 		}
+
 		private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			SaveAs();
@@ -452,9 +309,32 @@ namespace CodeView
 		{
 			if (saveFileDialog.ShowDialog() == DialogResult.OK)
 			{
-				openFileDialog.FileName = saveFileDialog.FileName;
+				switch (Path.GetExtension(saveFileDialog.FileName))
+				{
+					case ".cvproj":
+						openFileDialog.FileName = saveFileDialog.FileName;
 
-				SaveProject(saveFileDialog.FileName);
+						SaveProject(saveFileDialog.FileName);
+						break;
+
+					case ".txt":
+						SaveText(saveFileDialog.FileName);
+						break;
+				}
+			}
+		}
+
+		private void SaveText(string fileName)
+		{
+			using (var writer = File.CreateText(fileName))
+			{
+				var node = treeView.SelectedNode;
+
+				foreach (var child in node.Nodes.OfType<TreeNode>())
+					writer.WriteLine(child.Text);
+
+				writer.Flush();
+				writer.Close();
 			}
 		}
 

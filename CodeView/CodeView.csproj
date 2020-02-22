@@ -86,8 +86,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="Examples\StarFoxUsa12.bin" />
     <None Include="Examples\StarFoxUsa10.bin" />
+    <None Include="Examples\StarFoxUsa12_1FC801.bin" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

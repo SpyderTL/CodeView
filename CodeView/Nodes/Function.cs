@@ -620,6 +620,14 @@ namespace CodeView.Nodes
 						branch = address;
 						break;
 
+					case 0x92:
+						address = Project.Memory[current + 1];
+						text = current.ToString("X6") + " CopyAccumulatorToDirectAddressPointer " + address.ToString("X2");
+						instructionType = "Write";
+						addressType = "Pointer";
+						next = current + 2;
+						break;
+
 					case 0x94:
 						address = Project.Memory[current + 1];
 						text = current.ToString("X6") + " CopyYIndexToDirectAddressPlusXIndex " + address.ToString("X2");
@@ -939,6 +947,14 @@ namespace CodeView.Nodes
 						next = current + 1;
 						break;
 
+					case 0xcc:
+						address = Project.Memory[current + 1] | (Project.Memory[current + 2] << 8);
+						text = current.ToString("X6") + " TestSubtractAbsoluteAddressFromYIndex " + address.ToString("X4");
+						instructionType = "Read";
+						addressType = "Absolute";
+						next = current + 3;
+						break;
+
 					case 0xcd:
 						address = Project.Memory[current + 1] | (Project.Memory[current + 2] << 8);
 						text = current.ToString("X6") + " TestSubtractAbsoluteAddressFromAccumulator " + address.ToString("X4");
@@ -1068,7 +1084,7 @@ namespace CodeView.Nodes
 
 					case 0xec:
 						address = Project.Memory[current + 1] | (Project.Memory[current + 2] << 8);
-						text = current.ToString("X6") + " TestSubtractAbsoluteAddressFromIndexX " + address.ToString("X4");
+						text = current.ToString("X6") + " TestSubtractAbsoluteAddressFromXIndex " + address.ToString("X4");
 						instructionType = "Read";
 						addressType = "Absolute";
 						next = current + 3;
@@ -1088,6 +1104,14 @@ namespace CodeView.Nodes
 						instructionType = "Write";
 						addressType = "Absolute";
 						next = current + 3;
+						break;
+
+					case 0xef:
+						address = Project.Memory[current + 1] | Project.Memory[current + 2] << 8 | Project.Memory[current + 3] << 16;
+						text = current.ToString("X6") + " SubtractAbsoluteLongAddressFromAccumulator " + address.ToString("X6");
+						instructionType = "Read";
+						addressType = "AbsoluteLong";
+						next = current + 4;
 						break;
 
 					case 0xf0:
@@ -1128,6 +1152,14 @@ namespace CodeView.Nodes
 					case 0xfb:
 						text = current.ToString("X6") + " ExchangeCarryFlagWithEmulationFlag";
 						next = current + 1;
+						break;
+
+					case 0xfc:
+						address = Project.Memory[current + 1] | (Project.Memory[current + 2] << 8);
+						text = current.ToString("X6") + " CallAbsoluteAddressPlusXIndex " + address.ToString("X4");
+						instructionType = "Call";
+						addressType = "AbsoluteTable";
+						next = current + 3;
 						break;
 
 					case 0xfd:
