@@ -140,7 +140,7 @@ namespace CodeView
 			})
 			.OrderBy(x => x.Text)
 			.ToDictionary(x => x.Address);
-				
+			
 			treeView.Nodes.Clear();
 
 			treeView.Nodes.Add(project);

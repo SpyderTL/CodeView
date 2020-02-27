@@ -217,6 +217,22 @@ namespace CodeView.Nodes
 						branch = address;
 						break;
 
+					case 0x24:
+						address = Project.Memory[current + 1];
+						text = current.ToString("X6") + " TestAndAccumulatorWithDirectAddress " + address.ToString("X2");
+						instructionType = "Read";
+						addressType = "Direct";
+						next = current + 2;
+						break;
+
+					case 0x26:
+						address = (int)Project.Memory[current + 1];
+						text = current.ToString("X6") + " RotateDirectAddressLeft " + address.ToString("X2");
+						instructionType = "Write";
+						addressType = "Direct";
+						next = current + 2;
+						break;
+
 					case 0x28:
 						text = current.ToString("X6") + " PullFlags";
 						next = current + 1;
@@ -250,6 +266,14 @@ namespace CodeView.Nodes
 						instructionType = "Read";
 						addressType = "Absolute";
 						next = current + 3;
+						break;
+
+					case 0x2f:
+						address = Project.Memory[current + 1] | Project.Memory[current + 2] << 8 | Project.Memory[current + 3] << 16;
+						text = current.ToString("X6") + " AndAccumulatorWithAbsoluteLongAddress " + address.ToString("X6");
+						instructionType = "Read";
+						addressType = "AbsoluteLong";
+						next = current + 4;
 						break;
 
 					case 0x30:
@@ -354,6 +378,14 @@ namespace CodeView.Nodes
 						next = current + 3;
 						break;
 
+					case 0x50:
+						address = current + 2 + (sbyte)Project.Memory[current + 1];
+						text = current.ToString("X6") + " BranchToRelativeIfNotOverflow " + address.ToString("X6");
+						instructionType = "Branch";
+						next = current + 2;
+						branch = address;
+						break;
+
 					case 0x58:
 						text = current.ToString("X6") + " ClearInterruptDisableFlag";
 						next = current + 1;
@@ -402,6 +434,14 @@ namespace CodeView.Nodes
 						address = Project.Memory[current + 1];
 						text = current.ToString("X6") + " AddDirectAddressToAccumulator " + address.ToString("X2");
 						instructionType = "Read";
+						addressType = "Direct";
+						next = current + 2;
+						break;
+
+					case 0x66:
+						address = Project.Memory[current + 1];
+						text = current.ToString("X6") + " RotateDirectAddressRight " + address.ToString("X2");
+						instructionType = "Write";
 						addressType = "Direct";
 						next = current + 2;
 						break;
@@ -458,6 +498,14 @@ namespace CodeView.Nodes
 						instructionType = "Write";
 						addressType = "Absolute";
 						next = current + 3;
+						break;
+
+					case 0x70:
+						address = current + 2 + (sbyte)Project.Memory[current + 1];
+						text = current.ToString("X6") + " BranchToRelativeIfOverflow " + address.ToString("X6");
+						instructionType = "Branch";
+						next = current + 2;
+						branch = address;
 						break;
 
 					case 0x74:
@@ -847,6 +895,14 @@ namespace CodeView.Nodes
 						next = current + 2;
 						break;
 
+					case 0xb6:
+						address = Project.Memory[current + 1];
+						text = current.ToString("X6") + " CopyDirectAddresPlusYIndexToXIndex " + address.ToString("X2");
+						instructionType = "Read";
+						addressType = "DirectTable";
+						next = current + 2;
+						break;
+
 					case 0xb7:
 						address = Project.Memory[current + 1];
 						text = current.ToString("X6") + " CopyDirectAddressLongPointerPlusYIndexToAccumulator " + address.ToString("X2");
@@ -1132,6 +1188,14 @@ namespace CodeView.Nodes
 						address = Project.Memory[current + 1];
 						text = current.ToString("X6") + " SubtractDirectAddressPlusXIndexFromAccumulator " + address.ToString("X2");
 						instructionType = "Read";
+						addressType = "DirectTable";
+						next = current + 2;
+						break;
+
+					case 0xf6:
+						address = Project.Memory[current + 1];
+						text = current.ToString("X6") + " IncrementDirectAddressPlusXIndex " + address.ToString("X2");
+						instructionType = "Write";
 						addressType = "DirectTable";
 						next = current + 2;
 						break;
