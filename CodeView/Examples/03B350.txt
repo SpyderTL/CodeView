@@ -1,0 +1,59 @@
+03B350 ClearImmediateFlags 30
+03B352 CopyAbsoluteAddressToXIndex 121D
+03B355 SetImmediateFlags 20
+03B357 CopyDirectAddressPlusXIndexToAccumulator 2A
+03B359 TestSubtractImmediateFromAccumulator FF
+03B35B BranchToRelativeIfNotZero 03B395
+03B35D CopyDirectAddressPlusXIndexToAccumulator 1F
+03B35F AndAccumulatorWithImmediate 08
+03B361 BranchToRelativeIfNotZero 03B367
+03B363 JumpToAbsoluteLongAddress 03B395
+03B367 CopyDirectAddressPlusXIndexToAccumulator 20
+03B369 AndAccumulatorWithImmediate 02
+03B36B BranchToRelativeIfZero 03B371
+03B36D JumpToAbsoluteLongAddress 03B395
+03B371 ClearImmediateFlags 20
+03B373 CopyAbsoluteAddressToYIndex 1238
+03B376 CopyAbsoluteAddressToAccumulator 14F6
+03B379 SetCarryFlag
+03B37A SubtractDirectAddressPlusXIndexFromAccumulator 0C
+03B37C BranchToRelativeIfNegative 03B385
+03B37E TestSubtractImmediateFromAccumulator 012C
+03B381 BranchToRelativeIfGreaterOrEqual 03B395
+03B383 JumpToRelative 03B38A
+03B385 TestSubtractImmediateFromAccumulator FED4
+03B388 BranchToRelativeIfLessThan 03B395
+03B38A CopyDirectAddressPlusXIndexToAccumulator 10
+03B38C SetCarryFlag
+03B38D SubtractAbsoluteAddressPlusYIndexFromAccumulator 0010
+03B390 TestSubtractImmediateFromAccumulator 0064
+03B393 BranchToRelativeIfLessThan 03B39B
+03B395 CopyDirectAddressPlusXIndexToYIndex 00
+03B397 CopyYIndexToXIndex
+03B398 BranchToRelativeIfNotZero 03B355
+03B39A ReturnToCaller
+03B39B SetImmediateFlags 20
+03B39D CopyDirectAddressPlusXIndexToAccumulator 20
+03B39F OrAccumulatorWithImmediate 02
+03B3A1 CopyAccumulatorToDirectAddressPlusXIndex 20
+03B3A3 ClearImmediateFlags 20
+03B3A5 CopyAbsoluteAddressToAccumulator 14F6
+03B3A8 SetCarryFlag
+03B3A9 SubtractDirectAddressPlusXIndexFromAccumulator 0C
+03B3AB BranchToRelativeIfNegative 03B3BB
+03B3AD TestSubtractImmediateFromAccumulator 0050
+03B3B0 BranchToRelativeIfLessThan 03B3C9
+03B3B2 SetImmediateFlags 20
+03B3B4 CopyImmediateToAccumulator 6D
+03B3B6 CallAbsoluteLongAddress 03B7F9 [03B7F9]
+03B3BA ReturnToCaller
+03B3BB TestSubtractImmediateFromAccumulator FFB0
+03B3BE BranchToRelativeIfGreaterOrEqual 03B3C9
+03B3C0 SetImmediateFlags 20
+03B3C2 CopyImmediateToAccumulator 6F
+03B3C4 CallAbsoluteLongAddress 03B7F9 [03B7F9]
+03B3C8 ReturnToCaller
+03B3C9 SetImmediateFlags 20
+03B3CB CopyImmediateToAccumulator 6E
+03B3CD CallAbsoluteLongAddress 03B7F9 [03B7F9]
+03B3D1 ReturnToCaller

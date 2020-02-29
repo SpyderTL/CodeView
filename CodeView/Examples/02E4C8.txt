@@ -1,0 +1,66 @@
+02E4C8 CallAbsoluteLongAddress 06BBDA
+02E4CC SetImmediateFlags 20
+02E4CE ClearImmediateFlags 10
+02E4D0 CallAbsoluteLongAddress 03AEC8
+02E4D4 SetAbsoluteAddressToZero 1FDF
+02E4D7 CopyImmediateToAccumulator 00
+02E4D9 CopyAccumulatorToAbsoluteLongAddress 7EA05A
+02E4DD CallAbsoluteLongAddress 03A963
+02E4E1 CopyImmediateToAccumulator 01
+02E4E3 CopyImmediateToXIndex B4DF
+02E4E6 CallAbsoluteLongAddress 7E4EE9
+02E4EA CopyImmediateToAccumulator 01
+02E4EC CopyAccumulatorToAbsoluteAddress 18B2
+02E4EF CopyAccumulatorToAbsoluteAddress 1FDD
+02E4F2 ClearImmediateFlags 20
+02E4F4 SetAbsoluteAddressToZero 1F37
+02E4F7 CopyImmediateToAccumulator 0020
+02E4FA CopyAccumulatorToAbsoluteAddress 1F35
+02E4FD CopyImmediateToAccumulator 0032
+02E500 PushAccumulator
+02E501 CallAbsoluteAddress 02F0B3
+02E504 CallAbsoluteLongAddress 02FD84 [02FD84]
+02E508 CallAbsoluteLongAddress 02D956 [02D956]
+02E50C ClearImmediateFlags 20
+02E50E PullAccumulator
+02E50F DecrementAccumulator
+02E510 BranchToRelativeIfNotZero 02E500
+02E512 SetImmediateFlags 20
+02E514 SetAbsoluteAddressToZero 1209
+02E517 ClearImmediateFlags 20
+02E519 CopyImmediateToAccumulator 04B0
+02E51C PushAccumulator
+02E51D CallAbsoluteAddress 02F06F
+02E520 CallAbsoluteLongAddress 02FD84 [02FD84]
+02E524 CallAbsoluteLongAddress 02D956 [02D956]
+02E528 SetImmediateFlags 20
+02E52A ClearImmediateFlags 10
+02E52C CopyImmediateToXIndex 14A1
+02E52F CopyDirectAddressPlusXIndexToAccumulator 07
+02E531 BranchToRelativeIfNotZero 02E51D
+02E533 SetImmediateFlags 20
+02E535 CopyAbsoluteAddressToAccumulator 1202
+02E538 TestAndAccumulatorWithImmediate 10
+02E53A BranchToRelativeIfNotZero 02E542
+02E53C ClearImmediateFlags 20
+02E53E PullAccumulator
+02E53F DecrementAccumulator
+02E540 BranchToRelativeIfNotZero 02E51C
+02E542 SetImmediateFlags 20
+02E544 CopyImmediateToAccumulator FF
+02E546 CopyAccumulatorToAbsoluteAddress 18B2
+02E549 CallAbsoluteAddress 02F06F
+02E54C CallAbsoluteLongAddress 02FD84 [02FD84]
+02E550 CallAbsoluteLongAddress 02D956 [02D956]
+02E554 SetImmediateFlags 20
+02E556 CopyAbsoluteAddressToAccumulator 18B2
+02E559 AndAccumulatorWithImmediate FF
+02E55B BranchToRelativeIfNotZero 02E549
+02E55D SetImmediateFlags 20
+02E55F SetAbsoluteAddressToZero 1FDD
+02E562 CopyImmediateToAccumulator 01
+02E564 CopyAccumulatorToAbsoluteAddress 1FDF
+02E567 CopyImmediateToAccumulator 01
+02E569 CopyAccumulatorToAbsoluteLongAddress 7EA05A
+02E56D CallAbsoluteLongAddress 03E403
+02E571 JumpToAbsoluteLongAddress 03BDDF

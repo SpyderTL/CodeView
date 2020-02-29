@@ -1,0 +1,65 @@
+02DB5A ClearImmediateFlags 30
+02DB5C SetAbsoluteAddressToZero 1951
+02DB5F CopyAbsoluteAddressToAccumulator 1954
+02DB62 AndAccumulatorWithImmediate 00FF
+02DB65 BranchToRelativeIfNotZero 02DB68
+02DB67 ReturnToCaller
+02DB68 CopyAbsoluteAddressToAccumulator 16F1
+02DB6B AndAccumulatorWithImmediate 00FF
+02DB6E BranchToRelativeIfNotZero 02DB75
+02DB70 CopyImmediateToAccumulator 0000
+02DB73 JumpToRelative 02DB7A
+02DB75 CopyAbsoluteAddressToAccumulator 1234
+02DB78 BranchToRelativeIfNegative 02DBAA
+02DB7A ExchangeAccumulators
+02DB7B AndAccumulatorWithImmediate 0007
+02DB7E ShiftAccumulatorLeft
+02DB7F CopyAccumulatorToXIndex
+02DB80 CopyAbsoluteLongAddressPlusXIndexToAccumulator 008C15
+02DB84 TestSubtractAbsoluteAddressFromAccumulator 194F
+02DB87 BranchToRelativeIfNotZero 02DB8A
+02DB89 ReturnToCaller
+02DB8A CopyAccumulatorToAbsoluteAddress 194F
+02DB8D CopyAccumulatorToXIndex
+02DB8E CopyImmediateToYIndex 0000
+02DB91 CopyDirectAddressPlusXIndexToAccumulator 00
+02DB93 ClearCarryFlag
+02DB94 AddAbsoluteAddressToAccumulator 194D
+02DB97 CopyAccumulatorToAbsoluteAddressPlusYIndex 18CD
+02DB9A IncrementYIndex
+02DB9B IncrementYIndex
+02DB9C IncrementXIndex
+02DB9D IncrementXIndex
+02DB9E TestSubtractImmediateFromYIndex 0040
+02DBA1 BranchToRelativeIfNotZero 02DB91
+02DBA3 CopyImmediateToAccumulator 0001
+02DBA6 CopyAccumulatorToAbsoluteAddress 1951
+02DBA9 ReturnToCaller
+02DBAA ExclusiveOrAccumulatorWithImmediate FFFF
+02DBAD IncrementAccumulator
+02DBAE ExchangeAccumulators
+02DBAF AndAccumulatorWithImmediate 0007
+02DBB2 ShiftAccumulatorLeft
+02DBB3 CopyAccumulatorToXIndex
+02DBB4 CopyAbsoluteLongAddressPlusXIndexToAccumulator 008C15
+02DBB8 TestSubtractAbsoluteAddressFromAccumulator 194F
+02DBBB BranchToRelativeIfNotZero 02DBBE
+02DBBD ReturnToCaller
+02DBBE CopyAccumulatorToAbsoluteAddress 194F
+02DBC1 ClearCarryFlag
+02DBC2 AddImmediateToAccumulator 003E
+02DBC5 CopyAccumulatorToXIndex
+02DBC6 CopyImmediateToYIndex 0000
+02DBC9 CopyDirectAddressPlusXIndexToAccumulator 00
+02DBCB ClearCarryFlag
+02DBCC AddAbsoluteAddressToAccumulator 194D
+02DBCF CopyAccumulatorToAbsoluteAddressPlusYIndex 18CD
+02DBD2 DecrementXIndex
+02DBD3 DecrementXIndex
+02DBD4 IncrementYIndex
+02DBD5 IncrementYIndex
+02DBD6 TestSubtractImmediateFromYIndex 0040
+02DBD9 BranchToRelativeIfNotZero 02DBC9
+02DBDB CopyImmediateToAccumulator 0001
+02DBDE CopyAccumulatorToAbsoluteAddress 1951
+02DBE1 ReturnToCaller

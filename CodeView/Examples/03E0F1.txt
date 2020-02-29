@@ -1,0 +1,70 @@
+03E0F1 PushFlags
+03E0F2 SetImmediateFlags 20
+03E0F4 ClearImmediateFlags 10
+03E0F6 CopyAbsoluteAddressToAccumulator 14DB
+03E0F9 TestSubtractImmediateFromAccumulator 03
+03E0FB BranchToRelativeIfNotZero 03E102
+03E0FD CopyAbsoluteAddressToAccumulator 15AB
+03E100 BranchToRelativeIfNotZero 03E104
+03E102 PullFlags
+03E103 ReturnToCaller
+03E104 ClearImmediateFlags 20
+03E106 CopyAbsoluteAddressToAccumulator 16F2
+03E109 CopyAccumulatorToDirectAddress 72
+03E10B CopyAbsoluteAddressToAccumulator 16F4
+03E10E CopyAccumulatorToDirectAddress 74
+03E110 ClearImmediateFlags 20
+03E112 CopyAbsoluteAddressToXIndex 15AF
+03E115 CopyImmediateToAccumulator 28E1
+03E118 CopyAccumulatorToAbsoluteAddressPlusXIndex 1263
+03E11B SetImmediateFlags 20
+03E11D CopyDirectAddressToAccumulator 72
+03E11F ClearCarryFlag
+03E120 AddImmediateToAccumulator 74
+03E122 CopyAccumulatorToAbsoluteAddressPlusXIndex 1261
+03E125 CopyDirectAddressToAccumulator 74
+03E127 ClearCarryFlag
+03E128 AddImmediateToAccumulator 5C
+03E12A CopyAccumulatorToAbsoluteAddressPlusXIndex 1262
+03E12D ClearImmediateFlags 20
+03E12F CopyImmediateToAccumulator 68E1
+03E132 CopyAccumulatorToAbsoluteAddressPlusXIndex 1267
+03E135 SetImmediateFlags 20
+03E137 CopyDirectAddressToAccumulator 72
+03E139 ClearCarryFlag
+03E13A AddImmediateToAccumulator 84
+03E13C CopyAccumulatorToAbsoluteAddressPlusXIndex 1265
+03E13F CopyDirectAddressToAccumulator 74
+03E141 ClearCarryFlag
+03E142 AddImmediateToAccumulator 5C
+03E144 CopyAccumulatorToAbsoluteAddressPlusXIndex 1266
+03E147 ClearImmediateFlags 20
+03E149 CopyImmediateToAccumulator A8E1
+03E14C CopyAccumulatorToAbsoluteAddressPlusXIndex 126B
+03E14F SetImmediateFlags 20
+03E151 CopyDirectAddressToAccumulator 72
+03E153 ClearCarryFlag
+03E154 AddImmediateToAccumulator 74
+03E156 CopyAccumulatorToAbsoluteAddressPlusXIndex 1269
+03E159 CopyDirectAddressToAccumulator 74
+03E15B ClearCarryFlag
+03E15C AddImmediateToAccumulator 6C
+03E15E CopyAccumulatorToAbsoluteAddressPlusXIndex 126A
+03E161 ClearImmediateFlags 20
+03E163 CopyImmediateToAccumulator E8E1
+03E166 CopyAccumulatorToAbsoluteAddressPlusXIndex 126F
+03E169 SetImmediateFlags 20
+03E16B CopyDirectAddressToAccumulator 72
+03E16D ClearCarryFlag
+03E16E AddImmediateToAccumulator 84
+03E170 CopyAccumulatorToAbsoluteAddressPlusXIndex 126D
+03E173 CopyDirectAddressToAccumulator 74
+03E175 ClearCarryFlag
+03E176 AddImmediateToAccumulator 6C
+03E178 CopyAccumulatorToAbsoluteAddressPlusXIndex 126E
+03E17B CopyXIndexToAccumulator
+03E17C ClearCarryFlag
+03E17D AddImmediateToAccumulator 10
+03E17F CopyAccumulatorToAbsoluteAddress 15AF
+03E182 PullFlags
+03E183 ReturnToCaller

@@ -1,0 +1,18 @@
+03ABCD ClearImmediateFlags 20
+03ABCF PullAccumulator
+03ABD0 CopyAccumulatorToXIndex
+03ABD1 ClearCarryFlag
+03ABD2 AddImmediateToAccumulator 0007
+03ABD5 PushAccumulator
+03ABD6 CopyAbsoluteLongAddressPlusXIndexToAccumulator 030001
+03ABDA CopyAccumulatorToAbsoluteLongAddress 700062
+03ABDE CopyAbsoluteLongAddressPlusXIndexToAccumulator 030003
+03ABE2 AndAccumulatorWithImmediate 00FF
+03ABE5 CopyAccumulatorToAbsoluteLongAddress 700064
+03ABE9 CopyAbsoluteLongAddressPlusXIndexToAccumulator 030004
+03ABED CopyAccumulatorToAbsoluteAddress 188E
+03ABF0 CopyAbsoluteLongAddressPlusXIndexToAccumulator 030006
+03ABF4 CopyAccumulatorToAbsoluteAddress 1890
+03ABF7 SetImmediateFlags 20
+03ABF9 CallAbsoluteLongAddress 03AB42
+03ABFD ReturnToCaller

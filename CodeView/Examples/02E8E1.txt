@@ -1,0 +1,107 @@
+02E8E1 ClearImmediateFlags 30
+02E8E3 CallAbsoluteAddress 02E8AC [02E8AC]
+02E8E6 CopyAbsoluteAddressToAccumulator 14C5
+02E8E9 CopyAccumulatorToAbsoluteLongAddress 700062
+02E8ED CopyAbsoluteAddressToAccumulator 1FBB
+02E8F0 SetCarryFlag
+02E8F1 SubtractAbsoluteLongAddressFromAccumulator 7EA058
+02E8F5 CopyAccumulatorToAbsoluteLongAddress 70002C
+02E8F9 SetImmediateFlags 20
+02E8FB CopyImmediateToAccumulator 01
+02E8FD CopyImmediateToXIndex B6B7
+02E900 CallAbsoluteLongAddress 7E4EE9
+02E904 ClearImmediateFlags 20
+02E906 ClearImmediateFlags 10
+02E908 CopyAbsoluteLongAddressToAccumulator 700062
+02E90C CopyAccumulatorToAbsoluteAddress 1957
+02E90F ShiftAccumulatorLeft
+02E910 ShiftAccumulatorLeft
+02E911 ClearCarryFlag
+02E912 AddAbsoluteAddressToAccumulator 1957
+02E915 ClearCarryFlag
+02E916 AddImmediateToAccumulator CBE6
+02E919 PushAccumulator
+02E91A CopyImmediateToAccumulator CDE4
+02E91D CopyImmediateToXIndex 01F4
+02E920 CopyImmediateToYIndex 02EE
+02E923 CallAbsoluteAddress 02EB15 [02EB15]
+02E926 ClearImmediateFlags 20
+02E928 CopyImmediateToAccumulator 000A
+02E92B PushAccumulator
+02E92C CallAbsoluteLongAddress 02D956 [02D956]
+02E930 ClearImmediateFlags 20
+02E932 PullAccumulator
+02E933 DecrementAccumulator
+02E934 BranchToRelativeIfNotZero 02E92B
+02E936 ClearImmediateFlags 20
+02E938 CallAbsoluteAddress 02E8AC [02E8AC]
+02E93B CopyAbsoluteAddressToAccumulator 14C5
+02E93E CopyAccumulatorToDirectAddress 18
+02E940 CopyImmediateToAccumulator FF38
+02E943 CopyAccumulatorToDirectAddress 16
+02E945 CopyDirectAddressToAccumulator 18
+02E947 CopyImmediateToXIndex FFFF
+02E94A IncrementXIndex
+02E94B SetCarryFlag
+02E94C SubtractImmediateFromAccumulator 0064
+02E94F BranchToRelativeIfPositive 02E94A
+02E951 ClearCarryFlag
+02E952 AddImmediateToAccumulator 0064
+02E955 CopyAccumulatorToDirectAddress 18
+02E957 CopyXIndexToAccumulator
+02E958 OrAccumulatorWithImmediate 0000
+02E95B BranchToRelativeIfZero 02E966
+02E95D CopyImmediateToXIndex 00C8
+02E960 CopyImmediateToYIndex 0384
+02E963 CallAbsoluteAddress 02EB10 [02EB10]
+02E966 CopyDirectAddressToAccumulator 18
+02E968 CopyImmediateToXIndex FFFF
+02E96B IncrementXIndex
+02E96C SetCarryFlag
+02E96D SubtractImmediateFromAccumulator 000A
+02E970 BranchToRelativeIfPositive 02E96B
+02E972 ClearCarryFlag
+02E973 AddImmediateToAccumulator 000A
+02E976 CopyAccumulatorToDirectAddress 18
+02E978 CopyXIndexToAccumulator
+02E979 OrAccumulatorWithImmediate 0000
+02E97C CopyImmediateToXIndex 015E
+02E97F CopyImmediateToYIndex 0384
+02E982 CallAbsoluteAddress 02EB10 [02EB10]
+02E985 CopyDirectAddressToAccumulator 18
+02E987 CopyImmediateToXIndex 01F4
+02E98A CopyImmediateToYIndex 0384
+02E98D CallAbsoluteAddress 02EB10 [02EB10]
+02E990 CopyImmediateToAccumulator 0000
+02E993 CopyImmediateToXIndex 028A
+02E996 CopyImmediateToYIndex 0384
+02E999 CallAbsoluteAddress 02EB10 [02EB10]
+02E99C CopyImmediateToAccumulator 0000
+02E99F CopyImmediateToXIndex 0320
+02E9A2 CopyImmediateToYIndex 0384
+02E9A5 CallAbsoluteAddress 02EB10 [02EB10]
+02E9A8 ClearImmediateFlags 20
+02E9AA CopyImmediateToAccumulator 000A
+02E9AD PushAccumulator
+02E9AE CallAbsoluteLongAddress 02D956 [02D956]
+02E9B2 ClearImmediateFlags 20
+02E9B4 PullAccumulator
+02E9B5 DecrementAccumulator
+02E9B6 BranchToRelativeIfNotZero 02E9AD
+02E9B8 CopyImmediateToAccumulator CDF0
+02E9BB CopyImmediateToXIndex 01F4
+02E9BE CopyImmediateToYIndex 041A
+02E9C1 CallAbsoluteAddress 02EB15 [02EB15]
+02E9C4 ClearImmediateFlags 20
+02E9C6 CopyImmediateToAccumulator 000A
+02E9C9 PushAccumulator
+02E9CA CallAbsoluteLongAddress 02D956 [02D956]
+02E9CE ClearImmediateFlags 20
+02E9D0 PullAccumulator
+02E9D1 DecrementAccumulator
+02E9D2 BranchToRelativeIfNotZero 02E9C9
+02E9D4 PullAccumulator
+02E9D5 CopyImmediateToXIndex 01F4
+02E9D8 CopyImmediateToYIndex 04B0
+02E9DB CallAbsoluteAddress 02EB15 [02EB15]
+02E9DE ReturnToCaller

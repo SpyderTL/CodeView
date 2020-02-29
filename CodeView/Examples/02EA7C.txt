@@ -1,0 +1,68 @@
+02EA7C CopyAccumulatorToAbsoluteAddress 1957
+02EA7F CopyXIndexToAbsoluteAddress 1F3D
+02EA82 CopyYIndexToAbsoluteAddress 1F3F
+02EA85 PushFlags
+02EA86 SetImmediateFlags 20
+02EA88 PushDataBank
+02EA89 CopyImmediateToAccumulator 7E
+02EA8B PushAccumulator
+02EA8C PullDataBank
+02EA8D CopyAbsoluteAddressToXIndex 121D
+02EA90 ClearImmediateFlags 20
+02EA92 CopyImmediateToAccumulator D924
+02EA95 CopyAccumulatorToAbsoluteAddress 14C5
+02EA98 SetImmediateFlags 20
+02EA9A CallAbsoluteLongAddress 1FD54B
+02EA9E BranchToRelativeIfGreaterOrEqual 02EAA4
+02EAA0 JumpToAbsoluteLongAddress 02EB0D
+02EAA4 CopyYIndexToXIndex
+02EAA5 ClearImmediateFlags 20
+02EAA7 CopyImmediateToAccumulator 800E
+02EAAA CopyAccumulatorToDirectAddressPlusXIndex 16
+02EAAC SetImmediateFlags 20
+02EAAE CopyImmediateToAccumulator 04
+02EAB0 CopyAccumulatorToDirectAddressPlusXIndex 18
+02EAB2 CopyDirectAddressPlusXIndexToAccumulator 1D
+02EAB4 OrAccumulatorWithImmediate 40
+02EAB6 CopyAccumulatorToDirectAddressPlusXIndex 1D
+02EAB8 CopyDirectAddressPlusXIndexToAccumulator 1E
+02EABA OrAccumulatorWithImmediate 01
+02EABC CopyAccumulatorToDirectAddressPlusXIndex 1E
+02EABE CopyImmediateToAccumulator 03
+02EAC0 CopyAccumulatorToAbsoluteAddressPlusXIndex 1CDF
+02EAC3 ClearImmediateFlags 20
+02EAC5 CopyAbsoluteAddressToAccumulator 1957
+02EAC8 CopyAccumulatorToAbsoluteAddressPlusXIndex 1CEA
+02EACB SetImmediateFlags 20
+02EACD CopyImmediateToAccumulator 00
+02EACF CopyAccumulatorToAbsoluteAddressPlusXIndex 1CF4
+02EAD2 CopyImmediateToAccumulator 03
+02EAD4 CopyAccumulatorToAbsoluteAddressPlusXIndex 1CF5
+02EAD7 ClearImmediateFlags 20
+02EAD9 CopyImmediateToAccumulator 4834
+02EADC CopyAccumulatorToDirectAddressPlusXIndex 28
+02EADE SetImmediateFlags 20
+02EAE0 CopyAbsoluteAddressToYIndex 159E
+02EAE3 CallAbsoluteLongAddress 1FDAED
+02EAE7 ClearImmediateFlags 20
+02EAE9 CopyDirectAddressPlusXIndexToAccumulator 0C
+02EAEB ClearCarryFlag
+02EAEC AddAbsoluteAddressToAccumulator 1F3D
+02EAEF CopyAccumulatorToDirectAddressPlusXIndex 0C
+02EAF1 SetImmediateFlags 20
+02EAF3 ClearImmediateFlags 20
+02EAF5 CopyDirectAddressPlusXIndexToAccumulator 0E
+02EAF7 ClearCarryFlag
+02EAF8 AddAbsoluteAddressToAccumulator 1F3F
+02EAFB CopyAccumulatorToDirectAddressPlusXIndex 0E
+02EAFD SetImmediateFlags 20
+02EAFF ClearImmediateFlags 20
+02EB01 CopyDirectAddressPlusXIndexToAccumulator 10
+02EB03 ClearCarryFlag
+02EB04 AddImmediateToAccumulator 0FA0
+02EB07 CopyAccumulatorToDirectAddressPlusXIndex 10
+02EB09 SetImmediateFlags 20
+02EB0B SetImmediateFlags 20
+02EB0D PullDataBank
+02EB0E PullFlags
+02EB0F ReturnToCaller

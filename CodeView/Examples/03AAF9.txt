@@ -1,0 +1,13 @@
+03AAF9 SetImmediateFlags 20
+03AAFB ClearImmediateFlags 10
+03AAFD CopyDirectAddressToAccumulator 00
+03AAFF BranchToRelativeIfZero 03AB05
+03AB01 TestSubtractImmediateFromAccumulator 20
+03AB03 BranchToRelativeIfNotZero 03AAFD
+03AB05 CopyImmediateToAccumulator 24
+03AB07 CopyAccumulatorToDirectAddress 00
+03AB09 CopyDirectAddressToAccumulator 00
+03AB0B BranchToRelativeIfZero 03AB11
+03AB0D TestSubtractImmediateFromAccumulator 20
+03AB0F BranchToRelativeIfNotZero 03AB09
+03AB11 ReturnToCaller

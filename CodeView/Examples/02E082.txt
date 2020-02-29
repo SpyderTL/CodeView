@@ -1,0 +1,33 @@
+02E082 SetImmediateFlags 20
+02E084 PushDataBank
+02E085 CopyImmediateToAccumulator 7E
+02E087 PushAccumulator
+02E088 PullDataBank
+02E089 CopyImmediateToXIndex 017E
+02E08C CopyImmediateToYIndex 0240
+02E08F CopyAbsoluteAddressToAccumulator 18A9
+02E092 BranchToRelativeIfZero 02E0AB
+02E094 CopyAbsoluteLongAddressPlusXIndexToAccumulator 700EF2
+02E098 CopyAccumulatorToAbsoluteAddressPlusYIndex 416B
+02E09B CopyAbsoluteLongAddressPlusXIndexToAccumulator 7010B2
+02E09F CopyAccumulatorToAbsoluteAddressPlusYIndex 416A
+02E0A2 DecrementYIndex
+02E0A3 DecrementYIndex
+02E0A4 DecrementYIndex
+02E0A5 DecrementXIndex
+02E0A6 DecrementXIndex
+02E0A7 BranchToRelativeIfPositive 02E094
+02E0A9 PullDataBank
+02E0AA ReturnToCaller
+02E0AB CopyAbsoluteLongAddressPlusXIndexToAccumulator 700EF2
+02E0AF CopyAccumulatorToAbsoluteAddressPlusYIndex 43AF
+02E0B2 CopyAbsoluteLongAddressPlusXIndexToAccumulator 7010B2
+02E0B6 CopyAccumulatorToAbsoluteAddressPlusYIndex 43AE
+02E0B9 DecrementYIndex
+02E0BA DecrementYIndex
+02E0BB DecrementYIndex
+02E0BC DecrementXIndex
+02E0BD DecrementXIndex
+02E0BE BranchToRelativeIfPositive 02E0AB
+02E0C0 PullDataBank
+02E0C1 ReturnToCaller

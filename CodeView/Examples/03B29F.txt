@@ -1,0 +1,25 @@
+03B29F SetImmediateFlags 20
+03B2A1 ClearImmediateFlags 10
+03B2A3 CopyAbsoluteAddressToXIndex 15A2
+03B2A6 CopyDirectAddressPlusXIndexToAccumulator 2E
+03B2A8 AndAccumulatorWithImmediate 04
+03B2AA BranchToRelativeIfZero 03B2B0
+03B2AC JumpToAbsoluteLongAddress 03B2C7
+03B2B0 CopyAbsoluteAddressToAccumulator 14D0
+03B2B3 AndAccumulatorWithImmediate 40
+03B2B5 BranchToRelativeIfNotZero 03B2C7
+03B2B7 CopyAbsoluteAddressToAccumulator 14D8
+03B2BA AndAccumulatorWithImmediate 02
+03B2BC BranchToRelativeIfZero 03B2C7
+03B2BE CopyAbsoluteAddressToAccumulator 14D7
+03B2C1 AndAccumulatorWithImmediate 80
+03B2C3 BranchToRelativeIfNotZero 03B2D0
+03B2C5 JumpToRelative 03B2D9
+03B2C7 CopyImmediateToAccumulator 00
+03B2C9 CopyAccumulatorToAbsoluteAddress 2141
+03B2CC CopyAccumulatorToAbsoluteAddress 1FE1
+03B2CF ReturnToCaller
+03B2D0 CopyImmediateToAccumulator 4B
+03B2D2 CopyAccumulatorToAbsoluteAddress 2141
+03B2D5 CopyAccumulatorToAbsoluteAddress 1FE1
+03B2D8 ReturnToCaller

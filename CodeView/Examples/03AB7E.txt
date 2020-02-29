@@ -1,0 +1,10 @@
+03AB7E PushFlags
+03AB7F ClearImmediateFlags 20
+03AB81 CopyImmediateToAccumulator 2800
+03AB84 CopyAccumulatorToAbsoluteLongAddress 70002C
+03AB88 SetImmediateFlags 20
+03AB8A CopyImmediateToAccumulator 01
+03AB8C CopyImmediateToXIndex B301
+03AB8F CallAbsoluteLongAddress 7E4EE9 [7E4EE9]
+03AB93 PullFlags
+03AB94 ReturnToLongCaller

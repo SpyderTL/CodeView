@@ -1,8 +1,8 @@
 ﻿using System.Drawing;
 
-namespace CodeView.Nodes
+namespace CodeView
 {
-	public class Fonts
+	public static class Fonts
 	{
 		public static Font Bold;
 	}

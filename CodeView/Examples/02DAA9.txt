@@ -1,0 +1,31 @@
+02DAA9 CopyAbsoluteAddressToAccumulator 18BB
+02DAAC TestSubtractImmediateFromAccumulator 02
+02DAAE BranchToRelativeIfNotZero 02DAA9
+02DAB0 SetInterruptDisableFlag
+02DAB1 CopyDirectAddressToAccumulator 00
+02DAB3 SetDirectAddressToZero 00
+02DAB5 PushAccumulator
+02DAB6 CopyAbsoluteLongAddressToAccumulator 004211
+02DABA ClearInterruptDisableFlag
+02DABB SetImmediateFlags 20
+02DABD CopyAbsoluteAddressToAccumulator 1F13
+02DAC0 TestAndAccumulatorWithImmediate 01
+02DAC2 BranchToRelativeIfZero 02DAC8
+02DAC4 CallAbsoluteLongAddress 0993CB
+02DAC8 ClearImmediateFlags 30
+02DACA CopyAbsoluteAddressToAccumulator 1F13
+02DACD TestAndAccumulatorWithImmediate 0004
+02DAD0 BranchToRelativeIfZero 02DAD6
+02DAD2 CallAbsoluteLongAddress 03F55D
+02DAD6 ClearImmediateFlags 30
+02DAD8 CopyAbsoluteAddressToAccumulator 1F13
+02DADB TestAndAccumulatorWithImmediate 0008
+02DADE BranchToRelativeIfZero 02DAE4
+02DAE0 CallAbsoluteLongAddress 03F022
+02DAE4 SetImmediateFlags 20
+02DAE6 CopyAbsoluteAddressToAccumulator 1F13
+02DAE9 AndAccumulatorWithImmediate F2
+02DAEB CopyAccumulatorToAbsoluteAddress 1F13
+02DAEE PullAccumulator
+02DAEF CopyAccumulatorToDirectAddress 00
+02DAF1 ReturnToCaller

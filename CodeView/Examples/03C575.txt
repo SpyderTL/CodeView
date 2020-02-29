@@ -1,0 +1,7 @@
+03C575 CopyXIndexToDirectAddress 02
+03C577 TestSubtractDirectAddressFromAccumulator 02
+03C579 BranchToRelativeIfNegative 03C57D
+03C57B DecrementAccumulator
+03C57C ReturnToCaller
+03C57D IncrementAccumulator
+03C57E ReturnToCaller

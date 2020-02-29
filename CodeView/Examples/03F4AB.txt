@@ -1,0 +1,11 @@
+03F4AB PushFlags
+03F4AC SetImmediateFlags 20
+03F4AE SetAbsoluteAddressToZero 1954
+03F4B1 CopyImmediateToAccumulator 01
+03F4B3 CopyAccumulatorToAbsoluteAddress 2105
+03F4B6 CopyAbsoluteAddressToAccumulator 194D
+03F4B9 CopyAccumulatorToAbsoluteAddress 2110
+03F4BC CopyAbsoluteAddressToAccumulator 194E
+03F4BF CopyAccumulatorToAbsoluteAddress 2110
+03F4C2 PullFlags
+03F4C3 ReturnToCaller

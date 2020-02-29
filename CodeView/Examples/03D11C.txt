@@ -1,0 +1,12 @@
+03D11C PushFlags
+03D11D SetImmediateFlags 20
+03D11F CopyAbsoluteAddressToAccumulator 16D8
+03D122 BranchToRelativeIfZero 03D12C
+03D124 TestSubtractImmediateFromAccumulator 01
+03D126 BranchToRelativeIfNotZero 03D12E
+03D128 CopyImmediateToAccumulator 00
+03D12A JumpToRelative 03D12E
+03D12C CopyImmediateToAccumulator 01
+03D12E CopyAccumulatorToAbsoluteAddress 16D8
+03D131 PullFlags
+03D132 ReturnToCaller

@@ -1,0 +1,7 @@
+03D0D6 PushFlags
+03D0D7 ClearImmediateFlags 20
+03D0D9 CopyImmediateToAccumulator 0224
+03D0DC CopyAccumulatorToAbsoluteAddress 16CE
+03D0DF CopyAccumulatorToAbsoluteLongAddress 7EF0DA
+03D0E3 PullFlags
+03D0E4 ReturnToLongCaller

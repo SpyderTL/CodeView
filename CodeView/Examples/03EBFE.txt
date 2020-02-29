@@ -1,0 +1,75 @@
+03E8FE PushFlags
+03E8FF SetImmediateFlags 20
+03E901 ClearImmediateFlags 10
+03E903 CopyImmediateToAccumulator B3
+03E905 CopyAccumulatorToAbsoluteAddress 12F2
+03E908 CopyDirectAddressToAccumulator 12
+03E90A BranchToRelativeIfNotZero 03E910
+03E90C CopyImmediateToAccumulator 2D
+03E90E JumpToRelative 03E912
+03E910 CopyImmediateToAccumulator 5D
+03E912 CopyAccumulatorToAbsoluteAddress 12F1
+03E915 CopyImmediateToAccumulator BC
+03E917 CopyAccumulatorToAbsoluteAddress 12F3
+03E91A CopyImmediateToAccumulator 30
+03E91C CopyAccumulatorToAbsoluteAddress 12F4
+03E91F CopyDirectAddressToAccumulator 14
+03E921 ClearImmediateFlags 20
+03E923 AndAccumulatorWithImmediate 00FE
+03E926 TestSubtractImmediateFromAccumulator 0008
+03E929 BranchToRelativeIfLessThan 03E92E
+03E92B CopyImmediateToAccumulator 0006
+03E92E CopyAccumulatorToXIndex
+03E92F CopyAbsoluteLongAddressPlusXIndexToAccumulator 03EBC2
+03E933 CopyAccumulatorToXIndex
+03E934 SetImmediateFlags 20
+03E936 CopyImmediateToYIndex 1299
+03E939 CallAbsoluteAddress 03E9A3 [03E9A3]
+03E93C CopyDirectAddressToAccumulator 14
+03E93E SetCarryFlag
+03E93F SubtractImmediateFromAccumulator 08
+03E941 BranchToRelativeIfNegative 03E95E
+03E943 ClearImmediateFlags 20
+03E945 AndAccumulatorWithImmediate 00FE
+03E948 TestSubtractImmediateFromAccumulator 0008
+03E94B BranchToRelativeIfNegative 03E950
+03E94D CopyImmediateToAccumulator 0006
+03E950 CopyAccumulatorToXIndex
+03E951 CopyAbsoluteLongAddressPlusXIndexToAccumulator 03EBBA
+03E955 CopyAccumulatorToXIndex
+03E956 SetImmediateFlags 20
+03E958 CopyImmediateToYIndex 1261
+03E95B CallAbsoluteAddress 03E9A3 [03E9A3]
+03E95E CopyDirectAddressToAccumulator 1C
+03E960 ClearImmediateFlags 20
+03E962 AndAccumulatorWithImmediate 0007
+03E965 ShiftAccumulatorLeft
+03E966 CopyAccumulatorToXIndex
+03E967 CopyAbsoluteLongAddressPlusXIndexToAccumulator 03EBCA
+03E96B CopyAccumulatorToXIndex
+03E96C SetImmediateFlags 20
+03E96E CopyImmediateToYIndex 12D9
+03E971 CallAbsoluteAddress 03E9A3 [03E9A3]
+03E974 CopyDirectAddressToAccumulator 1C
+03E976 AndAccumulatorWithImmediate 07
+03E978 BranchToRelativeIfZero 03E97E
+03E97A IncrementDirectAddress 1C
+03E97C JumpToRelative 03E9A1
+03E97E CopyDirectAddressToAccumulator 1C
+03E980 TestAndAccumulatorWithImmediate 80
+03E982 BranchToRelativeIfZero 03E992
+03E984 CallAbsoluteLongAddress 02FC58 [02FC58]
+03E988 AndAccumulatorWithImmediate 1F
+03E98A BranchToRelativeIfNotZero 03E9A1
+03E98C CopyImmediateToAccumulator 81
+03E98E CopyAccumulatorToDirectAddress 1C
+03E990 JumpToRelative 03E9A1
+03E992 CallAbsoluteLongAddress 02FC58 [02FC58]
+03E996 AndAccumulatorWithImmediate 7F
+03E998 BranchToRelativeIfNotZero 03E9A1
+03E99A CopyDirectAddressToAccumulator 1C
+03E99C ClearCarryFlag
+03E99D AddImmediateToAccumulator 08
+03E99F CopyAccumulatorToDirectAddress 1C
+03E9A1 PullFlags
+03E9A2 ReturnToLongCaller

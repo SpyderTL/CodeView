@@ -1,0 +1,12 @@
+03CBB2 SetImmediateFlags 20
+03CBB4 ShiftAccumulatorLeft
+03CBB5 ShiftAccumulatorLeft
+03CBB6 ShiftAccumulatorLeft
+03CBB7 ExchangeAccumulators
+03CBB8 ShiftAccumulatorLeft
+03CBB9 ShiftAccumulatorLeft
+03CBBA ShiftAccumulatorLeft
+03CBBB ExchangeAccumulators
+03CBBC ClearImmediateFlags 20
+03CBBE CopyAccumulatorToDirectAddress 0C
+03CBC0 ReturnToCaller

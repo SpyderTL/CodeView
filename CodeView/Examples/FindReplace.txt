@@ -1,0 +1,336 @@
+ClearImmediateFlags 
+rep #$
+
+CallAbsoluteAddress 
+jsr CODE_
+
+CopyAbsoluteAddressToAccumulator 
+lda $
+
+TestSubtractImmediateFromAccumulator 
+cmp #$
+
+BranchToRelativeIfNotZero 
+bne CODE_
+
+JumpToRelativeLong 
+jmp CODE_
+
+CopyAccumulatorToDirectAddress 
+sta D, $
+
+SetDirectAddressToZero 
+stz $
+
+CallAbsoluteLongAddress 
+jsr CODE_
+
+CopyImmediateToAccumulator 
+lda #$
+
+CopyAccumulatorToAbsoluteLongAddress 
+sta $
+
+SetImmediateFlags 
+sep #$
+
+CopyImmediateToXIndex 
+ldx #$
+
+CopyDirectAddressToAccumulator 
+lda D, $
+
+BranchToRelativeIfZero 
+beq CODE_
+
+DecrementAccumulator
+dec
+
+IncrementAbsoluteAddress 
+inc $
+
+CopyAccumulatorToAbsoluteAddress 
+sta $
+
+JumpToAbsoluteAddress 
+jmp CODE_
+
+CopyAbsoluteLongAddressToAccumulator 
+lda $
+
+ClearCarryFlag
+clc
+
+AddImmediateToAccumulator 
+adc #$
+
+TestSubtractDirectAddressFromAccumulator 
+cmp D, $
+
+BranchToRelativeIfNegative 
+bmi CODE_
+
+BranchToRelativeIfOverflow 
+bvs CODE_
+
+JumpToRelative 
+jmp CODE_
+
+BranchToRelativeIfNotOverflow 
+bvc CODE_
+
+CopyAbsoluteAddressToXIndex 
+ldx $
+
+CopyAccumulatorToAbsoluteLongAddressPlusXIndex 
+sta $, X
+
+IncrementXIndex
+inx
+
+CopyXIndexToAbsoluteAddress 
+stx $
+
+CopyImmediateToYIndex 
+ldy #$
+
+CopyAbsoluteAddressPlusYIndexToAccumulator 
+lda $, Y
+
+AndAccumulatorWithImmediate 
+and #$
+
+CopyAbsoluteLongAddressPlusXIndexToAccumulator 
+lda $, X
+
+PullXIndex
+plx
+
+PushXIndex
+phx
+
+TestSubtractImmediateFromXIndex 
+cpx #$
+
+IncrementYIndex
+iny
+
+TestSubtractImmediateFromYIndex 
+cpy #$
+
+SetAbsoluteAddressToZero 
+stz $
+
+ReturnToCaller
+rts
+
+TestSubtractAbsoluteAddressFromAccumulator 
+cmp $
+
+BranchToRelativeIfLessThan 
+bmi CODE_
+
+PullFlags
+plp
+
+SetInterruptDisableFlag
+sei
+
+DecrementYIndex
+dey
+
+DecrementXIndex
+dex
+
+CopyXIndexToDirectAddress 
+stx D, $
+
+ShiftAccumulatorRight
+lsr A
+
+OrAccumulatorWithImmediate 
+ora #$
+
+ClearInterruptDisableFlag
+cli
+
+ReturnToLongCaller
+rtl
+
+PushDataBank
+phb
+
+PushAccumulator
+pha
+
+PullDataBank
+plb
+
+PullAccumulator
+pla
+
+SetCarryFlag
+sec
+
+SubtractImmediateFromAccumulator 
+sbc $
+
+PushFlags
+php
+
+ExchangeAccumulators
+xba
+
+CopyAccumulatorToXIndex
+tax
+
+CopyAccumulatorToDirectAddressPlusXIndex 
+sta D, $, X
+
+SetDirectAddressPlusXIndexToZero 
+stz D, $, X
+
+CopyAbsoluteAddressToYIndex 
+ldy $
+
+CopyYIndexToAbsoluteAddress 
+sty $
+
+CopyAccumulatorToAbsoluteAddressPlusYIndex 
+sta $, Y
+
+JumpToAbsoluteLongAddress 
+jmp $
+
+SubtractDirectAddressFromAccumulator 
+sbc D, $
+
+CopyYIndexToAccumulator
+tya
+
+TestSubtractAbsoluteAddressFromYIndex 
+cpy $
+
+CopyXIndexToAccumulator
+txa
+
+CopyAccumulatorToYIndex
+tay
+
+DecrementAbsoluteAddress 
+dec $
+
+BranchToRelativeIfGreaterOrEqual 
+bcs CODE_
+
+IncrementAccumulator
+inc
+
+OrAccumulatorWithDirectAddress 
+ora D, $
+
+AddAbsoluteAddressToAccumulator 
+adc $
+
+SubtractAbsoluteAddressFromAccumulator 
+sbc $
+
+AddDirectAddressToAccumulator 
+adc D, $
+
+CopyDirectAddressPlusXIndexToAccumulator 
+lda D, $, X
+
+AddDirectAddressPlusXIndexToAccumulator 
+adc D, $, X
+
+OrAccumulatorWithDirectAddressPlusXIndex 
+ora D, $, X
+
+CopyDirectAddressPlusXIndexToYIndex 
+ldy D, $, X
+
+SubtractAbsoluteAddressPlusYIndexFromAccumulator 
+sbc $, Y
+
+BranchToRelativeIfPositive 
+bpl CODE_
+
+CopyYIndexToXIndex
+tyx
+
+PushYIndex
+phy
+
+PullYIndex
+ply
+
+SubtractDirectAddressPlusXIndexFromAccumulator 
+sbc D, $, X
+
+CopyAccumulatorToAbsoluteAddressPlusXIndex 
+sta $, X
+
+AddDirectAddressToAccumulator 
+adc D, $
+
+RotateDirectAddressRight 
+ror D, $
+
+ShiftAccumulatorLeft
+asl
+
+CopyDirectAddressToXIndex 
+ldx D, $
+
+CopyAbsoluteAddressPlusXIndexToAccumulator 
+lda $, X
+
+SubtractAbsoluteAddressPlusXIndexFromAccumulator 
+sbc $, X
+
+RotateDirectAddressLeft 
+rol D, $
+
+TestAndAccumulatorWithDirectAddress 
+bit D, $
+
+ShiftDirectAddressRight 
+lsr D, $
+
+RotateAccumulatorRight
+ror a
+
+CopyDirectAddressToYIndex 
+ldy D, $
+
+CopyYIndexToDirectAddress 
+sty D, $
+
+AddAbsoluteLongAddressPlusXIndexToAccumulator 
+adc $, X
+
+RotateAccumulatorLeft
+rol
+
+JumpToAbsoluteAddressPlusXIndexPointer 
+jmp $, X
+
+IncrementDirectAddress 
+inc D, $
+
+AndAccumulatorWithAbsoluteAddress 
+and $
+
+DecrementDirectAddress 
+dec D, $
+
+SetAbsoluteAddressPlusXIndexToZero 
+stz $
+
+CopyXIndexToYIndex
+txy
+
+REGEX
+ \[......\]
+

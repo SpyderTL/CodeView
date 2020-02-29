@@ -1,0 +1,5 @@
+02E6A3 PushFlags
+02E6A4 SetImmediateFlags 20
+02E6A6 PushXIndex
+02E6A7 CopyAbsoluteAddressToXIndex 1892 [001892 FunctionIndex]
+02E6AA JumpToAbsoluteAddressPlusXIndexPointer E6AD [00E6AD]

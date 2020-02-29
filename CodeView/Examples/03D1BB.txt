@@ -1,0 +1,55 @@
+03D1BB PushFlags
+03D1BC ClearImmediateFlags 30
+03D1BE CopyAbsoluteAddressToAccumulator 16D9
+03D1C1 AndAccumulatorWithImmediate 00FF
+03D1C4 CopyAccumulatorToXIndex
+03D1C5 CopyAbsoluteLongAddressPlusXIndexToAccumulator 03D3B3
+03D1C9 AndAccumulatorWithImmediate 00FF
+03D1CC DecrementAccumulator
+03D1CD TestSubtractImmediateFromAccumulator FFFF
+03D1D0 BranchToRelativeIfZero 03D24E
+03D1D2 ShiftAccumulatorLeft
+03D1D3 CopyAccumulatorToXIndex
+03D1D4 CopyAbsoluteLongAddressPlusXIndexToAccumulator 01FBD9
+03D1D8 IncrementAccumulator
+03D1D9 IncrementAccumulator
+03D1DA CopyAccumulatorToAbsoluteLongAddress 7000A6
+03D1DE CopyImmediateToAccumulator 0001
+03D1E1 CopyAccumulatorToAbsoluteLongAddress 700206
+03D1E5 CopyImmediateToAccumulator 00C0
+03D1E8 CopyAccumulatorToAbsoluteLongAddress 7000A8
+03D1EC CopyImmediateToAccumulator 0002
+03D1EF CopyAccumulatorToAbsoluteLongAddress 700062
+03D1F3 CopyImmediateToAccumulator 0032
+03D1F6 CopyAccumulatorToAbsoluteLongAddress 70002C
+03D1FA CopyAbsoluteLongAddressToAccumulator 7EF0C7
+03D1FE AndAccumulatorWithImmediate 00FF
+03D201 CopyAccumulatorToAbsoluteLongAddress 7000BC
+03D205 CopyXIndexToAccumulator
+03D206 SetImmediateFlags 20
+03D208 CopyImmediateToAccumulator 01
+03D20A CopyImmediateToXIndex B509
+03D20D CallAbsoluteLongAddress 7E4EE9 [7E4EE9]
+03D211 ClearImmediateFlags 20
+03D213 ClearImmediateFlags 10
+03D215 ClearImmediateFlags 30
+03D217 CopyImmediateToAccumulator 0004
+03D21A CopyAccumulatorToAbsoluteLongAddress 700206
+03D21E CopyImmediateToAccumulator 00BE
+03D221 CopyAccumulatorToAbsoluteLongAddress 7000A8
+03D225 CopyImmediateToAccumulator 0000
+03D228 CopyAccumulatorToAbsoluteLongAddress 700062
+03D22C CopyImmediateToAccumulator 0030
+03D22F CopyAccumulatorToAbsoluteLongAddress 70002C
+03D233 CopyAbsoluteLongAddressToAccumulator 7EF0C7
+03D237 AndAccumulatorWithImmediate 00FF
+03D23A CopyAccumulatorToAbsoluteLongAddress 7000BC
+03D23E CopyXIndexToAccumulator
+03D23F SetImmediateFlags 20
+03D241 CopyImmediateToAccumulator 01
+03D243 CopyImmediateToXIndex B509
+03D246 CallAbsoluteLongAddress 7E4EE9 [7E4EE9]
+03D24A ClearImmediateFlags 20
+03D24C ClearImmediateFlags 10
+03D24E PullFlags
+03D24F ReturnToCaller

@@ -1,0 +1,8 @@
+02DC26 PushFlags
+02DC27 SetImmediateFlags 20
+02DC29 ClearImmediateFlags 10
+02DC2B CopyImmediateToAccumulator 01
+02DC2D CopyImmediateToXIndex B0E2
+02DC30 CallAbsoluteLongAddress 7E4EE9
+02DC34 PullFlags
+02DC35 ReturnToLongCaller

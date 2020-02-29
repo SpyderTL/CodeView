@@ -1,0 +1,2 @@
+02FD1D CallAbsoluteAddress 02FD21 [02FD21]
+02FD20 ReturnToLongCaller

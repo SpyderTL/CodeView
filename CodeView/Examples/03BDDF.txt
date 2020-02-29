@@ -1,0 +1,205 @@
+03BDDF SetImmediateFlags 20
+03BDE1 ClearImmediateFlags 10
+03BDE3 CallAbsoluteAddress 03D11C [03D11C]
+03BDE6 SetAbsoluteAddressToZero 1F51
+03BDE9 CopyImmediateToXIndex 0000
+03BDEC CopyXIndexToAbsoluteAddress 1F4F
+03BDEF CopyXIndexToAbsoluteAddress 1F4D
+03BDF2 SetAbsoluteAddressToZero 1FCF
+03BDF5 SetInterruptDisableFlag
+03BDF6 ClearImmediateFlags 20
+03BDF8 CopyImmediateToAccumulator 0000
+03BDFB CopyAccumulatorToAbsoluteLongAddress 7001D6
+03BDFF CopyAccumulatorToAbsoluteAddress 16E4
+03BE02 CopyImmediateToAccumulator 0000
+03BE05 CopyAccumulatorToAbsoluteLongAddress 7001D8
+03BE09 CopyAccumulatorToAbsoluteAddress 16E6
+03BE0C CopyImmediateToAccumulator 0096
+03BE0F CopyAccumulatorToAbsoluteAddress 16E8
+03BE12 CopyAccumulatorToAbsoluteLongAddress 7001DA
+03BE16 CopyImmediateToXIndex 1281
+03BE19 CopyXIndexToDirectAddress 30
+03BE1B SetDirectAddressToZero 34
+03BE1D CopyImmediateToAccumulator 0001
+03BE20 CopyAccumulatorToDirectAddress 36
+03BE22 CallAbsoluteLongAddress 03CD09 [03CD09]
+03BE26 CallAbsoluteAddress 03C511 [03C511]
+03BE29 SetImmediateFlags 20
+03BE2B CopyDirectAddressToAccumulator 45
+03BE2D ShiftAccumulatorRight
+03BE2E ShiftAccumulatorRight
+03BE2F CopyAccumulatorToAbsoluteAddress 3038
+03BE32 CopyImmediateToAccumulator FF
+03BE34 CopyAccumulatorToAbsoluteAddress 16D9
+03BE37 CopyImmediateToAccumulator 06
+03BE39 CopyAccumulatorToAbsoluteLongAddress 70009A
+03BE3D CallAbsoluteAddress 03CA7B [03CA7B]
+03BE40 CallAbsoluteAddress 03C71C [03C71C]
+03BE43 CallAbsoluteAddress 03C891 [03C891]
+03BE46 CallAbsoluteAddress 03C71C [03C71C]
+03BE49 CallAbsoluteAddress 03C891 [03C891]
+03BE4C CallAbsoluteLongAddress 03CB35 [03CB35]
+03BE50 ClearImmediateFlags 30
+03BE52 CopyImmediateToAccumulator 2020
+03BE55 CopyAccumulatorToAbsoluteAddress 2116
+03BE58 CopyImmediateToXIndex 0000
+03BE5B CopyAbsoluteAddressPlusXIndexToAccumulator A08B
+03BE5E CopyAccumulatorToAbsoluteAddress 2118
+03BE61 IncrementXIndex
+03BE62 IncrementXIndex
+03BE63 TestSubtractImmediateFromXIndex 03C0
+03BE66 BranchToRelativeIfNotZero 03BE5B
+03BE68 CopyImmediateToAccumulator 5020
+03BE6B CopyAccumulatorToAbsoluteAddress 2116
+03BE6E CopyImmediateToXIndex 0000
+03BE71 CopyAbsoluteAddressPlusXIndexToAccumulator A08B
+03BE74 CopyAccumulatorToAbsoluteAddress 2118
+03BE77 IncrementXIndex
+03BE78 IncrementXIndex
+03BE79 TestSubtractImmediateFromXIndex 03C0
+03BE7C BranchToRelativeIfNotZero 03BE71
+03BE7E ClearImmediateFlags 20
+03BE80 SetDirectAddressToZero 04
+03BE82 CopyImmediateToAccumulator 0010
+03BE85 CopyAccumulatorToAbsoluteAddress 15C2
+03BE88 DecrementAbsoluteAddress 16D6
+03BE8B BranchToRelativeIfNegative 03BEA0
+03BE8D IncrementAbsoluteAddress 16D6
+03BE90 CallAbsoluteLongAddress 03CC3E [03CC3E]
+03BE94 CopyAbsoluteAddressToAccumulator 16D9
+03BE97 PushAccumulator
+03BE98 DecrementAbsoluteAddress 16D6
+03BE9B CallAbsoluteLongAddress 03CC3E [03CC3E]
+03BE9F PullAccumulator
+03BEA0 PushAccumulator
+03BEA1 IncrementAbsoluteAddress 16D6
+03BEA4 SetImmediateFlags 20
+03BEA6 ClearImmediateFlags 10
+03BEA8 CopyAbsoluteAddressToAccumulator 16D9
+03BEAB BranchToRelativeIfPositive 03BEAF
+03BEAD CopyImmediateToAccumulator 00
+03BEAF ClearImmediateFlags 20
+03BEB1 ShiftAccumulatorLeft
+03BEB2 CopyAccumulatorToXIndex
+03BEB3 CopyAbsoluteLongAddressPlusXIndexToAccumulator 03D408
+03BEB7 CopyAccumulatorToDirectAddress 32
+03BEB9 CopyAccumulatorToDirectAddress 38
+03BEBB CallAbsoluteAddress 03C67F [03C67F]
+03BEBE SetImmediateFlags 30
+03BEC0 CopyImmediateToAccumulator 08
+03BEC2 CopyAccumulatorToAbsoluteAddress 420C
+03BEC5 CopyImmediateToAccumulator BE
+03BEC7 CopyAccumulatorToAbsoluteAddress 16DB
+03BECA CallAbsoluteLongAddress 03BD8D [03BD8D]
+03BECE SetImmediateFlags 30
+03BED0 CopyImmediateToAccumulator 64
+03BED2 CopyAccumulatorToAbsoluteAddress 16DB
+03BED5 CallAbsoluteLongAddress 03BD8D [03BD8D]
+03BED9 SetImmediateFlags 30
+03BEDB ClearImmediateFlags 20
+03BEDD PullAccumulator
+03BEDE SetImmediateFlags 20
+03BEE0 PushAccumulator
+03BEE1 CopyAbsoluteLongAddressToAccumulator 004211
+03BEE5 ClearInterruptDisableFlag
+03BEE6 CallAbsoluteLongAddress 03AD89 [03AD89]
+03BEEA PullAccumulator
+03BEEB TestSubtractImmediateFromAccumulator 0E
+03BEED BranchToRelativeIfZero 03BEF3
+03BEEF TestSubtractImmediateFromAccumulator 0A
+03BEF1 BranchToRelativeIfNotZero 03BEFB
+03BEF3 CopyImmediateToAccumulator 0F
+03BEF5 CopyAccumulatorToAbsoluteAddress 1F47
+03BEF8 SetAbsoluteAddressToZero 1F46
+03BEFB CopyImmediateToAccumulator FF
+03BEFD PushAccumulator
+03BEFE CopyImmediateToAccumulator C8
+03BF00 CopyAccumulatorToAbsoluteAddress 16DB
+03BF03 CallAbsoluteLongAddress 03BD8D [03BD8D]
+03BF07 SetImmediateFlags 30
+03BF09 CallAbsoluteAddress 03BD7A [03BD7A]
+03BF0C PullAccumulator
+03BF0D IncrementAccumulator
+03BF0E IncrementAccumulator
+03BF0F CopyAccumulatorToAbsoluteLongAddress 7E4608
+03BF13 CopyAccumulatorToAbsoluteLongAddress 7E460A
+03BF17 CopyAccumulatorToAbsoluteLongAddress 7E460C
+03BF1B TestSubtractImmediateFromAccumulator 0F
+03BF1D BranchToRelativeIfNotZero 03BEFD
+03BF1F SetImmediateFlags 20
+03BF21 ClearImmediateFlags 10
+03BF23 CopyAbsoluteAddressToAccumulator 16D6
+03BF26 BranchToRelativeIfZero 03BF2B
+03BF28 JumpToRelativeLong 03BFF1
+03BF2B CopyImmediateToAccumulator 0A
+03BF2D CopyAccumulatorToAbsoluteAddress 16D6
+03BF30 ClearImmediateFlags 20
+03BF32 CopyImmediateToAccumulator 0010
+03BF35 CopyAccumulatorToAbsoluteLongAddress 70009A
+03BF39 IncrementAbsoluteAddress 15BB
+03BF3C CallAbsoluteAddress 03C511 [03C511]
+03BF3F CallAbsoluteAddress 03C58F [03C58F]
+03BF42 CopyAbsoluteLongAddressToAccumulator 70009A
+03BF46 PushAccumulator
+03BF47 CopyImmediateToAccumulator 0006
+03BF4A CopyAccumulatorToAbsoluteLongAddress 70009A
+03BF4E CopyImmediateToAccumulator FFFE
+03BF51 CopyAccumulatorToAbsoluteAddress 16D9
+03BF54 CallAbsoluteAddress 03CA7B [03CA7B]
+03BF57 PullAccumulator
+03BF58 CopyAccumulatorToAbsoluteLongAddress 70009A
+03BF5C CallAbsoluteAddress 03C78D [03C78D]
+03BF5F CopyAbsoluteLongAddressToAccumulator 70009A
+03BF63 BranchToRelativeIfZero 03BF6D
+03BF65 SetCarryFlag
+03BF66 SubtractImmediateFromAccumulator 0004
+03BF69 CopyAccumulatorToAbsoluteLongAddress 70009A
+03BF6D CallAbsoluteAddress 03C891 [03C891]
+03BF70 CopyAbsoluteAddressToAccumulator 15BB
+03BF73 TestAndAccumulatorWithImmediate 0002
+03BF76 BranchToRelativeIfZero 03BF7E
+03BF78 CallAbsoluteLongAddress 03CC3E [03CC3E]
+03BF7C JumpToRelative 03BF82
+03BF7E CallAbsoluteLongAddress 03CC22 [03CC22]
+03BF82 CallAbsoluteLongAddress 03CBFB [03CBFB]
+03BF86 CopyAbsoluteAddressToAccumulator 1209
+03BF89 TestAndAccumulatorWithImmediate 2F00
+03BF8C BranchToRelativeIfZero 03BFCD
+03BF8E CopyImmediateToAccumulator 0010
+03BF91 CopyAccumulatorToAbsoluteLongAddress 70009A
+03BF95 CallAbsoluteAddress 03BD7A [03BD7A]
+03BF98 CallAbsoluteLongAddress 03CC22 [03CC22]
+03BF9C CopyAbsoluteAddressToAccumulator 1209
+03BF9F TestAndAccumulatorWithImmediate 2A00
+03BFA2 SetImmediateFlags 20
+03BFA4 BranchToRelativeIfNotZero 03BFB5
+03BFA6 CopyAbsoluteAddressToAccumulator 16D8
+03BFA9 IncrementAccumulator
+03BFAA TestSubtractImmediateFromAccumulator 03
+03BFAC BranchToRelativeIfNotZero 03BFB0
+03BFAE CopyImmediateToAccumulator 00
+03BFB0 CopyAccumulatorToAbsoluteAddress 16D8
+03BFB3 JumpToRelative 03BFC2
+03BFB5 CopyAbsoluteAddressToAccumulator 16D8
+03BFB8 DecrementAccumulator
+03BFB9 TestSubtractImmediateFromAccumulator FF
+03BFBB BranchToRelativeIfNotZero 03BFBF
+03BFBD CopyImmediateToAccumulator 02
+03BFBF CopyAccumulatorToAbsoluteAddress 16D8
+03BFC2 CopyImmediateToAccumulator 11
+03BFC4 CallAbsoluteLongAddress 03B7F9 [03B7F9]
+03BFC8 CallAbsoluteAddress 03C67F [03C67F]
+03BFCB ClearImmediateFlags 20
+03BFCD CopyAbsoluteAddressToAccumulator 1209
+03BFD0 TestAndAccumulatorWithImmediate 9080
+03BFD3 BranchToRelativeIfNotZero 03BFD8
+03BFD5 JumpToRelativeLong 03BF39
+03BFD8 SetAbsoluteAddressToZero 16D6
+03BFDB SetAbsoluteAddressToZero 16D9
+03BFDE CallAbsoluteLongAddress 03CC3E [03CC3E]
+03BFE2 SetImmediateFlags 20
+03BFE4 CopyImmediateToAccumulator F1
+03BFE6 CopyAccumulatorToAbsoluteAddress 1F47
+03BFE9 SetAbsoluteAddressToZero 1F46
+03BFEC ClearImmediateFlags 20
+03BFEE JumpToAbsoluteAddress 03C04C [03C04C]

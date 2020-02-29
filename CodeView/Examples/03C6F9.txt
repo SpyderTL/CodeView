@@ -1,0 +1,15 @@
+03C6F9 CopyAccumulatorToDirectAddress 02
+03C6FB CopyImmediateToXIndex FFFF
+03C6FE CopyAbsoluteAddressToAccumulator 14C5
+03C701 IncrementXIndex
+03C702 SetCarryFlag
+03C703 SubtractDirectAddressFromAccumulator 02
+03C705 BranchToRelativeIfPositive 03C701
+03C707 ClearCarryFlag
+03C708 AddDirectAddressToAccumulator 02
+03C70A CopyAccumulatorToAbsoluteAddress 14C5
+03C70D CopyXIndexToAccumulator
+03C70E ClearCarryFlag
+03C70F AddImmediateToAccumulator 18A8
+03C712 CopyAccumulatorToAbsoluteAddress 2118
+03C715 ReturnToCaller

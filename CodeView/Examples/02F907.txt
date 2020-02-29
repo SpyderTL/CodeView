@@ -1,0 +1,19 @@
+02F907 PushFlags
+02F908 SetImmediateFlags 20
+02F90A ClearImmediateFlags 10
+02F90C SetAbsoluteAddressToZero 420C
+02F90F CopyImmediateToAccumulator 80
+02F911 CopyAccumulatorToAbsoluteAddress 2100
+02F914 CallAbsoluteLongAddress 02F8DF [02F8DF]
+02F918 CopyImmediateToAccumulator 96
+02F91A CopyAccumulatorToAbsoluteAddress 16DB
+02F91D CallAbsoluteLongAddress 03BD8D
+02F921 SetImmediateFlags 20
+02F923 ClearImmediateFlags 10
+02F925 CopyImmediateToAccumulator 8C
+02F927 CopyAccumulatorToAbsoluteAddress 16DB
+02F92A CallAbsoluteLongAddress 03BD8D
+02F92E SetImmediateFlags 20
+02F930 ClearImmediateFlags 10
+02F932 PullFlags
+02F933 ReturnToLongCaller

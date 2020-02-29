@@ -1,0 +1,6 @@
+02DBE2 PushFlags
+02DBE3 SetImmediateFlags 20
+02DBE5 ClearImmediateFlags 10
+02DBE7 CallAbsoluteAddress 02DBEC [02DBEC]
+02DBEA PullFlags
+02DBEB ReturnToLongCaller

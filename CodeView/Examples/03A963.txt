@@ -1,0 +1,5 @@
+03A963 SetImmediateFlags 20
+03A965 CallAbsoluteAddress 03AAF9 [03AAF9]
+03A968 CallAbsoluteAddress 03AB95 [03AB95]
+03A96B TestSubtractAbsoluteAddressFromAccumulator 05FE
+03A96E Break

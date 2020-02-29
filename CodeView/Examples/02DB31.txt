@@ -1,0 +1,15 @@
+02DB31 SetAbsoluteAddressToZero 14C6
+02DB34 CopyAbsoluteAddressToAccumulator 14C1
+02DB37 CopyAccumulatorToAbsoluteAddress 14C5
+02DB3A ClearImmediateFlags 20
+02DB3C BranchToRelativeIfZero 02DB4F
+02DB3E CopyImmediateToXIndex 0008
+02DB41 CopyImmediateToAccumulator 1481
+02DB44 RotateAbsoluteAddressRight 14C5
+02DB47 BranchToRelativeIfGreaterOrEqual 02DB52
+02DB49 AddImmediateToAccumulator 0008
+02DB4C DecrementXIndex
+02DB4D BranchToRelativeIfNotZero 02DB44
+02DB4F CopyImmediateToAccumulator 0000
+02DB52 CopyAccumulatorToAbsoluteAddress 16A7
+02DB55 ReturnToCaller

@@ -1,0 +1,9 @@
+03C57F CopyXIndexToDirectAddress 02
+03C581 TestSubtractDirectAddressFromAccumulator 02
+03C583 BranchToRelativeIfNegative 03C58A
+03C585 SetCarryFlag
+03C586 SubtractImmediateFromAccumulator 0010
+03C589 ReturnToCaller
+03C58A ClearCarryFlag
+03C58B AddImmediateToAccumulator 0010
+03C58E ReturnToCaller

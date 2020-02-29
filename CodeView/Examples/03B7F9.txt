@@ -1,0 +1,25 @@
+03B7F9 PushFlags
+03B7FA PushAccumulator
+03B7FB SetImmediateFlags 20
+03B7FD CopyAbsoluteAddressToAccumulator 1FCF
+03B800 BranchToRelativeIfNotZero 03B824
+03B802 CopyAbsoluteAddressToAccumulator 14D1
+03B805 AndAccumulatorWithImmediate 08
+03B807 BranchToRelativeIfZero 03B810
+03B809 CopyAbsoluteAddressToAccumulator 14D7
+03B80C AndAccumulatorWithImmediate 80
+03B80E BranchToRelativeIfNotZero 03B824
+03B810 PullAccumulator
+03B811 PushXIndex
+03B812 CopyAbsoluteAddressToXIndex 1F4D
+03B815 CopyAccumulatorToAbsoluteAddressPlusXIndex 1F53
+03B818 CopyAbsoluteAddressToAccumulator 1F4D
+03B81B IncrementAccumulator
+03B81C AndAccumulatorWithImmediate 0F
+03B81E CopyAccumulatorToAbsoluteAddress 1F4D
+03B821 PullXIndex
+03B822 PullFlags
+03B823 ReturnToLongCaller
+03B824 PullAccumulator
+03B825 PullFlags
+03B826 ReturnToLongCaller

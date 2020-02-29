@@ -1,0 +1,9 @@
+03C5C0 PushFlags
+03C5C1 SetImmediateFlags 20
+03C5C3 CallAbsoluteAddress 03BD7A [03BD7A]
+03C5C6 SetAbsoluteAddressToZero 2132
+03C5C9 SetAbsoluteAddressToZero 2130
+03C5CC SetAbsoluteAddressToZero 2131
+03C5CF SetAbsoluteAddressToZero 2125
+03C5D2 PullFlags
+03C5D3 ReturnToCaller

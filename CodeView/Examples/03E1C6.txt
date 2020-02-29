@@ -1,0 +1,23 @@
+03E1C6 ClearImmediateFlags 20
+03E1C8 SetAbsoluteAddressToZero 14C5
+03E1CB CallAbsoluteAddress 03E201 [03E201]
+03E1CE CallAbsoluteAddress 03E213 [03E213]
+03E1D1 CallAbsoluteAddress 03E225 [03E225]
+03E1D4 CallAbsoluteAddress 03E237 [03E237]
+03E1D7 CopyAbsoluteAddressToAccumulator 15BB
+03E1DA AndAccumulatorWithImmediate 0001
+03E1DD BranchToRelativeIfZero 03E200
+03E1DF CopyAbsoluteAddressToAccumulator 1FCB
+03E1E2 ClearCarryFlag
+03E1E3 AddImmediateToAccumulator 0010
+03E1E6 TestSubtractImmediateFromAccumulator 0040
+03E1E9 BranchToRelativeIfNotZero 03E1FD
+03E1EB CopyAbsoluteAddressToAccumulator 14C5
+03E1EE BranchToRelativeIfZero 03E1FA
+03E1F0 SetImmediateFlags 20
+03E1F2 CopyImmediateToAccumulator 8A
+03E1F4 CallAbsoluteLongAddress 03B7F9 [03B7F9]
+03E1F8 ClearImmediateFlags 20
+03E1FA CopyImmediateToAccumulator 0000
+03E1FD CopyAccumulatorToAbsoluteAddress 1FCB
+03E200 ReturnToCaller

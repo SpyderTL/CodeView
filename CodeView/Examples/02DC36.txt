@@ -1,0 +1,2 @@
+02DC36 CallAbsoluteAddress 02DC3A [02DC3A]
+02DC39 ReturnToLongCaller

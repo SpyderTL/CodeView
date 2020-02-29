@@ -1,0 +1,25 @@
+02F3FE CopyImmediateToAccumulator 00
+02F400 CopyAccumulatorToDirectAddress 2A
+02F402 CopyImmediateToAccumulator 00
+02F404 CopyAccumulatorToDirectAddress 2B
+02F406 CopyImmediateToAccumulator DF
+02F408 CopyAccumulatorToDirectAddress 2E
+02F40A CopyImmediateToAccumulator 00
+02F40C CopyAccumulatorToDirectAddress 2F
+02F40E CopyImmediateToAccumulator 00
+02F410 CopyAccumulatorToDirectAddress 2C
+02F412 CopyImmediateToAccumulator 00
+02F414 CopyAccumulatorToDirectAddress 2D
+02F416 CopyImmediateToAccumulator BF
+02F418 CopyAccumulatorToDirectAddress 30
+02F41A CopyImmediateToAccumulator 00
+02F41C CopyAccumulatorToDirectAddress 31
+02F41E CopyImmediateToAccumulator 70
+02F420 CopyAccumulatorToDirectAddress CA
+02F422 CopyImmediateToAccumulator 00
+02F424 CopyAccumulatorToDirectAddress CB
+02F426 CopyImmediateToAccumulator 60
+02F428 CopyAccumulatorToDirectAddress CC
+02F42A CopyImmediateToAccumulator 00
+02F42C CopyAccumulatorToDirectAddress CD
+02F42E ReturnToCaller

@@ -1,0 +1,27 @@
+03C5D4 PushFlags
+03C5D5 ClearImmediateFlags 30
+03C5D7 CopyImmediateToAccumulator 00B8
+03C5DA CopyAccumulatorToAbsoluteAddress 16DB
+03C5DD CallAbsoluteLongAddress 03BD8D [03BD8D]
+03C5E1 ClearImmediateFlags 30
+03C5E3 SetInterruptDisableFlag
+03C5E4 SetImmediateFlags 20
+03C5E6 CopyImmediateToAccumulator 80
+03C5E8 CopyAccumulatorToAbsoluteAddress 2115
+03C5EB ClearImmediateFlags 20
+03C5ED CopyImmediateToXIndex 5200
+03C5F0 CopyImmediateToYIndex 6C20
+03C5F3 CopyXIndexToAbsoluteAddress 2116
+03C5F6 CopyAbsoluteAddressToAccumulator 2139
+03C5F9 CopyYIndexToAbsoluteAddress 2116
+03C5FC CopyAccumulatorToAbsoluteAddress 2118
+03C5FF IncrementXIndex
+03C600 IncrementYIndex
+03C601 TestSubtractImmediateFromXIndex 5340
+03C604 BranchToRelativeIfNotZero 03C5F3
+03C606 SetImmediateFlags 20
+03C608 CopyAbsoluteLongAddressToAccumulator 004211
+03C60C ClearImmediateFlags 20
+03C60E ClearInterruptDisableFlag
+03C60F PullFlags
+03C610 ReturnToCaller

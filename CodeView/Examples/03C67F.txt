@@ -1,0 +1,53 @@
+03C67F PushFlags
+03C680 ClearImmediateFlags 30
+03C682 PushXIndex
+03C683 CopyDirectAddressToAccumulator 02
+03C685 PushAccumulator
+03C686 CopyAbsoluteAddressToAccumulator 14C5
+03C689 PushAccumulator
+03C68A CallAbsoluteLongAddress 02E8A8 [02E8A8]
+03C68E CallAbsoluteAddress 03BD7A [03BD7A]
+03C691 CopyImmediateToAccumulator 7F38
+03C694 CopyAccumulatorToAbsoluteAddress 2116
+03C697 CopyAbsoluteAddressToAccumulator 16D8
+03C69A AndAccumulatorWithImmediate 00FF
+03C69D ShiftAccumulatorLeft
+03C69E CopyAccumulatorToXIndex
+03C69F CopyAbsoluteLongAddressPlusXIndexToAccumulator 03C716
+03C6A3 CopyAccumulatorToAbsoluteAddress 2118
+03C6A6 IncrementAccumulator
+03C6A7 CopyAccumulatorToAbsoluteAddress 2118
+03C6AA IncrementAccumulator
+03C6AB CopyAccumulatorToAbsoluteAddress 2118
+03C6AE IncrementAccumulator
+03C6AF CopyAccumulatorToAbsoluteAddress 2118
+03C6B2 IncrementAccumulator
+03C6B3 CopyAccumulatorToAbsoluteAddress 2118
+03C6B6 IncrementAccumulator
+03C6B7 CopyAccumulatorToAbsoluteAddress 2118
+03C6BA CopyImmediateToAccumulator 7F18
+03C6BD CopyAccumulatorToAbsoluteAddress 2116
+03C6C0 CopyImmediateToAccumulator 0064
+03C6C3 CallAbsoluteAddress 03C6F9 [03C6F9]
+03C6C6 CopyImmediateToAccumulator 000A
+03C6C9 CallAbsoluteAddress 03C6F9 [03C6F9]
+03C6CC CopyImmediateToAccumulator 0001
+03C6CF CallAbsoluteAddress 03C6F9 [03C6F9]
+03C6D2 CopyImmediateToAccumulator 18A8
+03C6D5 CopyAccumulatorToAbsoluteAddress 2118
+03C6D8 CopyAccumulatorToAbsoluteAddress 2118
+03C6DB CopyAbsoluteAddressToYIndex 1898
+03C6DE BranchToRelativeIfZero 03C6EF
+03C6E0 CopyImmediateToAccumulator 7EFB
+03C6E3 CopyAccumulatorToAbsoluteAddress 2116
+03C6E6 CopyImmediateToAccumulator 18DE
+03C6E9 CopyAccumulatorToAbsoluteAddress 2118
+03C6EC DecrementYIndex
+03C6ED BranchToRelativeIfNotZero 03C6E9
+03C6EF PullAccumulator
+03C6F0 CopyAccumulatorToAbsoluteAddress 14C5
+03C6F3 PullAccumulator
+03C6F4 CopyAccumulatorToDirectAddress 02
+03C6F6 PullXIndex
+03C6F7 PullFlags
+03C6F8 ReturnToCaller

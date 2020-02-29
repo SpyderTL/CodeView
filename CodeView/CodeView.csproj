@@ -53,6 +53,7 @@
     <Compile Include="BrowserForm.designer.cs">
       <DependentUpon>BrowserForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Change.cs" />
     <Compile Include="Dialogs\VariableDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,7 +61,7 @@
       <DependentUpon>VariableDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="Nodes\DataNode.cs" />
-    <Compile Include="Nodes\Fonts.cs" />
+    <Compile Include="Fonts.cs" />
     <Compile Include="Nodes\Function.cs" />
     <Compile Include="Nodes\INotable.cs" />
     <Compile Include="Nodes\TablePointer.cs" />
@@ -70,6 +71,10 @@
     <Compile Include="Nodes\FunctionPointer.cs" />
     <Compile Include="Nodes\Variable.cs" />
     <Compile Include="Program.cs" />
+    <Compile Include="ProgramForm.cs" />
+    <Compile Include="ProgramProject.cs" />
+    <Compile Include="Project.cs" />
+    <Compile Include="ProjectFile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="BrowserForm.resx">
       <DependentUpon>BrowserForm.cs</DependentUpon>

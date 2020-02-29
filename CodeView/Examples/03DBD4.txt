@@ -1,0 +1,30 @@
+03DBD4 ClearImmediateFlags 20
+03DBD6 CopyImmediateToAccumulator 0148
+03DBD9 SetCarryFlag
+03DBDA SubtractAbsoluteAddressFromAccumulator 15AF
+03DBDD BranchToRelativeIfNegative 03DBEC
+03DBDF CopyAbsoluteAddressToXIndex 15AF
+03DBE2 SetAbsoluteAddressPlusXIndexToZero 1261
+03DBE5 IncrementXIndex
+03DBE6 IncrementXIndex
+03DBE7 DecrementAccumulator
+03DBE8 DecrementAccumulator
+03DBE9 BranchToRelativeIfPositive 03DBE2
+03DBEB ReturnToCaller
+03DBEC SetImmediateFlags 20
+03DBEE SetImmediateFlags 20
+03DBF0 CopyImmediateToAccumulator 00
+03DBF2 CopyAccumulatorToAbsoluteLongAddress 002100
+03DBF6 CopyImmediateToAccumulator 00
+03DBF8 NoOperation
+03DBF9 NoOperation
+03DBFA NoOperation
+03DBFB NoOperation
+03DBFC NoOperation
+03DBFD NoOperation
+03DBFE NoOperation
+03DBFF DecrementAccumulator
+03DC00 BranchToRelativeIfNotZero 03DBF8
+03DC02 CopyImmediateToAccumulator 0F
+03DC04 CopyAccumulatorToAbsoluteLongAddress 002100
+03DC08 ReturnToCaller

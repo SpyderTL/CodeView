@@ -1,0 +1,59 @@
+03E7DB PushFlags
+03E7DC ClearImmediateFlags 20
+03E7DE CopyImmediateToAccumulator 0000
+03E7E1 CopyAccumulatorToAbsoluteLongAddress 700026
+03E7E5 CopyAccumulatorToAbsoluteLongAddress 700028
+03E7E9 CopyAccumulatorToAbsoluteLongAddress 7001A4
+03E7ED CopyAbsoluteAddressToAccumulator 15BB
+03E7F0 CopyAccumulatorToAbsoluteLongAddress 700044
+03E7F4 CopyAccumulatorToAbsoluteLongAddress 700046
+03E7F8 IncrementAbsoluteAddress 15BB
+03E7FB CopyDirectAddressToAccumulator 20
+03E7FD CopyAccumulatorToAbsoluteLongAddress 70001A
+03E801 CopyImmediateToAccumulator 004C
+03E804 CopyAccumulatorToAbsoluteLongAddress 700034
+03E808 CopyImmediateToAccumulator 005C
+03E80B CopyAccumulatorToAbsoluteLongAddress 700036
+03E80F CopyImmediateToAccumulator 0000
+03E812 CopyAccumulatorToDirectAddress 2A
+03E814 CopyImmediateToAccumulator 00DF
+03E817 CopyAccumulatorToDirectAddress 2E
+03E819 CopyImmediateToAccumulator 0000
+03E81C CopyAccumulatorToDirectAddress 2C
+03E81E CopyImmediateToAccumulator 00BF
+03E821 CopyAccumulatorToDirectAddress 30
+03E823 CopyImmediateToAccumulator 0070
+03E826 CopyAccumulatorToDirectAddress CA
+03E828 CopyImmediateToAccumulator 0060
+03E82B CopyAccumulatorToDirectAddress CC
+03E82D SetImmediateFlags 20
+03E82F ClearImmediateFlags 10
+03E831 CopyAbsoluteLongAddressToAccumulator 700024
+03E835 PushAccumulator
+03E836 CopyAbsoluteLongAddressToAccumulator 700022
+03E83A PushAccumulator
+03E83B CopyAbsoluteLongAddressToAccumulator 700020
+03E83F PushAccumulator
+03E840 CopyImmediateToAccumulator 01
+03E842 CopyImmediateToXIndex 840A
+03E845 CallAbsoluteLongAddress 7E4EE9 [7E4EE9]
+03E849 SetImmediateFlags 20
+03E84B PullAccumulator
+03E84C ClearCarryFlag
+03E84D AddDirectAddressToAccumulator 16
+03E84F CopyAccumulatorToAbsoluteLongAddress 700020
+03E853 PullAccumulator
+03E854 ClearCarryFlag
+03E855 AddDirectAddressToAccumulator 18
+03E857 CopyAccumulatorToAbsoluteLongAddress 700022
+03E85B PullAccumulator
+03E85C ClearCarryFlag
+03E85D AddDirectAddressToAccumulator 1A
+03E85F CopyAccumulatorToAbsoluteLongAddress 700024
+03E863 CopyImmediateToAccumulator 00
+03E865 CopyAccumulatorToAbsoluteLongAddress 700021
+03E869 CopyAccumulatorToAbsoluteLongAddress 700023
+03E86D CopyAccumulatorToAbsoluteLongAddress 700025
+03E871 ClearImmediateFlags 20
+03E873 PullFlags
+03E874 ReturnToCaller

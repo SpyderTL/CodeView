@@ -1,0 +1,79 @@
+02E2CC PushFlags
+02E2CD PushDataBank
+02E2CE SetImmediateFlags 20
+02E2D0 CopyImmediateToAccumulator 00
+02E2D2 PushAccumulator
+02E2D3 PullDataBank
+02E2D4 SetInterruptDisableFlag
+02E2D5 SetImmediateFlags 20
+02E2D7 SetAbsoluteAddressToZero 420C
+02E2DA CopyImmediateToAccumulator 80
+02E2DC CallAbsoluteLongAddress 02F8DF [02F8DF]
+02E2E0 CopyAccumulatorToAbsoluteAddress 2100
+02E2E3 SetAbsoluteAddressToZero 18B2
+02E2E6 SetAbsoluteAddressToZero 18B3
+02E2E9 CopyImmediateToAccumulator 6E
+02E2EB CopyAccumulatorToAbsoluteAddress 16DB
+02E2EE CallAbsoluteLongAddress 03BD8D
+02E2F2 SetImmediateFlags 20
+02E2F4 ClearImmediateFlags 10
+02E2F6 CopyImmediateToAccumulator 64
+02E2F8 CopyAccumulatorToAbsoluteAddress 16DB
+02E2FB CallAbsoluteLongAddress 03BD8D
+02E2FF SetImmediateFlags 20
+02E301 ClearImmediateFlags 10
+02E303 ClearImmediateFlags 30
+02E305 SetAbsoluteAddressToZero 1FD2
+02E308 SetAbsoluteAddressToZero 16AB
+02E30B SetAbsoluteAddressToZero 16FB
+02E30E SetAbsoluteAddressToZero 16FF
+02E311 SetAbsoluteAddressToZero 1701
+02E314 SetDirectAddressToZero C5
+02E316 CopyImmediateToAccumulator 0001
+02E319 CopyAccumulatorToAbsoluteLongAddress 70021C
+02E31D SetAbsoluteAddressToZero 1FD2
+02E320 SetAbsoluteAddressToZero 1201
+02E323 SetAbsoluteAddressToZero 1F4F
+02E326 SetAbsoluteAddressToZero 1F4D
+02E329 SetAbsoluteAddressToZero 1F51
+02E32C SetImmediateFlags 20
+02E32E CopyImmediateToAccumulator 01
+02E330 CopyAccumulatorToAbsoluteAddress 15AC
+02E333 SetAbsoluteAddressToZero 1956
+02E336 SetAbsoluteAddressToZero 189D
+02E339 SetAbsoluteAddressToZero 189E
+02E33C SetAbsoluteAddressToZero 1F14
+02E33F SetAbsoluteAddressToZero 1FCD
+02E342 SetAbsoluteAddressToZero 1FCE
+02E345 SetAbsoluteAddressToZero 14C1
+02E348 SetAbsoluteAddressToZero 1FCF
+02E34B SetAbsoluteAddressToZero 1F52
+02E34E SetAbsoluteAddressToZero 1F51
+02E351 SetAbsoluteAddressToZero 1FDE
+02E354 CallAbsoluteLongAddress 02F4C9 [02F4C9]
+02E358 CallAbsoluteLongAddress 0AF94C
+02E35C CopyAbsoluteAddressToAccumulator 1FF4
+02E35F PushAccumulator
+02E360 CopyAbsoluteLongAddressToAccumulator 058002
+02E364 CopyAccumulatorToAbsoluteAddress 1FF4
+02E367 ClearImmediateFlags 30
+02E369 CopyAbsoluteAddressToAccumulator 16FD
+02E36C PushAccumulator
+02E36D CopyAbsoluteLongAddressToAccumulator 058000
+02E371 CopyAccumulatorToXIndex
+02E372 CallAbsoluteLongAddress 03EDA1
+02E376 SetImmediateFlags 20
+02E378 CallAbsoluteLongAddress 068004
+02E37C ClearImmediateFlags 10
+02E37E PullXIndex
+02E37F PullAccumulator
+02E380 CopyAccumulatorToAbsoluteAddress 1FF4
+02E383 ClearImmediateFlags 20
+02E385 SetAbsoluteAddressToZero 1FD2
+02E388 CopyXIndexToAbsoluteAddress 16FD
+02E38B CallAbsoluteLongAddress 03EDA1
+02E38F CallAbsoluteLongAddress 02E39A [02E39A]
+02E393 CallAbsoluteLongAddress 02DB27 [02DB27]
+02E397 PullDataBank
+02E398 PullFlags
+02E399 ReturnToLongCaller

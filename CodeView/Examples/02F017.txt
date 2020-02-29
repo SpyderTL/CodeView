@@ -1,0 +1,12 @@
+02F017 ClearImmediateFlags 30
+02F019 CopyImmediateToAccumulator 005A
+02F01C CopyAccumulatorToAbsoluteLongAddress 700062
+02F020 CopyImmediateToAccumulator 005A
+02F023 CopyAccumulatorToAbsoluteLongAddress 70002C
+02F027 CopyImmediateToAccumulator E796
+02F02A CopyAccumulatorToAbsoluteLongAddress 7000A6 [7000A6]
+02F02E SetImmediateFlags 20
+02F030 CopyImmediateToAccumulator 01
+02F032 CopyImmediateToXIndex B54B
+02F035 CallAbsoluteLongAddress 7E4EE9
+02F039 ReturnToCaller

@@ -1,0 +1,13 @@
+02F6DA ClearImmediateFlags 30
+02F6DC CopyAbsoluteAddressToYIndex 1EED
+02F6DF BranchToRelativeIfNotZero 02F6E2
+02F6E1 ReturnToLongCaller
+02F6E2 CopyAbsoluteAddressToXIndex 1EE9
+02F6E5 CopyAbsoluteAddressToYIndex 1EED
+02F6E8 CopyAbsoluteLongAddressPlusXIndexToAccumulator 02F7FF
+02F6EC CopyAccumulatorToAbsoluteAddressPlusYIndex 1809
+02F6EF DecrementAbsoluteAddress 1EE9
+02F6F2 DecrementAbsoluteAddress 1EE9
+02F6F5 DecrementAbsoluteAddress 1EED
+02F6F8 DecrementAbsoluteAddress 1EED
+02F6FB ReturnToLongCaller

@@ -1,0 +1,24 @@
+03B269 SetImmediateFlags 20
+03B26B CopyAbsoluteAddressToAccumulator 14D1
+03B26E AndAccumulatorWithImmediate 08
+03B270 BranchToRelativeIfZero 03B279
+03B272 CopyAbsoluteAddressToAccumulator 14D7
+03B275 AndAccumulatorWithImmediate 80
+03B277 BranchToRelativeIfNotZero 03B298
+03B279 CopyAbsoluteAddressToAccumulator 1FD2
+03B27C TestSubtractImmediateFromAccumulator 10
+03B27E BranchToRelativeIfZero 03B298
+03B280 TestSubtractImmediateFromAccumulator 0F
+03B282 BranchToRelativeIfZero 03B298
+03B284 TestSubtractImmediateFromAccumulator 0B
+03B286 BranchToRelativeIfZero 03B298
+03B288 TestSubtractImmediateFromAccumulator 0C
+03B28A BranchToRelativeIfZero 03B298
+03B28C TestSubtractImmediateFromAccumulator 0D
+03B28E BranchToRelativeIfZero 03B298
+03B290 CallAbsoluteAddress 03B3D2 [03B3D2]
+03B293 CallAbsoluteAddress 03B350 [03B350]
+03B296 JumpToRelative 03B29B
+03B298 SetAbsoluteAddressToZero 2142
+03B29B CallAbsoluteAddress 03B29F [03B29F]
+03B29E ReturnToLongCaller

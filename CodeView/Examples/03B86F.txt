@@ -1,0 +1,16 @@
+03B86F CopyImmediateToAccumulator FF
+03B871 CopyAccumulatorToAbsoluteAddress 15BF
+03B874 CallAbsoluteLongAddress 03BCE5 [03BCE5]
+03B878 CopyDirectAddressToAccumulator CA
+03B87A CopyAccumulatorToAbsoluteLongAddress 700034
+03B87E CopyDirectAddressToAccumulator CC
+03B880 CopyAccumulatorToAbsoluteLongAddress 700036
+03B884 CopyDirectAddressToAccumulator 2A
+03B886 CopyAccumulatorToAbsoluteLongAddress 700038
+03B88A CopyDirectAddressToAccumulator 2E
+03B88C CopyAccumulatorToAbsoluteLongAddress 70003A
+03B890 CopyDirectAddressToAccumulator 2C
+03B892 CopyAccumulatorToAbsoluteLongAddress 70003C
+03B896 CopyDirectAddressToAccumulator 30
+03B898 CopyAccumulatorToAbsoluteLongAddress 70003E
+03B89C ReturnToLongCaller

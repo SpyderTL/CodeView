@@ -1,0 +1,20 @@
+03C8A5 CopyImmediateToAccumulator 0000
+03C8A8 TestSubtractDirectAddressFromAccumulator 4A
+03C8AA BranchToRelativeIfZero 03C8B5
+03C8AC CopyAccumulatorToDirectAddress 4A
+03C8AE CopyImmediateToAccumulator 3000
+03C8B1 CopyAccumulatorToDirectAddress 4C
+03C8B3 JumpToRelative 03C8BC
+03C8B5 CopyAccumulatorToDirectAddress 4C
+03C8B7 CopyImmediateToAccumulator 3000
+03C8BA CopyAccumulatorToDirectAddress 4A
+03C8BC SetImmediateFlags 20
+03C8BE CopyDirectAddressToAccumulator 4B
+03C8C0 ShiftAccumulatorRight
+03C8C1 ShiftAccumulatorRight
+03C8C2 ShiftAccumulatorRight
+03C8C3 ShiftAccumulatorRight
+03C8C4 OrAccumulatorWithImmediate 50
+03C8C6 CopyAccumulatorToAbsoluteAddress 210B
+03C8C9 PullFlags
+03C8CA ReturnToCaller

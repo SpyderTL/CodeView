@@ -1,0 +1,63 @@
+03CA7B PushFlags
+03CA7C ClearImmediateFlags 30
+03CA7E CopyAbsoluteLongAddressToAccumulator 70009A
+03CA82 ExclusiveOrAccumulatorWithImmediate 000F
+03CA85 AndAccumulatorWithImmediate 000F
+03CA88 ExchangeAccumulators
+03CA89 ShiftAccumulatorLeft
+03CA8A ShiftAccumulatorLeft
+03CA8B ShiftAccumulatorLeft
+03CA8C CopyImmediateToAccumulator 7800
+03CA8F CopyAccumulatorToAbsoluteLongAddress 700030
+03CA93 CopyImmediateToXIndex 0000
+03CA96 CopyImmediateToAccumulator FFF0
+03CA99 CopyAccumulatorToAbsoluteLongAddress 7001F8
+03CA9D CopyImmediateToAccumulator 0010
+03CAA0 CopyAccumulatorToAbsoluteLongAddress 7001FA
+03CAA4 CopyAbsoluteLongAddressToAccumulator 7EF0DA
+03CAA8 BranchToRelativeIfNotZero 03CAB5
+03CAAA TestSubtractImmediateFromXIndex 000E
+03CAAD BranchToRelativeIfNotZero 03CAB5
+03CAAF CallAbsoluteAddress 03CB10 [03CB10]
+03CAB2 JumpToAbsoluteAddress 03CB08
+03CAB5 PushXIndex
+03CAB6 CopyXIndexToAccumulator
+03CAB7 ShiftAccumulatorLeft
+03CAB8 CopyAccumulatorToXIndex
+03CAB9 CopyAbsoluteLongAddressPlusXIndexToAccumulator 03D391
+03CABD AndAccumulatorWithImmediate 00FF
+03CAC0 CopyAccumulatorToAbsoluteLongAddress 700098
+03CAC4 CopyXIndexToAccumulator
+03CAC5 ShiftAccumulatorRight
+03CAC6 CopyAccumulatorToXIndex
+03CAC7 PushXIndex
+03CAC8 CopyXIndexToAccumulator
+03CAC9 CallAbsoluteAddress 03C9C8 [03C9C8]
+03CACC PullXIndex
+03CACD CallAbsoluteAddress 03CB10 [03CB10]
+03CAD0 CopyImmediateToAccumulator 000F
+03CAD3 CopyAccumulatorToAbsoluteLongAddress 7001F2
+03CAD7 SetImmediateFlags 20
+03CAD9 TestSubtractAbsoluteAddressFromXIndex 16D9
+03CADC BranchToRelativeIfZero 03CB05
+03CADE CopyAbsoluteLongAddressToAccumulator 700098
+03CAE2 BranchToRelativeIfNegative 03CAF6
+03CAE4 CopyAbsoluteAddressToAccumulator 16D9
+03CAE7 TestSubtractImmediateFromAccumulator FE
+03CAE9 BranchToRelativeIfZero 03CB05
+03CAEB CopyImmediateToAccumulator 01
+03CAED CopyImmediateToXIndex CBF6
+03CAF0 CallAbsoluteLongAddress 7E4EE9 [7E4EE9]
+03CAF4 JumpToRelative 03CB05
+03CAF6 AndAccumulatorWithImmediate 7F
+03CAF8 CopyAccumulatorToAbsoluteLongAddress 700098
+03CAFC CopyImmediateToAccumulator 01
+03CAFE CopyImmediateToXIndex B807
+03CB01 CallAbsoluteLongAddress 7E4EE9 [7E4EE9]
+03CB05 ClearImmediateFlags 20
+03CB07 PullXIndex
+03CB08 IncrementXIndex
+03CB09 TestSubtractImmediateFromXIndex 0010
+03CB0C BranchToRelativeIfNotZero 03CAA4
+03CB0E PullFlags
+03CB0F ReturnToCaller

@@ -1,0 +1,25 @@
+03B950 PushXIndex
+03B951 PushYIndex
+03B952 PushFlags
+03B953 ClearImmediateFlags 30
+03B955 CopyDirectAddressToAccumulator 02
+03B957 CopyAccumulatorToAbsoluteLongAddress 700062
+03B95B CopyDirectAddressToAccumulator 08
+03B95D CopyAccumulatorToAbsoluteLongAddress 70002C
+03B961 CopyDirectAddressToAccumulator 90
+03B963 CopyAccumulatorToAbsoluteLongAddress 70002E
+03B967 SetImmediateFlags 20
+03B969 CopyImmediateToAccumulator 01
+03B96B CopyImmediateToXIndex 823E
+03B96E CallAbsoluteLongAddress 7E4EE9 [7E4EE9]
+03B972 ClearImmediateFlags 20
+03B974 CopyAbsoluteLongAddressToAccumulator 700026
+03B978 CopyAccumulatorToDirectAddress B3
+03B97A CopyAbsoluteLongAddressToAccumulator 700028
+03B97E CopyAccumulatorToDirectAddress B5
+03B980 CopyAbsoluteLongAddressToAccumulator 70002A
+03B984 CopyAccumulatorToDirectAddress B7
+03B986 PullFlags
+03B987 PullYIndex
+03B988 PullXIndex
+03B989 ReturnToLongCaller

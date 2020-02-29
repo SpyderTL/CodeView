@@ -1,0 +1,10 @@
+03BD7A PushFlags
+03BD7B SetImmediateFlags 20
+03BD7D CopyImmediateToAccumulator DE
+03BD7F CopyAccumulatorToAbsoluteAddress 16DB
+03BD82 CallAbsoluteLongAddress 03BD8D [03BD8D]
+03BD86 CopyImmediateToAccumulator 00
+03BD88 DecrementAccumulator
+03BD89 BranchToRelativeIfNotZero 03BD88
+03BD8B PullFlags
+03BD8C ReturnToCaller

@@ -1,0 +1,12 @@
+0484C3 CopyDirectAddressPlusXIndexToAccumulator 1E
+0484C5 AndAccumulatorWithImmediate 40
+0484C7 BranchToRelativeIfZero 0484CD
+0484C9 JumpToAbsoluteLongAddress 0484E0 [0484E0]
+0484CD CopyDirectAddressPlusXIndexToAccumulator 15
+0484CF CopyAccumulatorToDirectAddress 7E
+0484D1 CopyDirectAddressPlusXIndexToAccumulator 13
+0484D3 CopyAccumulatorToAbsoluteAddress 15A7
+0484D6 CopyDirectAddressPlusXIndexToAccumulator 12
+0484D8 CopyAccumulatorToAbsoluteAddress 15A6
+0484DB CallAbsoluteLongAddress 1FD5A7 [1FD5A7]
+0484DF ReturnToCaller

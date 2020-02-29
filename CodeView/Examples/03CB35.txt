@@ -1,0 +1,12 @@
+03CB35 PushFlags
+03CB36 SetImmediateFlags 20
+03CB38 ClearImmediateFlags 10
+03CB3A SetAbsoluteAddressToZero 2121
+03CB3D CopyImmediateToXIndex 0000
+03CB40 CopyAbsoluteLongAddressPlusXIndexToAccumulator 03D46C
+03CB44 CopyAccumulatorToAbsoluteAddress 2122
+03CB47 IncrementXIndex
+03CB48 TestSubtractImmediateFromXIndex 0200
+03CB4B BranchToRelativeIfNotZero 03CB40
+03CB4D PullFlags
+03CB4E ReturnToLongCaller

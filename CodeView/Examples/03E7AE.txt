@@ -1,0 +1,19 @@
+03E7AE PushFlags
+03E7AF SetImmediateFlags 20
+03E7B1 ClearImmediateFlags 10
+03E7B3 CopyDirectAddressToAccumulator 00
+03E7B5 BranchToRelativeIfNotZero 03E7B3
+03E7B7 CopyImmediateToAccumulator 0A
+03E7B9 CopyAccumulatorToDirectAddress 00
+03E7BB CopyAbsoluteAddressToAccumulator 18BB
+03E7BE BranchToRelativeIfZero 03E7BB
+03E7C0 CallAbsoluteLongAddress 02DC16 [02DC16]
+03E7C4 CopyAbsoluteAddressToAccumulator 18BB
+03E7C7 TestSubtractImmediateFromAccumulator 02
+03E7C9 BranchToRelativeIfNotZero 03E7C4
+03E7CB SetAbsoluteAddressToZero 18BB
+03E7CE CallAbsoluteLongAddress 02DC26 [02DC26]
+03E7D2 CallAbsoluteLongAddress 03E8FE [03E8FE]
+03E7D6 CallAbsoluteAddress 03E7DB [03E7DB]
+03E7D9 PullFlags
+03E7DA ReturnToLongCaller

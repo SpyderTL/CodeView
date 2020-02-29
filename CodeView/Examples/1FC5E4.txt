@@ -1,0 +1,116 @@
+1FC5E4 CopyAccumulatorToDirectAddress 7E
+1FC5E6 CopyXIndexToDirectAddress 76
+1FC5E8 CopyYIndexToDirectAddress 78
+1FC5EA SetDirectAddressToZero 08
+1FC5EC SetDirectAddressToZero 09
+1FC5EE SetCarryFlag
+1FC5EF CopyImmediateToAccumulator 40
+1FC5F1 SubtractDirectAddressPlusXIndexFromAccumulator 13
+1FC5F3 CopyAccumulatorToXIndex
+1FC5F4 SetImmediateFlags 10
+1FC5F6 PushDataBank
+1FC5F7 CopyImmediateToAccumulator 00
+1FC5F9 PushAccumulator
+1FC5FA PullDataBank
+1FC5FB IncrementXIndex
+1FC5FC CopyAbsoluteAddressPlusXIndexToAccumulator 98A5
+1FC5FF CopyAccumulatorToDirectAddress 7A
+1FC601 CopyAbsoluteAddressPlusXIndexToAccumulator 98E5
+1FC604 CopyAccumulatorToDirectAddress 7B
+1FC606 CopyDirectAddressToAccumulator 7E
+1FC608 BranchToRelativeIfNegative 1FC61F
+1FC60A ShiftAccumulatorLeft
+1FC60B CopyAccumulatorToAbsoluteAddress 4202 [004202 WRMPYA]
+1FC60E CopyDirectAddressToAccumulator 7A
+1FC610 BranchToRelativeIfNegative 1FC641
+1FC612 CopyAccumulatorToAbsoluteAddress 4203 [004203 WRMPYB]
+1FC615 NoOperation
+1FC616 NoOperation
+1FC617 NoOperation
+1FC618 NoOperation
+1FC619 CopyAbsoluteAddressToAccumulator 4217 [004217 RDMPYH]
+1FC61C JumpToAbsoluteAddress 1FC64F
+1FC61F ExclusiveOrAccumulatorWithImmediate FF
+1FC621 IncrementAccumulator
+1FC622 ShiftAccumulatorLeft
+1FC623 CopyAccumulatorToAbsoluteAddress 4202 [004202 WRMPYA]
+1FC626 CopyDirectAddressToAccumulator 7A
+1FC628 BranchToRelativeIfNegative 1FC631
+1FC62A CopyAccumulatorToAbsoluteAddress 4203 [004203 WRMPYB]
+1FC62D NoOperation
+1FC62E JumpToAbsoluteAddress 1FC649
+1FC631 ExclusiveOrAccumulatorWithImmediate FF
+1FC633 IncrementAccumulator
+1FC634 CopyAccumulatorToAbsoluteAddress 4203 [004203 WRMPYB]
+1FC637 NoOperation
+1FC638 NoOperation
+1FC639 NoOperation
+1FC63A NoOperation
+1FC63B CopyAbsoluteAddressToAccumulator 4217 [004217 RDMPYH]
+1FC63E JumpToAbsoluteAddress 1FC64F
+1FC641 ExclusiveOrAccumulatorWithImmediate FF
+1FC643 IncrementAccumulator
+1FC644 CopyAccumulatorToAbsoluteAddress 4203 [004203 WRMPYB]
+1FC647 NoOperation
+1FC648 NoOperation
+1FC649 CopyImmediateToAccumulator 00
+1FC64B SetCarryFlag
+1FC64C SubtractAbsoluteAddressFromAccumulator 4217 [004217 RDMPYH]
+1FC64F CopyAccumulatorToXIndex
+1FC650 CopyImmediateToXIndex 00
+1FC652 CopyAccumulatorToDirectAddress 02
+1FC654 TestSubtractImmediateFromAccumulator 00
+1FC656 BranchToRelativeIfPositive 1FC659
+1FC658 DecrementXIndex
+1FC659 CopyXIndexToDirectAddress 03
+1FC65B CopyDirectAddressToAccumulator 7E
+1FC65D BranchToRelativeIfNegative 1FC674
+1FC65F ShiftAccumulatorLeft
+1FC660 CopyAccumulatorToAbsoluteAddress 4202 [004202 WRMPYA]
+1FC663 CopyDirectAddressToAccumulator 7B
+1FC665 BranchToRelativeIfNegative 1FC696
+1FC667 CopyAccumulatorToAbsoluteAddress 4203 [004203 WRMPYB]
+1FC66A NoOperation
+1FC66B NoOperation
+1FC66C NoOperation
+1FC66D NoOperation
+1FC66E CopyAbsoluteAddressToAccumulator 4217 [004217 RDMPYH]
+1FC671 JumpToAbsoluteAddress 1FC6A4
+1FC674 ExclusiveOrAccumulatorWithImmediate FF
+1FC676 IncrementAccumulator
+1FC677 ShiftAccumulatorLeft
+1FC678 CopyAccumulatorToAbsoluteAddress 4202 [004202 WRMPYA]
+1FC67B CopyDirectAddressToAccumulator 7B
+1FC67D BranchToRelativeIfNegative 1FC686
+1FC67F CopyAccumulatorToAbsoluteAddress 4203 [004203 WRMPYB]
+1FC682 NoOperation
+1FC683 JumpToAbsoluteAddress 1FC69E
+1FC686 ExclusiveOrAccumulatorWithImmediate FF
+1FC688 IncrementAccumulator
+1FC689 CopyAccumulatorToAbsoluteAddress 4203 [004203 WRMPYB]
+1FC68C NoOperation
+1FC68D NoOperation
+1FC68E NoOperation
+1FC68F NoOperation
+1FC690 CopyAbsoluteAddressToAccumulator 4217 [004217 RDMPYH]
+1FC693 JumpToAbsoluteAddress 1FC6A4
+1FC696 ExclusiveOrAccumulatorWithImmediate FF
+1FC698 IncrementAccumulator
+1FC699 CopyAccumulatorToAbsoluteAddress 4203 [004203 WRMPYB]
+1FC69C NoOperation
+1FC69D NoOperation
+1FC69E CopyImmediateToAccumulator 00
+1FC6A0 SetCarryFlag
+1FC6A1 SubtractAbsoluteAddressFromAccumulator 4217 [004217 RDMPYH]
+1FC6A4 CopyAccumulatorToXIndex
+1FC6A5 CopyImmediateToXIndex 00
+1FC6A7 CopyAccumulatorToDirectAddress 90
+1FC6A9 TestSubtractImmediateFromAccumulator 00
+1FC6AB BranchToRelativeIfPositive 1FC6AE
+1FC6AD DecrementXIndex
+1FC6AE CopyXIndexToDirectAddress 91
+1FC6B0 ClearImmediateFlags 10
+1FC6B2 CopyDirectAddressToXIndex 76
+1FC6B4 CopyDirectAddressToYIndex 78
+1FC6B6 PullDataBank
+1FC6B7 ReturnToLongCaller

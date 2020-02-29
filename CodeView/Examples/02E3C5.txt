@@ -1,0 +1,103 @@
+02E3C5 SetImmediateFlags 30
+02E3C7 CallAbsoluteLongAddress 02E2CC [02E2CC]
+02E3CB SetImmediateFlags 20
+02E3CD SetImmediateFlags 20
+02E3CF CopyAbsoluteAddressToAccumulator 1FE7
+02E3D2 BranchToRelativeIfNotZero 02E3F3
+02E3D4 CopyAbsoluteAddressToAccumulator 14D6
+02E3D7 TestAndAccumulatorWithImmediate 20
+02E3D9 BranchToRelativeIfNotZero 02E3F3
+02E3DB CopyAbsoluteAddressToAccumulator 14D3
+02E3DE AndAccumulatorWithImmediate 10
+02E3E0 BranchToRelativeIfNotZero 02E3F3
+02E3E2 CopyAbsoluteAddressToAccumulator 14DD
+02E3E5 AndAccumulatorWithImmediate 20
+02E3E7 BranchToRelativeIfNotZero 02E3F3
+02E3E9 CopyAbsoluteAddressToAccumulator 1201
+02E3EC TestAndAccumulatorWithImmediate 10
+02E3EE BranchToRelativeIfZero 02E3F3
+02E3F0 CallAbsoluteAddress 02EFA5 [02EFA5]
+02E3F3 CallAbsoluteLongAddress 02FD84 [02FD84]
+02E3F7 CallAbsoluteLongAddress 1FBDB0
+02E3FB CallAbsoluteLongAddress 02D956 [02D956]
+02E3FF CallAbsoluteLongAddress 03EA26
+02E403 ClearImmediateFlags 20
+02E405 CopyAbsoluteAddressToAccumulator 1FD2
+02E408 BranchToRelativeIfZero 02E3CB
+02E40A TestSubtractImmediateFromAccumulator 000A
+02E40D BranchToRelativeIfNotZero 02E412
+02E40F JumpToRelativeLong 02E4C8 [02E4C8]
+02E412 IncrementAbsoluteAddress 16D6
+02E415 SetImmediateFlags 20
+02E417 CopyImmediateToAccumulator 01
+02E419 CopyAccumulatorToAbsoluteAddress 15A8
+02E41C SetAbsoluteAddressToZero 15AB
+02E41F CopyAbsoluteAddressToAccumulator 1FD2
+02E422 TestSubtractImmediateFromAccumulator 05
+02E424 BranchToRelativeIfZero 02E45B
+02E426 TestSubtractImmediateFromAccumulator 0B
+02E428 BranchToRelativeIfZero 02E49B
+02E42A TestSubtractImmediateFromAccumulator 0C
+02E42C BranchToRelativeIfZero 02E4A1
+02E42E TestSubtractImmediateFromAccumulator 0D
+02E430 BranchToRelativeIfZero 02E4A7
+02E432 TestSubtractImmediateFromAccumulator 0E
+02E434 BranchToRelativeIfZero 02E4AD
+02E436 TestSubtractImmediateFromAccumulator 0F
+02E438 BranchToRelativeIfZero 02E4B1
+02E43A TestSubtractImmediateFromAccumulator 10
+02E43C BranchToRelativeIfZero 02E469
+02E43E CallAbsoluteAddress 02EC26 [02EC26]
+02E441 SetImmediateFlags 20
+02E443 CopyAbsoluteAddressToAccumulator 1FD2
+02E446 TestSubtractImmediateFromAccumulator 07
+02E448 BranchToRelativeIfNotZero 02E451
+02E44A SetAbsoluteAddressToZero 15A8
+02E44D JumpToAbsoluteLongAddress 02E3C5 [02E3C5]
+02E451 CopyAbsoluteAddressToAccumulator 1FD2
+02E454 TestSubtractImmediateFromAccumulator 06
+02E456 BranchToRelativeIfNotZero 02E45B
+02E458 JumpToRelativeLong 02E575 [02E575]
+02E45B SetImmediateFlags 20
+02E45D CopyAbsoluteAddressToAccumulator 1FCE
+02E460 BranchToRelativeIfNotZero 02E492
+02E462 CopyAbsoluteAddressToAccumulator 1FD2
+02E465 TestSubtractImmediateFromAccumulator 04
+02E467 BranchToRelativeIfNotZero 02E47C
+02E469 SetImmediateFlags 20
+02E46B CopyImmediateToAccumulator 28
+02E46D PushAccumulator
+02E46E CallAbsoluteLongAddress 02FD1D [02FD1D]
+02E472 CallAbsoluteLongAddress 02D956 [02D956]
+02E476 SetImmediateFlags 20
+02E478 PullAccumulator
+02E479 DecrementAccumulator
+02E47A BranchToRelativeIfNotZero 02E46D
+02E47C SetImmediateFlags 20
+02E47E CopyImmediateToAccumulator FF
+02E480 CopyAccumulatorToAbsoluteAddress 18B2
+02E483 SetImmediateFlags 20
+02E485 SetImmediateFlags 10
+02E487 CallAbsoluteLongAddress 02D956 [02D956]
+02E48B SetImmediateFlags 20
+02E48D CopyAbsoluteAddressToAccumulator 18B2
+02E490 BranchToRelativeIfNotZero 02E487
+02E492 SetImmediateFlags 20
+02E494 SetAbsoluteAddressToZero 15A8
+02E497 JumpToAbsoluteLongAddress 03BDDF
+02E49B CallAbsoluteLongAddress 03D0FB
+02E49F JumpToRelative 02E4B1
+02E4A1 CallAbsoluteLongAddress 03D106
+02E4A5 JumpToRelative 02E4B1
+02E4A7 CallAbsoluteLongAddress 03D111
+02E4AB JumpToRelative 02E4B1
+02E4AD CallAbsoluteLongAddress 03D0D6
+02E4B1 SetImmediateFlags 20
+02E4B3 ClearImmediateFlags 10
+02E4B5 CopyAbsoluteAddressToXIndex 1FBB
+02E4B8 CopyImmediateToAccumulator 65
+02E4BA CopyAccumulatorToAbsoluteAddressPlusXIndex 1FBD
+02E4BD IncrementXIndex
+02E4BE CopyXIndexToAbsoluteAddress 1FBB
+02E4C1 SetAbsoluteAddressToZero 15A8
+02E4C4 JumpToAbsoluteLongAddress 03BDDF

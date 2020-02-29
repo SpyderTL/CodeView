@@ -1,0 +1,21 @@
+03B109 SetImmediateFlags 20
+03B10B SetInterruptDisableFlag
+03B10C CopyAbsoluteLongAddressPlusXIndexToAccumulator 03AEE9
+03B110 CopyAccumulatorToAbsoluteAddress 1F47
+03B113 IncrementXIndex
+03B114 CopyXIndexToAbsoluteAddress 1F63
+03B117 CopyAbsoluteAddressToAccumulator 1F65
+03B11A BranchToRelativeIfZero 03B121
+03B11C CopyImmediateToAccumulator FF
+03B11E CopyAccumulatorToAbsoluteAddress 2140
+03B121 CopyImmediateToAccumulator 01
+03B123 CopyAccumulatorToAbsoluteAddress 1F65
+03B126 ClearImmediateFlags 30
+03B128 CopyImmediateToYIndex 0000
+03B12B CopyImmediateToAccumulator BBAA
+03B12E TestSubtractAbsoluteAddressFromAccumulator 2140
+03B131 BranchToRelativeIfNotZero 03B12E
+03B133 SetImmediateFlags 20
+03B135 CopyImmediateToAccumulator CC
+03B137 PushAccumulator
+03B138 JumpToAbsoluteAddress 03B1B7

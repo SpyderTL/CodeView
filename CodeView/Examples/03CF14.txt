@@ -1,0 +1,23 @@
+03CF14 PushFlags
+03CF15 SetImmediateFlags 20
+03CF17 ClearImmediateFlags 10
+03CF19 CopyImmediateToXIndex 021F
+03CF1C SetAbsoluteAddressPlusXIndexToZero 1261
+03CF1F DecrementXIndex
+03CF20 BranchToRelativeIfPositive 03CF1C
+03CF22 CopyImmediateToAccumulator 04
+03CF24 CopyAccumulatorToAbsoluteAddress 4301
+03CF27 CopyImmediateToXIndex 0000
+03CF2A CopyXIndexToAbsoluteAddress 2102
+03CF2D CopyImmediateToXIndex 1261
+03CF30 CopyXIndexToAbsoluteAddress 4302
+03CF33 CopyImmediateToAccumulator 00
+03CF35 CopyAccumulatorToAbsoluteAddress 4304
+03CF38 CopyImmediateToXIndex 0220
+03CF3B CopyXIndexToAbsoluteAddress 4305
+03CF3E CopyImmediateToAccumulator 00
+03CF40 CopyAccumulatorToAbsoluteAddress 4300
+03CF43 CopyImmediateToAccumulator 01
+03CF45 CopyAccumulatorToAbsoluteAddress 420B
+03CF48 PullFlags
+03CF49 ReturnToLongCaller

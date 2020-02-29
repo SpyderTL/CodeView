@@ -1,0 +1,10 @@
+03EDAB SetImmediateFlags 20
+03EDAD CopyAbsoluteAddressToAccumulator 1FF4
+03EDB0 PushAccumulator
+03EDB1 PullDataBank
+03EDB2 ClearImmediateFlags 20
+03EDB4 CopyAbsoluteAddressPlusXIndexToAccumulator 8000
+03EDB7 AndAccumulatorWithImmediate 00FF
+03EDBA CopyXIndexToYIndex
+03EDBB CopyAccumulatorToXIndex
+03EDBC JumpToAbsoluteAddressPlusXIndexPointer EDBF

@@ -1,0 +1,28 @@
+03B82D CopyImmediateToAccumulator 3A
+03B82F CopyAccumulatorToDirectAddress EF
+03B831 CopyImmediateToAccumulator A7
+03B833 CopyAccumulatorToDirectAddress F0
+03B835 CopyImmediateToAccumulator 55
+03B837 CopyAccumulatorToDirectAddress F1
+03B839 CopyImmediateToAccumulator 7F
+03B83B CopyAccumulatorToDirectAddress F2
+03B83D SetDirectAddressToZero 98
+03B83F SetDirectAddressToZero B9
+03B841 SetDirectAddressToZero 95
+03B843 SetDirectAddressToZero 9B
+03B845 SetDirectAddressToZero 9C
+03B847 SetDirectAddressToZero 9D
+03B849 SetDirectAddressToZero 99
+03B84B SetDirectAddressToZero DC
+03B84D SetAbsoluteAddressToZero 1634
+03B850 SetAbsoluteAddressToZero 1636
+03B853 SetAbsoluteAddressToZero 1638
+03B856 SetAbsoluteAddressToZero 1249
+03B859 SetAbsoluteAddressToZero 124A
+03B85C CopyImmediateToAccumulator 00
+03B85E CopyAccumulatorToAbsoluteAddress 15CA
+03B861 CallAbsoluteLongAddress 03B8B8 [03B8B8]
+03B865 CallAbsoluteLongAddress 03B89D [03B89D]
+03B869 CallAbsoluteLongAddress 03B86F [03B86F]
+03B86D PullFlags
+03B86E ReturnToLongCaller

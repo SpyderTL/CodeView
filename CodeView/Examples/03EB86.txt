@@ -1,0 +1,23 @@
+03EB86 PushFlags
+03EB87 ClearImmediateFlags 20
+03EB89 AndAccumulatorWithImmediate 00FF
+03EB8C ExchangeAccumulators
+03EB8D CopyAccumulatorToDirectAddress 02
+03EB8F ShiftDirectAddressRight 02
+03EB91 ShiftAccumulatorLeft
+03EB92 AddDirectAddressToAccumulator 02
+03EB94 AddImmediateToAccumulator B7A4
+03EB97 CopyAccumulatorToAbsoluteLongAddress 700018
+03EB9B CopyImmediateToAccumulator 0006
+03EB9E CopyAccumulatorToAbsoluteLongAddress 700026
+03EBA2 CopyImmediateToAccumulator 0098
+03EBA5 CopyAccumulatorToAbsoluteLongAddress 700028
+03EBA9 SetImmediateFlags 20
+03EBAB CopyImmediateToAccumulator 01
+03EBAD CopyImmediateToXIndex 5B
+03EBAF TestSubtractDirectAddressPointerPlusYIndexFromAccumulator  22
+03EBB1 SubtractImmediateFromAccumulator 4E
+03EBB3 RotateAbsoluteAddressPlusXIndexRight 20C2
+03EBB6 ClearImmediateFlags 10
+03EBB8 PullFlags
+03EBB9 ReturnToCaller

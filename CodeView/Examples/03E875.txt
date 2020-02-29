@@ -1,0 +1,10 @@
+03E875 PushFlags
+03E876 SetImmediateFlags 20
+03E878 ClearImmediateFlags 10
+03E87A CopyImmediateToXIndex 0220
+03E87D SetAbsoluteAddressPlusXIndexToZero 1261
+03E880 DecrementXIndex
+03E881 BranchToRelativeIfPositive 03E87D
+03E883 CallAbsoluteLongAddress 03E889 [03E889]
+03E887 PullFlags
+03E888 ReturnToLongCaller

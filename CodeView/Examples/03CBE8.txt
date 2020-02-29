@@ -1,0 +1,9 @@
+03CBE8 PushFlags
+03CBE9 SetImmediateFlags 20
+03CBEB CopyAbsoluteAddressToAccumulator 4212
+03CBEE TestAndAccumulatorWithImmediate 01
+03CBF0 BranchToRelativeIfZero 03CBEB
+03CBF2 CopyAbsoluteAddressToAccumulator 4212
+03CBF5 TestAndAccumulatorWithImmediate 01
+03CBF7 BranchToRelativeIfNotZero 03CBF2
+03CBF9 JumpToRelative 03CBFC

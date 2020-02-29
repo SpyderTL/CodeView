@@ -1,0 +1,9 @@
+03B639 CopyImmediateToAccumulator 1E
+03B63B CopyAccumulatorToAbsoluteAddress 1F48
+03B63E CopyAccumulatorToAbsoluteAddress 1F49
+03B641 CopyAccumulatorToAbsoluteAddress 1F4A
+03B644 CopyImmediateToAccumulator 1F
+03B646 CopyAccumulatorToAbsoluteAddress 1F4B
+03B649 CopyImmediateToAccumulator 20
+03B64B CopyAccumulatorToAbsoluteAddress 1F4C
+03B64E JumpToAbsoluteAddress 03B799 [03B799]

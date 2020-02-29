@@ -1,0 +1,21 @@
+02DAF2 IncrementAbsoluteAddress 15BB
+02DAF5 BranchToRelativeIfNotZero 02DAFA
+02DAF7 IncrementAbsoluteAddress 15BC
+02DAFA PushDataBank
+02DAFB CopyImmediateToAccumulator 7E
+02DAFD PushAccumulator
+02DAFE PullDataBank
+02DAFF CallAbsoluteLongAddress 0681D5
+02DB03 CallAbsoluteLongAddress 03ED7E
+02DB07 CopyAbsoluteAddressToXIndex 121D
+02DB0A SetAbsoluteAddressToZero 1248
+02DB0D CallAbsoluteLongAddress 1FD26B
+02DB11 CopyAbsoluteAddressToAccumulator 1248
+02DB14 BranchToRelativeIfNotZero 02DB1D
+02DB16 CopyDirectAddressPlusXIndexToYIndex 00
+02DB18 CopyYIndexToXIndex
+02DB19 BranchToRelativeIfNotZero 02DB0A
+02DB1B JumpToRelative 02DB25 [02DB25]
+02DB1D CopyDirectAddressPlusXIndexToYIndex 00
+02DB1F CallAbsoluteLongAddress 1FBFDC
+02DB23 JumpToRelative 02DB18

@@ -1,0 +1,5 @@
+02EDC0 CopyDirectAddressToAccumulator 18
+02EDC2 CopyAccumulatorToDirectAddress 16
+02EDC4 CopyImmediateToAccumulator 0014
+02EDC7 CopyAccumulatorToDirectAddress 20
+02EDC9 JumpToRelative 02EDF2

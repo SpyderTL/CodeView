@@ -1,0 +1,17 @@
+03EB49 PushFlags
+03EB4A SetImmediateFlags 20
+03EB4C CopyAbsoluteAddressToAccumulator 189A
+03EB4F TestAndAccumulatorWithImmediate 80
+03EB51 BranchToRelativeIfNotZero 03EB5E
+03EB53 AndAccumulatorWithImmediate 7F
+03EB55 TestSubtractImmediateFromAccumulator 05
+03EB57 BranchToRelativeIfZero 03EB5E
+03EB59 CopyAbsoluteAddressToAccumulator 1FFB
+03EB5C BranchToRelativeIfZero 03EB6C
+03EB5E ClearImmediateFlags 20
+03EB60 CopyAbsoluteLongAddressToAccumulator 70002C
+03EB64 SetCarryFlag
+03EB65 SubtractImmediateFromAccumulator 0010
+03EB68 CopyAccumulatorToAbsoluteLongAddress 70002C
+03EB6C PullFlags
+03EB6D ReturnToCaller

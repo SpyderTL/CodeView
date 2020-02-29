@@ -1,0 +1,92 @@
+03CC3E PushFlags
+03CC3F ClearImmediateFlags 30
+03CC41 CopyImmediateToXIndex 1281
+03CC44 CopyXIndexToDirectAddress 30
+03CC46 SetImmediateFlags 20
+03CC48 CopyImmediateToAccumulator 1E
+03CC4A CopyAccumulatorToAbsoluteAddress 16DB
+03CC4D CallAbsoluteLongAddress 03BD8D [03BD8D]
+03CC51 SetImmediateFlags 20
+03CC53 ClearImmediateFlags 10
+03CC55 CopyAbsoluteAddressToAccumulator 16D6
+03CC58 CopyAccumulatorToDirectAddress 02
+03CC5A SetDirectAddressToZero 03
+03CC5C ClearImmediateFlags 30
+03CC5E CopyAbsoluteAddressToAccumulator 16D8
+03CC61 ShiftAccumulatorLeft
+03CC62 AndAccumulatorWithImmediate 00FF
+03CC65 CopyAccumulatorToXIndex
+03CC66 CopyAbsoluteLongAddressPlusXIndexToAccumulator 03D69D
+03CC6A CopyAccumulatorToXIndex
+03CC6B CopyAbsoluteLongAddressPlusXIndexToAccumulator 03D69D
+03CC6F AndAccumulatorWithImmediate 00FF
+03CC72 BranchToRelativeIfNotZero 03CC77
+03CC74 JumpToRelativeLong 03CCFF
+03CC77 TestSubtractImmediateFromAccumulator 0003
+03CC7A BranchToRelativeIfZero 03CC93
+03CC7C TestSubtractImmediateFromAccumulator 0002
+03CC7F BranchToRelativeIfZero 03CC88
+03CC81 CopyAbsoluteLongAddressPlusXIndexToAccumulator 03D69E
+03CC85 CopyAccumulatorToXIndex
+03CC86 JumpToRelative 03CC6B
+03CC88 CopyAbsoluteLongAddressPlusXIndexToAccumulator 03D69E
+03CC8C CopyAccumulatorToXIndex
+03CC8D CopyAbsoluteAddressPlusXIndexToAccumulator 16CE
+03CC90 CopyAccumulatorToXIndex
+03CC91 JumpToRelative 03CC6B
+03CC93 CopyAbsoluteLongAddressPlusXIndexToAccumulator 03D69E
+03CC97 CallAbsoluteAddress 03CBB2 [03CBB2]
+03CC9A CopyAccumulatorToYIndex
+03CC9B CopyAbsoluteLongAddressPlusXIndexToAccumulator 03D6A0
+03CC9F AndAccumulatorWithImmediate 00FF
+03CCA2 CopyAccumulatorToAbsoluteAddress 16D9
+03CCA5 CopyAbsoluteLongAddressPlusXIndexToAccumulator 03D6A1
+03CCA9 CopyAccumulatorToAbsoluteAddress 1FF7
+03CCAC CopyAbsoluteLongAddressPlusXIndexToAccumulator 03D6A2
+03CCB0 CopyAccumulatorToAbsoluteAddress 1FF8
+03CCB3 SetImmediateFlags 20
+03CCB5 CopyAbsoluteLongAddressPlusXIndexToAccumulator 03D6A4
+03CCB9 CopyAccumulatorToAbsoluteLongAddress 7EF0C8
+03CCBD CopyAbsoluteLongAddressPlusXIndexToAccumulator 03D6A5
+03CCC1 CopyAccumulatorToAbsoluteAddress 1FFD
+03CCC4 ClearImmediateFlags 20
+03CCC6 CopyXIndexToAccumulator
+03CCC7 ClearCarryFlag
+03CCC8 AddImmediateToAccumulator 0009
+03CCCB CopyAccumulatorToXIndex
+03CCCC CopyDirectAddressToAccumulator 02
+03CCCE BranchToRelativeIfZero 03CD02
+03CCD0 CopyYIndexToAccumulator
+03CCD1 PushXIndex
+03CCD2 CopyDirectAddressToXIndex 30
+03CCD4 CopyAccumulatorToDirectAddressPlusXIndex 00
+03CCD6 PullXIndex
+03CCD7 ClearCarryFlag
+03CCD8 AddAbsoluteLongAddressPlusXIndexToAccumulator 03D69F
+03CCDC CopyAccumulatorToYIndex
+03CCDD CopyAbsoluteLongAddressPlusXIndexToAccumulator 03D69D
+03CCE1 TestSubtractImmediateFromAccumulator FFFF
+03CCE4 BranchToRelativeIfZero 03CCF8
+03CCE6 PushXIndex
+03CCE7 CopyDirectAddressToXIndex 30
+03CCE9 CopyAccumulatorToDirectAddressPlusXIndex 02
+03CCEB IncrementXIndex
+03CCEC IncrementXIndex
+03CCED IncrementXIndex
+03CCEE IncrementXIndex
+03CCEF CopyXIndexToDirectAddress 30
+03CCF1 PullXIndex
+03CCF2 IncrementXIndex
+03CCF3 IncrementXIndex
+03CCF4 IncrementXIndex
+03CCF5 IncrementXIndex
+03CCF6 JumpToRelative 03CCD0
+03CCF8 IncrementXIndex
+03CCF9 IncrementXIndex
+03CCFA DecrementDirectAddress 02
+03CCFC JumpToRelativeLong 03CC6B
+03CD02 CopyXIndexToDirectAddress 02
+03CD04 CopyYIndexToDirectAddress 08
+03CD06 PullFlags
+03CD07 ClearCarryFlag
+03CD08 ReturnToLongCaller

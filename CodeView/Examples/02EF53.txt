@@ -1,0 +1,2 @@
+02EF53 SetAbsoluteAddressToZero 1FCD
+02EF56 ReturnToCaller

@@ -1,0 +1,13 @@
+03CB10 CopyAbsoluteLongAddressToAccumulator 7001F8
+03CB14 ClearCarryFlag
+03CB15 AddImmediateToAccumulator 0020
+03CB18 CopyAccumulatorToAbsoluteLongAddress 7001F8
+03CB1C TestSubtractImmediateFromAccumulator 0080
+03CB1F BranchToRelativeIfLessThan 03CB34
+03CB21 CopyImmediateToAccumulator 0010
+03CB24 CopyAccumulatorToAbsoluteLongAddress 7001F8
+03CB28 CopyAbsoluteLongAddressToAccumulator 7001FA
+03CB2C ClearCarryFlag
+03CB2D AddImmediateToAccumulator 0020
+03CB30 CopyAccumulatorToAbsoluteLongAddress 7001FA
+03CB34 ReturnToCaller

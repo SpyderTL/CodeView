@@ -1,0 +1,34 @@
+03E184 SetImmediateFlags 20
+03E186 CopyAbsoluteLongAddressToAccumulator 70019A
+03E18A AndAccumulatorWithImmediate FF
+03E18C BranchToRelativeIfNotZero 03E18F
+03E18E ReturnToCaller
+03E18F BranchToRelativeIfPositive 03E192
+03E191 ShiftAccumulatorRight
+03E192 CopyAccumulatorToDirectAddress 02
+03E194 CopyImmediateToAccumulator C8
+03E196 SetCarryFlag
+03E197 SubtractDirectAddressFromAccumulator 02
+03E199 ClearImmediateFlags 20
+03E19B AndAccumulatorWithImmediate 00FF
+03E19E OrAccumulatorWithImmediate 1000
+03E1A1 CopyImmediateToYIndex 20F1
+03E1A4 CopyImmediateToXIndex 0004
+03E1A7 CopyXIndexToDirectAddress 3A
+03E1A9 CopyAbsoluteAddressToXIndex 15AF
+03E1AC CopyAccumulatorToAbsoluteAddressPlusXIndex 1261
+03E1AF PushAccumulator
+03E1B0 CopyYIndexToAccumulator
+03E1B1 CopyAccumulatorToAbsoluteAddressPlusXIndex 1263
+03E1B4 PullAccumulator
+03E1B5 ClearCarryFlag
+03E1B6 AddImmediateToAccumulator 0008
+03E1B9 IncrementYIndex
+03E1BA IncrementXIndex
+03E1BB IncrementXIndex
+03E1BC IncrementXIndex
+03E1BD IncrementXIndex
+03E1BE DecrementDirectAddress 3A
+03E1C0 BranchToRelativeIfNotZero 03E1AC
+03E1C2 CopyXIndexToAbsoluteAddress 15AF
+03E1C5 ReturnToCaller

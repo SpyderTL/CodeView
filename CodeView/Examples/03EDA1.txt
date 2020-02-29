@@ -1,0 +1,7 @@
+03EDA1 PushFlags
+03EDA2 SetImmediateFlags 20
+03EDA4 PushDataBank
+03EDA5 CallAbsoluteAddress 03EDAB [03EDAB]
+03EDA8 PullDataBank
+03EDA9 PullFlags
+03EDAA ReturnToLongCaller

@@ -1,0 +1,6 @@
+03AE91 PushFlags
+03AE92 ClearImmediateFlags 10
+03AE94 CopyImmediateToXIndex 004F
+03AE97 CallAbsoluteAddress 03B109 [03B109]
+03AE9A PullFlags
+03AE9B ReturnToLongCaller

@@ -1,0 +1,17 @@
+03CC22 PushFlags
+03CC23 SetImmediateFlags 20
+03CC25 ClearImmediateFlags 10
+03CC27 CopyImmediateToXIndex 1281
+03CC2A CopyXIndexToDirectAddress 30
+03CC2C CopyImmediateToYIndex 0014
+03CC2F CopyImmediateToAccumulator F8
+03CC31 CopyAccumulatorToDirectAddressPlusXIndex 00
+03CC33 CopyAccumulatorToDirectAddressPlusXIndex 01
+03CC35 IncrementXIndex
+03CC36 IncrementXIndex
+03CC37 IncrementXIndex
+03CC38 IncrementXIndex
+03CC39 DecrementYIndex
+03CC3A BranchToRelativeIfNotZero 03CC31
+03CC3C PullFlags
+03CC3D ReturnToLongCaller

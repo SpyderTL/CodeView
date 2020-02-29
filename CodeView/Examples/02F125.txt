@@ -1,0 +1,180 @@
+02F125 SetImmediateFlags 30
+02F127 SetInterruptDisableFlag
+02F128 SetAbsoluteAddressToZero 4200
+02F12B SetDirectAddressToZero 00
+02F12D SetAbsoluteAddressToZero 18B3
+02F130 CopyAbsoluteAddressToAccumulator 4211
+02F133 ClearImmediateFlags 20
+02F135 CopyAbsoluteLongAddressToAccumulator 003030
+02F139 CopyImmediateToAccumulator 0021
+02F13C CopyAccumulatorToAbsoluteAddress 1260
+02F13F CallAbsoluteLongAddress 02F907 [02F907]
+02F143 SetAbsoluteAddressToZero 2121
+02F146 SetAbsoluteAddressToZero 2116
+02F149 SetAbsoluteAddressToZero 2117
+02F14C CopyImmediateToAccumulator 0080
+02F14F CopyAccumulatorToAbsoluteAddress 2100
+02F152 CopyAccumulatorToAbsoluteAddress 2115
+02F155 CopyImmediateToAccumulator 0000
+02F158 CopyImmediateToXIndex 7F
+02F15A CopyImmediateToYIndex 00
+02F15C CopyAccumulatorToAbsoluteAddress 2118
+02F15F CopyAccumulatorToAbsoluteAddress 2119
+02F162 DecrementYIndex
+02F163 BranchToRelativeIfNotZero 02F15C
+02F165 DecrementXIndex
+02F166 BranchToRelativeIfNotZero 02F15A
+02F168 ClearImmediateFlags 30
+02F16A CopyImmediateToAccumulator 2C00
+02F16D CopyAccumulatorToAbsoluteAddress 2116
+02F170 CopyImmediateToAccumulator 02A1
+02F173 CopyImmediateToXIndex 0400
+02F176 CopyAccumulatorToAbsoluteAddress 2118
+02F179 DecrementXIndex
+02F17A BranchToRelativeIfNotZero 02F176
+02F17C SetImmediateFlags 20
+02F17E ClearImmediateFlags 10
+02F180 CallAbsoluteLongAddress 02F307 [02F307]
+02F184 ClearImmediateFlags 10
+02F186 CopyImmediateToXIndex 0000
+02F189 CopyXIndexToDirectAddress 4A
+02F18B CopyImmediateToXIndex 3000
+02F18E CopyXIndexToDirectAddress 4C
+02F190 CopyImmediateToXIndex 2C00
+02F193 CopyXIndexToDirectAddress 44
+02F195 CopyImmediateToXIndex 2C00
+02F198 CopyXIndexToDirectAddress 46
+02F19A CopyDirectAddressToAccumulator 45
+02F19C ShiftAccumulatorRight
+02F19D ShiftAccumulatorRight
+02F19E CopyAccumulatorToAbsoluteAddress 3038
+02F1A1 CopyDirectAddressToAccumulator 4B
+02F1A3 ShiftAccumulatorRight
+02F1A4 ShiftAccumulatorRight
+02F1A5 ShiftAccumulatorRight
+02F1A6 ShiftAccumulatorRight
+02F1A7 OrAccumulatorWithImmediate 50
+02F1A9 CopyAccumulatorToAbsoluteAddress 210B
+02F1AC CopyImmediateToAccumulator 03
+02F1AE CopyAccumulatorToAbsoluteAddress 2101
+02F1B1 CopyImmediateToAccumulator 2C
+02F1B3 CopyAccumulatorToAbsoluteAddress 2107
+02F1B6 CopyImmediateToAccumulator 73
+02F1B8 CopyAccumulatorToAbsoluteAddress 2108
+02F1BB CopyImmediateToAccumulator 02
+02F1BD CopyAccumulatorToAbsoluteAddress 2105
+02F1C0 CallAbsoluteLongAddress 02DB56 [02DB56]
+02F1C4 CallAbsoluteLongAddress 02DBE2 [02DBE2]
+02F1C8 SetImmediateFlags 20
+02F1CA ClearImmediateFlags 10
+02F1CC CopyImmediateToAccumulator 01
+02F1CE CallAbsoluteLongAddress 02F464 [02F464]
+02F1D2 CallAbsoluteLongAddress 03DB17
+02F1D6 CopyImmediateToAccumulator 22
+02F1D8 CopyAccumulatorToAbsoluteAddress 4301
+02F1DB CopyImmediateToAccumulator 80
+02F1DD CopyAccumulatorToAbsoluteAddress 2121
+02F1E0 CopyImmediateToXIndex 1360
+02F1E3 CopyXIndexToAbsoluteAddress 4302
+02F1E6 CopyImmediateToAccumulator 7F
+02F1E8 CopyAccumulatorToAbsoluteAddress 4304
+02F1EB CopyImmediateToXIndex 0100
+02F1EE CopyXIndexToAbsoluteAddress 4305
+02F1F1 CopyImmediateToAccumulator 00
+02F1F3 CopyAccumulatorToAbsoluteAddress 4300
+02F1F6 CopyImmediateToAccumulator 01
+02F1F8 CopyAccumulatorToAbsoluteAddress 420B
+02F1FB SetAbsoluteAddressToZero 2123
+02F1FE SetAbsoluteAddressToZero 2124
+02F201 CopyImmediateToAccumulator 20
+02F203 CopyAccumulatorToAbsoluteAddress 2125
+02F206 SetAbsoluteAddressToZero 212A
+02F209 CopyImmediateToAccumulator 0C
+02F20B CopyAccumulatorToAbsoluteAddress 212B
+02F20E SetAbsoluteAddressToZero 212E
+02F211 SetAbsoluteAddressToZero 212F
+02F214 SetAbsoluteAddressToZero 2126
+02F217 SetAbsoluteAddressToZero 2127
+02F21A CopyImmediateToAccumulator 17
+02F21C CopyAccumulatorToAbsoluteAddress 212C
+02F21F CopyImmediateToAccumulator 07
+02F221 CopyAccumulatorToAbsoluteAddress 212D
+02F224 CallAbsoluteLongAddress 02F8F0 [02F8F0]
+02F228 SetImmediateFlags 20
+02F22A CopyImmediateToAccumulator 00
+02F22C CopyAccumulatorToAbsoluteAddress 4310
+02F22F CopyImmediateToAccumulator 00
+02F231 CopyAccumulatorToAbsoluteAddress 4311
+02F234 CopyImmediateToXIndex 45F1
+02F237 CopyXIndexToAbsoluteAddress 4312
+02F23A CopyImmediateToAccumulator 7E
+02F23C CopyAccumulatorToAbsoluteAddress 4314
+02F23F SetAbsoluteAddressToZero 4317
+02F242 CopyImmediateToAccumulator 02
+02F244 CopyAccumulatorToAbsoluteAddress 4320
+02F247 CopyImmediateToAccumulator 0F
+02F249 CopyAccumulatorToAbsoluteAddress 4321
+02F24C CopyImmediateToXIndex 4619
+02F24F CopyXIndexToAbsoluteAddress 4322
+02F252 CopyImmediateToAccumulator 7E
+02F254 CopyAccumulatorToAbsoluteAddress 4324
+02F257 SetAbsoluteAddressToZero 4327
+02F25A CopyImmediateToAccumulator 01
+02F25C CopyAccumulatorToAbsoluteAddress 4330
+02F25F CopyImmediateToAccumulator 26
+02F261 CopyAccumulatorToAbsoluteAddress 4331
+02F264 CopyImmediateToXIndex 4169
+02F267 CopyXIndexToAbsoluteAddress 4332
+02F26A CopyImmediateToAccumulator 7E
+02F26C CopyAccumulatorToAbsoluteAddress 4334
+02F26F SetAbsoluteAddressToZero 4337
+02F272 CopyImmediateToAccumulator 02
+02F274 CopyAccumulatorToAbsoluteAddress 4340
+02F277 CopyImmediateToAccumulator 10
+02F279 CopyAccumulatorToAbsoluteAddress 4341
+02F27C CopyImmediateToXIndex 4BF7
+02F27F CopyXIndexToAbsoluteAddress 4342
+02F282 CopyImmediateToAccumulator 7E
+02F284 CopyAccumulatorToAbsoluteAddress 4344
+02F287 SetAbsoluteAddressToZero 4347
+02F28A CopyImmediateToAccumulator 1E
+02F28C CopyAccumulatorToAbsoluteAddress 120E
+02F28F CopyImmediateToXIndex 4619
+02F292 CopyXIndexToAbsoluteAddress 18B4
+02F295 CopyImmediateToXIndex 4908
+02F298 CopyXIndexToAbsoluteAddress 18B6
+02F29B CopyImmediateToXIndex 4169
+02F29E CopyXIndexToAbsoluteAddress 18A5
+02F2A1 CopyImmediateToXIndex 43AD
+02F2A4 CopyXIndexToAbsoluteAddress 18A7
+02F2A7 SetAbsoluteAddressToZero 18A9
+02F2AA CallAbsoluteLongAddress 02F42F [02F42F]
+02F2AE SetImmediateFlags 20
+02F2B0 CopyImmediateToXIndex 00CF
+02F2B3 CopyXIndexToAbsoluteAddress 4209
+02F2B6 CopyImmediateToXIndex 0000
+02F2B9 CopyXIndexToAbsoluteAddress 4207
+02F2BC CopyImmediateToAccumulator 80
+02F2BE CallAbsoluteLongAddress 02F8DF [02F8DF]
+02F2C2 CopyAccumulatorToAbsoluteAddress 2100
+02F2C5 SetAbsoluteAddressToZero 18B3
+02F2C8 CopyImmediateToAccumulator 02
+02F2CA CopyAccumulatorToAbsoluteAddress 420C
+02F2CD CopyImmediateToAccumulator BE
+02F2CF CopyAccumulatorToAbsoluteAddress 16DB
+02F2D2 CallAbsoluteLongAddress 03BD8D
+02F2D6 SetImmediateFlags 20
+02F2D8 ClearImmediateFlags 10
+02F2DA CopyImmediateToAccumulator 64
+02F2DC CopyAccumulatorToAbsoluteAddress 16DB
+02F2DF CallAbsoluteLongAddress 03BD8D
+02F2E3 SetImmediateFlags 20
+02F2E5 ClearImmediateFlags 10
+02F2E7 CopyAbsoluteAddressToAccumulator 4210
+02F2EA CopyImmediateToAccumulator 31
+02F2EC CopyAccumulatorToAbsoluteAddress 4200
+02F2EF CopyImmediateToAccumulator FF
+02F2F1 CopyAccumulatorToAbsoluteAddress 15AB
+02F2F4 CopyAbsoluteLongAddressToAccumulator 004211
+02F2F8 ClearInterruptDisableFlag
+02F2F9 ReturnToLongCaller

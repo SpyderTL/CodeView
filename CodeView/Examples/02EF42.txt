@@ -1,0 +1,7 @@
+02EF42 SetImmediateFlags 20
+02EF44 CopyDirectAddressToAccumulator 1C
+02EF46 TestSubtractImmediateFromAccumulator 02
+02EF48 BranchToRelativeIfZero 02EF4D
+02EF4A JumpToRelativeLong 02EF53 [02EF53]
+02EF4D CallAbsoluteLongAddress 02D956 [02D956]
+02EF51 JumpToRelative 02EF42 [02EF42]

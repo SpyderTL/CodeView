@@ -1,0 +1,11 @@
+03C87B PushFlags
+03C87C SetImmediateFlags 20
+03C87E ClearImmediateFlags 10
+03C880 CopyAbsoluteAddressToAccumulator 1FE5
+03C883 BranchToRelativeIfNotZero 03C880
+03C885 CopyImmediateToAccumulator 04
+03C887 CopyAccumulatorToAbsoluteAddress 1FE5
+03C88A CopyAbsoluteAddressToAccumulator 1FE5
+03C88D BranchToRelativeIfNotZero 03C88A
+03C88F PullFlags
+03C890 ReturnToCaller

@@ -1,0 +1,24 @@
+02F464 PushFlags
+02F465 ClearImmediateFlags 30
+02F467 AndAccumulatorWithImmediate 00FF
+02F46A ExchangeAccumulators
+02F46B ShiftAccumulatorRight
+02F46C ShiftAccumulatorRight
+02F46D ShiftAccumulatorRight
+02F46E CopyAccumulatorToXIndex
+02F46F SetImmediateFlags 20
+02F471 CopyImmediateToAccumulator 70
+02F473 CopyAccumulatorToAbsoluteAddress 2121
+02F476 CopyImmediateToYIndex 0000
+02F479 CopyAbsoluteLongAddressPlusXIndexToAccumulator 038AAA
+02F47D CopyAccumulatorToAbsoluteAddress 2122
+02F480 CopyAbsoluteLongAddressPlusXIndexToAccumulator 038AAB
+02F484 CopyAccumulatorToAbsoluteAddress 2122
+02F487 IncrementXIndex
+02F488 IncrementXIndex
+02F489 IncrementYIndex
+02F48A IncrementYIndex
+02F48B TestSubtractImmediateFromYIndex 0020
+02F48E BranchToRelativeIfNotZero 02F479
+02F490 PullFlags
+02F491 ReturnToLongCaller

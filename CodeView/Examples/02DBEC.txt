@@ -1,0 +1,16 @@
+02DBEC CopyImmediateToAccumulator 80
+02DBEE CopyAccumulatorToAbsoluteAddress 2115
+02DBF1 CopyImmediateToAccumulator 18
+02DBF3 CopyAccumulatorToAbsoluteAddress 4301
+02DBF6 CopyImmediateToXIndex 18CD
+02DBF9 CopyXIndexToAbsoluteAddress 4302
+02DBFC SetAbsoluteAddressToZero 4304
+02DBFF CopyImmediateToXIndex 2FA0
+02DC02 CopyXIndexToAbsoluteAddress 2116
+02DC05 CopyImmediateToXIndex 0040
+02DC08 CopyXIndexToAbsoluteAddress 4305
+02DC0B CopyImmediateToAccumulator 01
+02DC0D CopyAccumulatorToAbsoluteAddress 4300
+02DC10 CopyImmediateToAccumulator 01
+02DC12 CopyAccumulatorToAbsoluteAddress 420B
+02DC15 ReturnToCaller

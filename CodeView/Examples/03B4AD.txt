@@ -1,0 +1,54 @@
+03B4AD SetImmediateFlags 20
+03B4AF CopyImmediateToAccumulator 10
+03B4B1 JumpToRelative 03B4B7 [03B4B7]
+03B4B3 SetImmediateFlags 20
+03B4B5 CopyImmediateToAccumulator 00
+03B4B7 OrAccumulatorWithAbsoluteAddress 1F3D
+03B4BA CopyAccumulatorToAbsoluteAddress 2142
+03B4BD ReturnToCaller
+03B4BE SetImmediateFlags 20
+03B4C0 SetAbsoluteAddressToZero 2142
+03B4C3 CopyXIndexToAbsoluteAddress 1F66
+03B4C6 ReturnToCaller
+03B4CD ClearImmediateFlags 20
+03B4CF CopyAbsoluteLongAddressPlusXIndexToAccumulator 7E1CE9
+03B4D3 AndAccumulatorWithImmediate 00FF
+03B4D6 CopyAccumulatorToAbsoluteAddress 1F3D
+03B4D9 CopyXIndexToAbsoluteAddress 1F66
+03B4DC CopyAbsoluteAddressToYIndex 1238
+03B4DF CopyDirectAddressPlusXIndexToAccumulator 10
+03B4E1 SetCarryFlag
+03B4E2 SubtractAbsoluteAddressPlusYIndexFromAccumulator 0010
+03B4E5 BranchToRelativeIfNegative 03B4BE
+03B4E7 CopyAccumulatorToAbsoluteAddress 1F3F
+03B4EA CopyAbsoluteAddressToAccumulator 14F6
+03B4ED SetCarryFlag
+03B4EE SubtractDirectAddressPlusXIndexFromAccumulator 0C
+03B4F0 BranchToRelativeIfNegative 03B4FF
+03B4F2 TestSubtractImmediateFromAccumulator 0050
+03B4F5 BranchToRelativeIfLessThan 03B50C
+03B4F7 CopyAbsoluteAddressToAccumulator 1F3D
+03B4FA OrAccumulatorWithImmediate 0040
+03B4FD JumpToRelative 03B512
+03B4FF TestSubtractImmediateFromAccumulator FFB0
+03B502 BranchToRelativeIfGreaterOrEqual 03B50C
+03B504 CopyAbsoluteAddressToAccumulator 1F3D
+03B507 OrAccumulatorWithImmediate 00C0
+03B50A JumpToRelative 03B512
+03B50C CopyAbsoluteAddressToAccumulator 1F3D
+03B50F OrAccumulatorWithImmediate 0080
+03B512 CopyAccumulatorToAbsoluteAddress 1F3D
+03B515 CopyAbsoluteAddressToAccumulator 1F3F
+03B518 TestSubtractImmediateFromAccumulator 01F4
+03B51B BranchToRelativeIfLessThan 03B4BE
+03B51D TestSubtractImmediateFromAccumulator 1388
+03B520 BranchToRelativeIfLessThan 03B4B3
+03B522 TestSubtractImmediateFromAccumulator 2710
+03B525 BranchToRelativeIfLessThan 03B4AD
+03B527 TestSubtractImmediateFromAccumulator 2710
+03B52A BranchToRelativeIfGreaterOrEqual 03B52F
+03B52C JumpToRelativeLong 03B4A7
+03B52F TestSubtractImmediateFromAccumulator 2AF8
+03B532 BranchToRelativeIfGreaterOrEqual 03B537
+03B534 JumpToRelativeLong 03B4A1
+03B537 JumpToRelative 03B4BE

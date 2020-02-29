@@ -1,0 +1,3 @@
+03C891 PushFlags
+03C892 ClearImmediateFlags 20
+03C894 JumpToRelative 03C8A5 [03C8A5]

@@ -1,0 +1,32 @@
+03CB76 PushFlags
+03CB77 ClearImmediateFlags 30
+03CB79 CopyAbsoluteAddressToAccumulator 15C2
+03CB7C TestSubtractImmediateFromAccumulator 000E
+03CB7F BranchToRelativeIfGreaterOrEqual 03CBA8
+03CB81 CallAbsoluteAddress 03CB75
+03CB84 CopyAbsoluteAddressToAccumulator 15C2
+03CB87 IncrementAccumulator
+03CB88 CopyAccumulatorToAbsoluteAddress 15C2
+03CB8B TestSubtractImmediateFromAccumulator 000E
+03CB8E BranchToRelativeIfLessThan 03CBA2
+03CB90 CopyDirectAddressToXIndex 30
+03CB92 CopyDirectAddressToAccumulator 0C
+03CB94 CopyAccumulatorToDirectAddressPlusXIndex 00
+03CB96 CopyDirectAddressToAccumulator 0A
+03CB98 CopyAccumulatorToDirectAddressPlusXIndex 02
+03CB9A IncrementXIndex
+03CB9B IncrementXIndex
+03CB9C IncrementXIndex
+03CB9D IncrementXIndex
+03CB9E CopyXIndexToDirectAddress 30
+03CBA0 JumpToRelative 03CBA2
+03CBA2 PullFlags
+03CBA3 ClearCarryFlag
+03CBA4 ReturnToCaller
+03CBA5 PullFlags
+03CBA6 SetCarryFlag
+03CBA7 ReturnToCaller
+03CBA8 CallAbsoluteAddress 03CBC1 [03CBC1]
+03CBAB BranchToRelativeIfGreaterOrEqual 03CBA5
+03CBAD SetAbsoluteAddressToZero 15C2
+03CBB0 JumpToRelative 03CB81

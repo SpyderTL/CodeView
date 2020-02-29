@@ -1,0 +1,54 @@
+03B8B8 PushFlags
+03B8B9 ClearImmediateFlags 20
+03B8BB SetAbsoluteAddressToZero 1633
+03B8BE SetAbsoluteAddressToZero 1635
+03B8C1 SetAbsoluteAddressToZero 1637
+03B8C4 CopyAbsoluteAddressToAccumulator 1633
+03B8C7 CopyAccumulatorToAbsoluteAddress 162D
+03B8CA CopyAbsoluteAddressToAccumulator 1635
+03B8CD CopyAccumulatorToAbsoluteAddress 162F
+03B8D0 CopyAbsoluteAddressToAccumulator 1637
+03B8D3 CopyAccumulatorToAbsoluteAddress 1631
+03B8D6 SetImmediateFlags 20
+03B8D8 CallAbsoluteLongAddress 03B98A [03B98A]
+03B8DC ClearImmediateFlags 20
+03B8DE CopyAbsoluteAddressToAccumulator 15D7
+03B8E1 CopyAccumulatorToAbsoluteAddress 161B
+03B8E4 CopyAbsoluteAddressToAccumulator 15D9
+03B8E7 CopyAccumulatorToAbsoluteAddress 161D
+03B8EA CopyAbsoluteAddressToAccumulator 15DB
+03B8ED CopyAccumulatorToAbsoluteAddress 161F
+03B8F0 CopyAbsoluteAddressToAccumulator 15DD
+03B8F3 CopyAccumulatorToAbsoluteAddress 1621
+03B8F6 CopyAbsoluteAddressToAccumulator 15DF
+03B8F9 CopyAccumulatorToAbsoluteAddress 1623
+03B8FC CopyAbsoluteAddressToAccumulator 15E1
+03B8FF CopyAccumulatorToAbsoluteAddress 1625
+03B902 CopyAbsoluteAddressToAccumulator 15E3
+03B905 CopyAccumulatorToAbsoluteAddress 1627
+03B908 CopyAbsoluteAddressToAccumulator 15E5
+03B90B CopyAccumulatorToAbsoluteAddress 1629
+03B90E CopyAbsoluteAddressToAccumulator 15E7
+03B911 CopyAccumulatorToAbsoluteAddress 162B
+03B914 SetImmediateFlags 20
+03B916 CopyImmediateToAccumulator 7F
+03B918 CopyAccumulatorToAbsoluteAddress 160A
+03B91B SetAbsoluteAddressToZero 160C
+03B91E SetAbsoluteAddressToZero 160E
+03B921 SetAbsoluteAddressToZero 1610
+03B924 CopyAccumulatorToAbsoluteAddress 1612
+03B927 SetAbsoluteAddressToZero 1614
+03B92A SetAbsoluteAddressToZero 1616
+03B92D SetAbsoluteAddressToZero 1618
+03B930 CopyAccumulatorToAbsoluteAddress 161A
+03B933 SetAbsoluteAddressToZero 1609
+03B936 SetAbsoluteAddressToZero 160B
+03B939 SetAbsoluteAddressToZero 160D
+03B93C SetAbsoluteAddressToZero 160F
+03B93F SetAbsoluteAddressToZero 1611
+03B942 SetAbsoluteAddressToZero 1613
+03B945 SetAbsoluteAddressToZero 1615
+03B948 SetAbsoluteAddressToZero 1617
+03B94B SetAbsoluteAddressToZero 1619
+03B94E PullFlags
+03B94F ReturnToLongCaller

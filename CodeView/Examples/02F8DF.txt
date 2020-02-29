@@ -1,0 +1,7 @@
+02F8DF PushFlags
+02F8E0 SetImmediateFlags 20
+02F8E2 CopyAccumulatorToAbsoluteLongAddress 7E45F4
+02F8E6 CopyAccumulatorToAbsoluteLongAddress 7E45F6
+02F8EA CopyAccumulatorToAbsoluteLongAddress 7E45F8
+02F8EE PullFlags
+02F8EF ReturnToLongCaller

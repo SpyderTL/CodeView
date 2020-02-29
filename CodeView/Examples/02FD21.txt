@@ -1,0 +1,28 @@
+02FD21 PushFlags
+02FD22 SetImmediateFlags 20
+02FD24 ClearImmediateFlags 10
+02FD26 PushXIndex
+02FD27 SetImmediateFlags 20
+02FD29 ClearImmediateFlags 10
+02FD2B CopyAbsoluteAddressToAccumulator 14C1
+02FD2E OrAccumulatorWithImmediate 04
+02FD30 CopyAccumulatorToAbsoluteAddress 14C1
+02FD33 CopyImmediateToXIndex 1491
+02FD36 SetImmediateFlags 20
+02FD38 ClearImmediateFlags 10
+02FD3A SetDirectAddressPlusXIndexToZero 04
+02FD3C CopyImmediateToAccumulator 02
+02FD3E CopyAccumulatorToDirectAddressPlusXIndex 05
+02FD40 CopyImmediateToAccumulator 07
+02FD42 CopyAccumulatorToDirectAddressPlusXIndex 06
+02FD44 CopyImmediateToAccumulator E0
+02FD46 OrAccumulatorWithDirectAddressPlusXIndex 07
+02FD48 CopyAccumulatorToDirectAddressPlusXIndex 00
+02FD4A CopyDirectAddressPlusXIndexToAccumulator 07
+02FD4C TestSubtractImmediateFromAccumulator 1F
+02FD4E BranchToRelativeIfZero 02FD53
+02FD50 IncrementAccumulator
+02FD51 CopyAccumulatorToDirectAddressPlusXIndex 07
+02FD53 PullXIndex
+02FD54 PullFlags
+02FD55 ReturnToCaller

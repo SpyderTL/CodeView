@@ -1,0 +1,7 @@
+03E213 CopyAbsoluteAddressToAccumulator 1FC7
+03E216 TestAndAccumulatorWithImmediate 0002
+03E219 BranchToRelativeIfNotZero 03E21C
+03E21B ReturnToCaller
+03E21C IncrementAbsoluteAddress 14C5
+03E21F CopyImmediateToAccumulator 0040
+03E222 JumpToAbsoluteAddress 03E249 [03E249]

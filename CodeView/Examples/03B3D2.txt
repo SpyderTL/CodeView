@@ -1,0 +1,100 @@
+03B3D2 ClearImmediateFlags 30
+03B3D4 CopyAbsoluteAddressToXIndex 121D
+03B3D7 CopyImmediateToAccumulator 7FFF
+03B3DA SetAbsoluteAddressToZero 1F3D
+03B3DD CopyDirectAddressPlusXIndexToYIndex 04
+03B3DF TestSubtractImmediateFromYIndex C7C0
+03B3E2 BranchToRelativeIfNotZero 03B3E7
+03B3E4 JumpToRelativeLong 03B4CD
+03B3E7 TestSubtractImmediateFromYIndex D9B0
+03B3EA BranchToRelativeIfNotZero 03B3EF
+03B3EC JumpToRelativeLong 03B4CD
+03B3EF TestSubtractImmediateFromYIndex D994
+03B3F2 BranchToRelativeIfNotZero 03B3F7
+03B3F4 JumpToRelativeLong 03B4CD
+03B3F7 TestSubtractImmediateFromYIndex D95C
+03B3FA BranchToRelativeIfNotZero 03B3FF
+03B3FC JumpToRelativeLong 03B4CD
+03B3FF TestSubtractImmediateFromYIndex C050
+03B402 BranchToRelativeIfNotZero 03B407
+03B404 JumpToRelativeLong 03B4CD
+03B407 PushAccumulator
+03B408 SetImmediateFlags 20
+03B40A CopyDirectAddressPlusXIndexToAccumulator 08
+03B40C TestAndAccumulatorWithImmediate 01
+03B40E BranchToRelativeIfNotZero 03B441
+03B410 CopyAbsoluteLongAddressPlusXIndexToAccumulator 7E1CE8
+03B414 BranchToRelativeIfNotZero 03B41C
+03B416 CopyAbsoluteLongAddressPlusXIndexToAccumulator 7E1CE9
+03B41A BranchToRelativeIfZero 03B441
+03B41C CopyAbsoluteAddressToYIndex 1238
+03B41F ClearImmediateFlags 20
+03B421 CopyDirectAddressPlusXIndexToAccumulator 10
+03B423 SetCarryFlag
+03B424 SubtractAbsoluteAddressPlusYIndexFromAccumulator 0010
+03B427 BranchToRelativeIfPositive 03B42D
+03B429 ExclusiveOrAccumulatorWithImmediate FFFF
+03B42C IncrementAccumulator
+03B42D CopyAccumulatorToAbsoluteAddress 1250
+03B430 PullAccumulator
+03B431 TestSubtractAbsoluteAddressFromAccumulator 1250
+03B434 BranchToRelativeIfLessThan 03B444
+03B436 CopyAbsoluteAddressToAccumulator 1250
+03B439 CopyXIndexToAbsoluteAddress 1F3D
+03B43C CopyAccumulatorToAbsoluteAddress 1F3F
+03B43F JumpToRelative 03B444
+03B441 ClearImmediateFlags 20
+03B443 PullAccumulator
+03B444 CopyDirectAddressPlusXIndexToYIndex 00
+03B446 CopyYIndexToXIndex
+03B447 BranchToRelativeIfNotZero 03B3DD
+03B449 CopyAbsoluteAddressToXIndex 1F3D
+03B44C BranchToRelativeIfNotZero 03B451
+03B44E JumpToRelativeLong 03B4BE
+03B451 TestSubtractAbsoluteAddressFromXIndex 1F66
+03B454 BranchToRelativeIfZero 03B459
+03B456 JumpToRelativeLong 03B4BE
+03B459 CopyAbsoluteLongAddressPlusXIndexToAccumulator 7E1CE8
+03B45D AndAccumulatorWithImmediate 00FF
+03B460 BranchToRelativeIfZero 03B465
+03B462 JumpToRelativeLong 03B4C7
+03B465 CopyAbsoluteLongAddressPlusXIndexToAccumulator 7E1CE9
+03B469 AndAccumulatorWithImmediate 00FF
+03B46C CopyAccumulatorToAbsoluteAddress 1F3D
+03B46F CopyAbsoluteAddressToYIndex 1236
+03B472 CallAbsoluteLongAddress 1FD021 [1FD021]
+03B476 ExchangeAccumulators
+03B477 ClearImmediateFlags 20
+03B479 AndAccumulatorWithImmediate 00FF
+03B47C CopyAccumulatorToXIndex
+03B47D CopyAbsoluteLongAddressPlusXIndexToAccumulator 03B539
+03B481 AndAccumulatorWithImmediate 00FF
+03B484 OrAccumulatorWithAbsoluteAddress 1F3D
+03B487 CopyAccumulatorToAbsoluteAddress 1F3D
+03B48A CopyAbsoluteAddressToAccumulator 1F3F
+03B48D TestSubtractImmediateFromAccumulator 00FA
+03B490 BranchToRelativeIfLessThan 03B4B3
+03B492 TestSubtractImmediateFromAccumulator 028A
+03B495 BranchToRelativeIfLessThan 03B4AD
+03B497 TestSubtractImmediateFromAccumulator 047E
+03B49A BranchToRelativeIfLessThan 03B4A7
+03B49C TestSubtractImmediateFromAccumulator 0C4E
+03B49F BranchToRelativeIfGreaterOrEqual 03B4BE
+03B4A1 SetImmediateFlags 20
+03B4A3 CopyImmediateToAccumulator 30
+03B4A5 JumpToRelative 03B4B7
+03B4A7 SetImmediateFlags 20
+03B4A9 CopyImmediateToAccumulator 20
+03B4AB JumpToRelative 03B4B7
+03B4AD SetImmediateFlags 20
+03B4AF CopyImmediateToAccumulator 10
+03B4B1 JumpToRelative 03B4B7
+03B4B3 SetImmediateFlags 20
+03B4B5 CopyImmediateToAccumulator 00
+03B4B7 OrAccumulatorWithAbsoluteAddress 1F3D
+03B4BA CopyAccumulatorToAbsoluteAddress 2142
+03B4BD ReturnToCaller
+03B4BE SetImmediateFlags 20
+03B4C0 SetAbsoluteAddressToZero 2142
+03B4C3 CopyXIndexToAbsoluteAddress 1F66
+03B4C6 ReturnToCaller

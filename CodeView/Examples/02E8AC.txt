@@ -1,0 +1,20 @@
+02E8AC SetAbsoluteAddressToZero 14C5
+02E8AF CopyImmediateToAccumulator 0000
+02E8B2 CopyAccumulatorToAbsoluteLongAddress 7EA058
+02E8B6 CopyImmediateToXIndex 0000
+02E8B9 TestSubtractAbsoluteAddressFromXIndex 1FBB
+02E8BC BranchToRelativeIfZero 02E8E0
+02E8BE CopyAbsoluteLongAddressPlusXIndexToAccumulator 001FBD
+02E8C2 AndAccumulatorWithImmediate 00FF
+02E8C5 TestSubtractImmediateFromAccumulator 0065
+02E8C8 BranchToRelativeIfNotZero 02E8D6
+02E8CA CopyAbsoluteLongAddressToAccumulator 7EA058
+02E8CE IncrementAccumulator
+02E8CF CopyAccumulatorToAbsoluteLongAddress 7EA058
+02E8D3 CopyImmediateToAccumulator 0000
+02E8D6 ClearCarryFlag
+02E8D7 AddAbsoluteAddressToAccumulator 14C5
+02E8DA CopyAccumulatorToAbsoluteAddress 14C5
+02E8DD IncrementXIndex
+02E8DE JumpToRelative 02E8B9 [02E8B9]
+02E8E0 ReturnToCaller

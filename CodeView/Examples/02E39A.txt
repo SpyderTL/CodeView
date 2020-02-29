@@ -1,0 +1,16 @@
+02E39A PushFlags
+02E39B ClearImmediateFlags 20
+02E39D CopyImmediateToAccumulator 1234
+02E3A0 CopyAccumulatorToAbsoluteLongAddress 7001FE
+02E3A4 CopyImmediateToAccumulator 0001
+02E3A7 CopyAccumulatorToAbsoluteLongAddress 7001B2
+02E3AB CallAbsoluteLongAddress 02F125 [02F125]
+02E3AF SetImmediateFlags 20
+02E3B1 CopyImmediateToAccumulator 80
+02E3B3 CopyAccumulatorToDirectAddress 9C
+02E3B5 CopyImmediateToAccumulator FF
+02E3B7 CopyAccumulatorToAbsoluteAddress 15BF
+02E3BA SetDirectAddressToZero 00
+02E3BC SetImmediateFlags 30
+02E3BE CallAbsoluteAddress 02F3FE [02F3FE]
+02E3C1 JumpToAbsoluteLongAddress 03B82D

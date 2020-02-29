@@ -1,0 +1,20 @@
+02DD4F SetImmediateFlags 20
+02DD51 SetAbsoluteAddressToZero 1FD0
+02DD54 ClearImmediateFlags 30
+02DD56 CopyAbsoluteAddressToXIndex 16AB
+02DD59 BranchToRelativeIfNotZero 02DD6F
+02DD5B SetImmediateFlags 20
+02DD5D SetImmediateFlags 20
+02DD5F CopyAbsoluteAddressToAccumulator 14C1
+02DD62 AndAccumulatorWithImmediate 7F
+02DD64 CopyAccumulatorToAbsoluteAddress 14C1
+02DD67 SetImmediateFlags 20
+02DD69 ClearImmediateFlags 10
+02DD6B SetAbsoluteAddressToZero 1FD1
+02DD6E ReturnToCaller
+02DD6F ClearImmediateFlags 20
+02DD71 CopyAbsoluteLongAddressPlusXIndexToAccumulator 02E0C2
+02DD75 AndAccumulatorWithImmediate 00FF
+02DD78 CopyXIndexToYIndex
+02DD79 CopyAccumulatorToXIndex
+02DD7A JumpToAbsoluteAddressPlusXIndexPointer DD7D

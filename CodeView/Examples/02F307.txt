@@ -1,0 +1,94 @@
+02F307 SetImmediateFlags 20
+02F309 PushDataBank
+02F30A CopyImmediateToAccumulator 00
+02F30C PushAccumulator
+02F30D PullDataBank
+02F30E CopyImmediateToAccumulator 80
+02F310 CopyAccumulatorToAbsoluteAddress 2115
+02F313 ClearImmediateFlags 30
+02F315 CopyImmediateToAccumulator 2C40
+02F318 CopyAccumulatorToAbsoluteAddress 2116
+02F31B CopyImmediateToAccumulator 1C00
+02F31E CopyImmediateToYIndex 0000
+02F321 PushAccumulator
+02F322 CopyImmediateToAccumulator 3AA0
+02F325 CopyAccumulatorToAbsoluteAddress 2118
+02F328 CopyAccumulatorToAbsoluteAddress 2118
+02F32B PullAccumulator
+02F32C CopyImmediateToXIndex 0000
+02F32F CopyAccumulatorToAbsoluteAddress 2118
+02F332 ClearCarryFlag
+02F333 AddImmediateToAccumulator 0018
+02F336 IncrementXIndex
+02F337 TestSubtractImmediateFromXIndex 001C
+02F33A BranchToRelativeIfNotZero 02F32F
+02F33C PushAccumulator
+02F33D CopyImmediateToAccumulator 3AA0
+02F340 CopyAccumulatorToAbsoluteAddress 2118
+02F343 CopyAccumulatorToAbsoluteAddress 2118
+02F346 PullAccumulator
+02F347 SetCarryFlag
+02F348 SubtractImmediateFromAccumulator 029F
+02F34B IncrementYIndex
+02F34C TestSubtractImmediateFromYIndex 0018
+02F34F BranchToRelativeIfNotZero 02F321
+02F351 CopyAbsoluteLongAddressToAccumulator 70021C
+02F355 AndAccumulatorWithImmediate 00FF
+02F358 BranchToRelativeIfZero 02F3D2
+02F35A CopyImmediateToAccumulator 2F03
+02F35D CopyAccumulatorToAbsoluteAddress 2116
+02F360 CopyImmediateToAccumulator 282E
+02F363 CopyAccumulatorToAbsoluteAddress 2118
+02F366 CopyImmediateToAccumulator 2F04
+02F369 CopyAccumulatorToAbsoluteAddress 2116
+02F36C CopyImmediateToAccumulator 2846
+02F36F CopyAccumulatorToAbsoluteAddress 2118
+02F372 CopyImmediateToAccumulator 2F05
+02F375 CopyAccumulatorToAbsoluteAddress 2116
+02F378 CopyImmediateToAccumulator 285E
+02F37B CopyAccumulatorToAbsoluteAddress 2118
+02F37E CopyImmediateToAccumulator 2F06
+02F381 CopyAccumulatorToAbsoluteAddress 2116
+02F384 CopyImmediateToAccumulator 2876
+02F387 CopyAccumulatorToAbsoluteAddress 2118
+02F38A CopyImmediateToAccumulator 2F07
+02F38D CopyAccumulatorToAbsoluteAddress 2116
+02F390 CopyImmediateToAccumulator 288E
+02F393 CopyAccumulatorToAbsoluteAddress 2118
+02F396 CopyImmediateToAccumulator 2F18
+02F399 CopyAccumulatorToAbsoluteAddress 2116
+02F39C CopyImmediateToAccumulator 2A26
+02F39F CopyAccumulatorToAbsoluteAddress 2118
+02F3A2 CopyImmediateToAccumulator 2F19
+02F3A5 CopyAccumulatorToAbsoluteAddress 2116
+02F3A8 CopyImmediateToAccumulator 2A3E
+02F3AB CopyAccumulatorToAbsoluteAddress 2118
+02F3AE CopyImmediateToAccumulator 2F1A
+02F3B1 CopyAccumulatorToAbsoluteAddress 2116
+02F3B4 CopyImmediateToAccumulator 2A56
+02F3B7 CopyAccumulatorToAbsoluteAddress 2118
+02F3BA CopyImmediateToAccumulator 2F1B
+02F3BD CopyAccumulatorToAbsoluteAddress 2116
+02F3C0 CopyImmediateToAccumulator 2A6E
+02F3C3 CopyAccumulatorToAbsoluteAddress 2118
+02F3C6 CopyImmediateToAccumulator 2F1C
+02F3C9 CopyAccumulatorToAbsoluteAddress 2116
+02F3CC CopyImmediateToAccumulator 2A86
+02F3CF CopyAccumulatorToAbsoluteAddress 2118
+02F3D2 CopyImmediateToXIndex 2A00
+02F3D5 CopyXIndexToAbsoluteAddress 2116
+02F3D8 CopyImmediateToXIndex FFFF
+02F3DB CopyImmediateToYIndex 0010
+02F3DE CopyXIndexToAbsoluteAddress 2118
+02F3E1 DecrementYIndex
+02F3E2 BranchToRelativeIfNotZero 02F3DE
+02F3E4 CopyImmediateToXIndex 5A00
+02F3E7 CopyXIndexToAbsoluteAddress 2116
+02F3EA CopyImmediateToXIndex FFFF
+02F3ED CopyImmediateToYIndex 0010
+02F3F0 CopyXIndexToAbsoluteAddress 2118
+02F3F3 DecrementYIndex
+02F3F4 BranchToRelativeIfNotZero 02F3F0
+02F3F6 PullDataBank
+02F3F7 SetImmediateFlags 20
+02F3F9 ReturnToLongCaller

@@ -1,0 +1,6 @@
+02EF57 CopyAbsoluteAddressToXIndex 1FBB
+02EF5A CopyDirectAddressToAccumulator 18
+02EF5C CopyAccumulatorToAbsoluteLongAddressPlusXIndex 001FBD
+02EF60 IncrementXIndex
+02EF61 CopyXIndexToAbsoluteAddress 1FBB
+02EF64 ReturnToCaller

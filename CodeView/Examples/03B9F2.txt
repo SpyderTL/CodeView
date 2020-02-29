@@ -1,0 +1,41 @@
+03B9F2 CopyDirectAddressToAccumulator 02
+03B9F4 CopyAccumulatorToDirectAddress 84
+03B9F6 CopyDirectAddressToAccumulator 03
+03B9F8 CopyAccumulatorToDirectAddress 85
+03B9FA CopyDirectAddressToAccumulator 90
+03B9FC CopyAccumulatorToDirectAddress 86
+03B9FE CopyDirectAddressToAccumulator 91
+03BA00 CopyAccumulatorToDirectAddress 87
+03BA02 CallAbsoluteLongAddress 03BA45 [03BA45]
+03BA06 CopyDirectAddressToAccumulator 88
+03BA08 CopyAccumulatorToDirectAddress 72
+03BA0A CopyDirectAddressToAccumulator 89
+03BA0C CopyAccumulatorToDirectAddress 73
+03BA0E CopyDirectAddressToAccumulator 08
+03BA10 CopyAccumulatorToDirectAddress 84
+03BA12 CopyDirectAddressToAccumulator 09
+03BA14 CopyAccumulatorToDirectAddress 85
+03BA16 CopyDirectAddressToAccumulator 90
+03BA18 CopyAccumulatorToDirectAddress 86
+03BA1A CopyDirectAddressToAccumulator 91
+03BA1C CopyAccumulatorToDirectAddress 87
+03BA1E CallAbsoluteLongAddress 03BA45 [03BA45]
+03BA22 CopyDirectAddressToAccumulator 88
+03BA24 CopyAccumulatorToDirectAddress 74
+03BA26 CopyDirectAddressToAccumulator 89
+03BA28 CopyAccumulatorToDirectAddress 75
+03BA2A ClearCarryFlag
+03BA2B CopyDirectAddressToAccumulator CC
+03BA2D AddDirectAddressToAccumulator 74
+03BA2F CopyAccumulatorToDirectAddress 74
+03BA31 CopyDirectAddressToAccumulator CD
+03BA33 AddDirectAddressToAccumulator 75
+03BA35 CopyAccumulatorToDirectAddress 75
+03BA37 SetCarryFlag
+03BA38 CopyDirectAddressToAccumulator 74
+03BA3A SubtractDirectAddressFromAccumulator CA
+03BA3C CopyAccumulatorToDirectAddress 74
+03BA3E CopyDirectAddressToAccumulator 75
+03BA40 SubtractDirectAddressFromAccumulator CB
+03BA42 CopyAccumulatorToDirectAddress 75
+03BA44 ReturnToLongCaller

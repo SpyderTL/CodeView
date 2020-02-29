@@ -1,0 +1,19 @@
+03BD8D PushFlags
+03BD8E ClearImmediateFlags 30
+03BD90 PushXIndex
+03BD91 PushAccumulator
+03BD92 SetImmediateFlags 20
+03BD94 SetAbsoluteAddressToZero 16DC
+03BD97 SetImmediateFlags 20
+03BD99 CopyAbsoluteAddressToAccumulator 2137
+03BD9C CopyAbsoluteAddressToAccumulator 213D
+03BD9F ExchangeAccumulators
+03BDA0 CopyAbsoluteAddressToAccumulator 213D
+03BDA3 ExchangeAccumulators
+03BDA4 TestSubtractAbsoluteAddressFromAccumulator 16DB
+03BDA7 BranchToRelativeIfNotZero 03BD97
+03BDA9 ClearImmediateFlags 30
+03BDAB PullAccumulator
+03BDAC PullXIndex
+03BDAD PullFlags
+03BDAE ReturnToLongCaller

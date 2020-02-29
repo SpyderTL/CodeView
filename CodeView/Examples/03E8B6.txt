@@ -1,0 +1,33 @@
+03E8B6 PushFlags
+03E8B7 SetImmediateFlags 20
+03E8B9 CopyImmediateToAccumulator 80
+03E8BB CopyAccumulatorToAbsoluteAddress 2115
+03E8BE ClearImmediateFlags 30
+03E8C0 CopyImmediateToAccumulator 2C40
+03E8C3 CopyAccumulatorToAbsoluteAddress 2116
+03E8C6 CopyImmediateToAccumulator 1C00
+03E8C9 CopyImmediateToYIndex 0000
+03E8CC PushAccumulator
+03E8CD CopyImmediateToAccumulator 1AA0
+03E8D0 CopyAccumulatorToAbsoluteAddress 2118
+03E8D3 CopyAccumulatorToAbsoluteAddress 2118
+03E8D6 PullAccumulator
+03E8D7 CopyImmediateToXIndex 0000
+03E8DA CopyAccumulatorToAbsoluteAddress 2118
+03E8DD ClearCarryFlag
+03E8DE AddImmediateToAccumulator 0018
+03E8E1 IncrementXIndex
+03E8E2 TestSubtractImmediateFromXIndex 001C
+03E8E5 BranchToRelativeIfNotZero 03E8DA
+03E8E7 PushAccumulator
+03E8E8 CopyImmediateToAccumulator 1AA0
+03E8EB CopyAccumulatorToAbsoluteAddress 2118
+03E8EE CopyAccumulatorToAbsoluteAddress 2118
+03E8F1 PullAccumulator
+03E8F2 SetCarryFlag
+03E8F3 SubtractImmediateFromAccumulator 029F
+03E8F6 IncrementYIndex
+03E8F7 TestSubtractImmediateFromYIndex 0018
+03E8FA BranchToRelativeIfNotZero 03E8CC
+03E8FC PullFlags
+03E8FD ReturnToLongCaller

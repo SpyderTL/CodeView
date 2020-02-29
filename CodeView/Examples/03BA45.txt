@@ -1,0 +1,97 @@
+03BA45 CopyImmediateToXIndex 00
+03BA47 CopyDirectAddressToAccumulator 87
+03BA49 BranchToRelativeIfZero 03BA57
+03BA4B IncrementXIndex
+03BA4C ShiftAccumulatorRight
+03BA4D BranchToRelativeIfZero 03BA55
+03BA4F RotateDirectAddressRight 86
+03BA51 IncrementXIndex
+03BA52 ShiftAccumulatorRight
+03BA53 BranchToRelativeIfNotZero 03BA4F
+03BA55 RotateDirectAddressRight 86
+03BA57 CopyXIndexToDirectAddress 92
+03BA59 CopyImmediateToXIndex 00
+03BA5B CopyDirectAddressToAccumulator 85
+03BA5D CopyAccumulatorToDirectAddress 8B
+03BA5F BranchToRelativeIfPositive 03BA6E
+03BA61 CopyImmediateToAccumulator 00
+03BA63 SetCarryFlag
+03BA64 SubtractDirectAddressFromAccumulator 84
+03BA66 CopyAccumulatorToDirectAddress 84
+03BA68 CopyImmediateToAccumulator 00
+03BA6A SubtractDirectAddressFromAccumulator 85
+03BA6C CopyAccumulatorToDirectAddress 85
+03BA6E BranchToRelativeIfZero 03BA7F
+03BA70 IncrementXIndex
+03BA71 ShiftAccumulatorRight
+03BA72 BranchToRelativeIfZero 03BA7A
+03BA74 RotateDirectAddressRight 84
+03BA76 IncrementXIndex
+03BA77 ShiftAccumulatorRight
+03BA78 BranchToRelativeIfNotZero 03BA74
+03BA7A RotateDirectAddressRight 84
+03BA7C JumpToAbsoluteAddress 03BA96
+03BA7F CopyDirectAddressToAccumulator 84
+03BA81 BranchToRelativeIfNegative 03BA96
+03BA83 BranchToRelativeIfNotZero 03BA90
+03BA85 CopyDirectAddressToAccumulator CA
+03BA87 CopyAccumulatorToDirectAddress 88
+03BA89 CopyDirectAddressToAccumulator CB
+03BA8B CopyAccumulatorToDirectAddress 89
+03BA8D JumpToAbsoluteAddress 03BAF6
+03BA90 DecrementXIndex
+03BA91 ShiftAccumulatorLeft
+03BA92 BranchToRelativeIfPositive 03BA90
+03BA94 CopyAccumulatorToDirectAddress 84
+03BA96 CopyDirectAddressToAccumulator 86
+03BA98 TestSubtractDirectAddressFromAccumulator 84
+03BA9A BranchToRelativeIfLessThan 03BAA4
+03BA9C DecrementXIndex
+03BA9D ShiftAccumulatorRight
+03BA9E TestSubtractDirectAddressFromAccumulator 84
+03BAA0 BranchToRelativeIfGreaterOrEqual 03BA9C
+03BAA2 CopyAccumulatorToDirectAddress 86
+03BAA4 CopyXIndexToAccumulator
+03BAA5 SetCarryFlag
+03BAA6 SubtractDirectAddressFromAccumulator 92
+03BAA8 CopyAccumulatorToDirectAddress 8A
+03BAAA CopyDirectAddressToXIndex 84
+03BAAC CopyAbsoluteAddressPlusXIndexToAccumulator 83D5
+03BAAF CopyDirectAddressToXIndex 86
+03BAB1 SetCarryFlag
+03BAB2 SubtractAbsoluteAddressPlusXIndexFromAccumulator 83D5
+03BAB5 CopyAccumulatorToXIndex
+03BAB6 CopyAbsoluteAddressPlusXIndexToAccumulator 82D5
+03BAB9 CopyAccumulatorToDirectAddress 89
+03BABB CopyAbsoluteAddressPlusXIndexToAccumulator 81D5
+03BABE CopyDirectAddressToXIndex 8A
+03BAC0 BranchToRelativeIfNegative 03BACD
+03BAC2 BranchToRelativeIfZero 03BAD3
+03BAC4 ShiftAccumulatorLeft
+03BAC5 RotateDirectAddressLeft 89
+03BAC7 DecrementXIndex
+03BAC8 BranchToRelativeIfNotZero 03BAC4
+03BACA JumpToAbsoluteAddress 03BAD3
+03BACD ShiftDirectAddressRight 89
+03BACF RotateAccumulatorRight
+03BAD0 IncrementXIndex
+03BAD1 BranchToRelativeIfNotZero 03BACD
+03BAD3 CopyAccumulatorToDirectAddress 88
+03BAD5 TestAndAccumulatorWithDirectAddress 8B
+03BAD7 BranchToRelativeIfPositive 03BAE9
+03BAD9 SetCarryFlag
+03BADA CopyDirectAddressToAccumulator CA
+03BADC SubtractDirectAddressFromAccumulator 88
+03BADE CopyAccumulatorToDirectAddress 88
+03BAE0 CopyDirectAddressToAccumulator CB
+03BAE2 SubtractDirectAddressFromAccumulator 89
+03BAE4 CopyAccumulatorToDirectAddress 89
+03BAE6 JumpToAbsoluteAddress 03BAF6
+03BAE9 ClearCarryFlag
+03BAEA CopyDirectAddressToAccumulator 88
+03BAEC AddDirectAddressToAccumulator CA
+03BAEE CopyAccumulatorToDirectAddress 88
+03BAF0 CopyDirectAddressToAccumulator 89
+03BAF2 AddDirectAddressToAccumulator CB
+03BAF4 CopyAccumulatorToDirectAddress 89
+03BAF6 ReturnToLongCaller

@@ -1,0 +1,19 @@
+03BDAF PushFlags
+03BDB0 SetImmediateFlags 20
+03BDB2 CopyImmediateToAccumulator 03
+03BDB4 CopyAccumulatorToAbsoluteAddress 16EC
+03BDB7 SetAbsoluteAddressToZero 1898
+03BDBA ClearImmediateFlags 20
+03BDBC CopyImmediateToAccumulator 00FC
+03BDBF CopyAccumulatorToAbsoluteAddress 16CE
+03BDC2 CopyImmediateToAccumulator 0092
+03BDC5 CopyAccumulatorToAbsoluteAddress 16D0
+03BDC8 CopyImmediateToAccumulator 0018
+03BDCB CopyAccumulatorToAbsoluteAddress 16D2
+03BDCE CopyImmediateToAccumulator 019A
+03BDD1 CopyAccumulatorToAbsoluteAddress 16D4
+03BDD4 SetAbsoluteAddressToZero 16D6
+03BDD7 SetAbsoluteAddressToZero 16DD
+03BDDA SetAbsoluteAddressToZero 16DF
+03BDDD PullFlags
+03BDDE ReturnToLongCaller

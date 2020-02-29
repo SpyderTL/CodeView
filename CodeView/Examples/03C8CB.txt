@@ -1,0 +1,35 @@
+03C8CB PushFlags
+03C8CC ClearImmediateFlags 30
+03C8CE CopyAbsoluteAddressToAccumulator 16D9
+03C8D1 AndAccumulatorWithImmediate 00FF
+03C8D4 ShiftAccumulatorLeft
+03C8D5 ShiftAccumulatorLeft
+03C8D6 CopyAccumulatorToXIndex
+03C8D7 CopyDirectAddressToAccumulator 1E
+03C8D9 CopyAccumulatorToDirectAddress 22
+03C8DB CopyAbsoluteLongAddressPlusXIndexToAccumulator 03D3C6
+03C8DF AndAccumulatorWithImmediate 00FF
+03C8E2 SetCarryFlag
+03C8E3 SubtractImmediateFromAccumulator 0070
+03C8E6 SetCarryFlag
+03C8E7 SubtractDirectAddressFromAccumulator 10
+03C8E9 BranchToRelativeIfZero 03C8EE
+03C8EB CallAbsoluteAddress 03C913 [03C913]
+03C8EE CopyAccumulatorToDirectAddress 18
+03C8F0 CopyDirectAddressToAccumulator 22
+03C8F2 CopyAccumulatorToDirectAddress 1E
+03C8F4 CopyDirectAddressToAccumulator 20
+03C8F6 CopyAccumulatorToDirectAddress 22
+03C8F8 CopyAbsoluteLongAddressPlusXIndexToAccumulator 03D3C7
+03C8FC AndAccumulatorWithImmediate 00FF
+03C8FF SetCarryFlag
+03C900 SubtractImmediateFromAccumulator 0058
+03C903 SetCarryFlag
+03C904 SubtractDirectAddressFromAccumulator 12
+03C906 BranchToRelativeIfZero 03C90B
+03C908 CallAbsoluteAddress 03C913 [03C913]
+03C90B CopyAccumulatorToDirectAddress 1A
+03C90D CopyDirectAddressToAccumulator 22
+03C90F CopyAccumulatorToDirectAddress 20
+03C911 PullFlags
+03C912 ReturnToCaller

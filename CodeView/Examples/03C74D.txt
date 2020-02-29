@@ -1,0 +1,11 @@
+03C74D PushFlags
+03C74E SetImmediateFlags 20
+03C750 ClearImmediateFlags 10
+03C752 SetImmediateFlags 20
+03C754 CopyImmediateToAccumulator 01
+03C756 CopyImmediateToXIndex B09B
+03C759 CallAbsoluteLongAddress 7E4EE9 [7E4EE9]
+03C75D SetImmediateFlags 20
+03C75F ClearImmediateFlags 10
+03C761 PullFlags
+03C762 ReturnToCaller

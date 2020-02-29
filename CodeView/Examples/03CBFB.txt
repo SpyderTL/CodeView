@@ -1,0 +1,18 @@
+03CBFB PushFlags
+03CBFC ClearImmediateFlags 20
+03CBFE CopyAbsoluteAddressToAccumulator 4218
+03CC01 PushAccumulator
+03CC02 ExclusiveOrAccumulatorWithAbsoluteAddress 1201
+03CC05 AndAccumulatorWithAbsoluteAddress 4218
+03CC08 CopyAccumulatorToAbsoluteAddress 1209
+03CC0B CopyAbsoluteAddressToAccumulator 421A
+03CC0E PushAccumulator
+03CC0F ExclusiveOrAccumulatorWithAbsoluteAddress 1205
+03CC12 AndAccumulatorWithAbsoluteAddress 421A
+03CC15 CopyAccumulatorToAbsoluteAddress 120B
+03CC18 PullAccumulator
+03CC19 CopyAccumulatorToAbsoluteAddress 1205
+03CC1C PullAccumulator
+03CC1D CopyAccumulatorToAbsoluteAddress 1201
+03CC20 PullFlags
+03CC21 ReturnToLongCaller

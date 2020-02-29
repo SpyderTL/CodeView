@@ -1,0 +1,29 @@
+02DCC3 SetImmediateFlags 30
+02DCC5 CopyAbsoluteAddressToAccumulator 2137
+02DCC8 CopyAbsoluteAddressToXIndex 213C
+02DCCB CopyAbsoluteAddressToAccumulator 213C
+02DCCE AndAccumulatorWithImmediate 01
+02DCD0 BranchToRelativeIfNotZero 02DCC5
+02DCD2 TestSubtractImmediateFromXIndex 5A
+02DCD4 BranchToRelativeIfLessThan 02DCC5
+02DCD6 TestSubtractImmediateFromXIndex 64
+02DCD8 BranchToRelativeIfGreaterOrEqual 02DCC5
+02DCDA ClearImmediateFlags 10
+02DCDC SetInterruptDisableFlag
+02DCDD CopyAbsoluteAddressToXIndex 18B6
+02DCE0 CopyXIndexToAbsoluteAddress 2181
+02DCE3 SetAbsoluteAddressToZero 2183
+02DCE6 CopyImmediateToAccumulator 80
+02DCE8 CopyAccumulatorToAbsoluteAddress 4301
+02DCEB CopyImmediateToXIndex 0222
+02DCEE CopyXIndexToAbsoluteAddress 4302
+02DCF1 CopyImmediateToAccumulator 70
+02DCF3 CopyAccumulatorToAbsoluteAddress 4304
+02DCF6 CopyImmediateToXIndex 02A0
+02DCF9 CopyXIndexToAbsoluteAddress 4305
+02DCFC SetAbsoluteAddressToZero 4300
+02DCFF CopyImmediateToAccumulator 01
+02DD01 CopyAccumulatorToAbsoluteAddress 420B
+02DD04 CopyAbsoluteLongAddressToAccumulator 004211
+02DD08 ClearInterruptDisableFlag
+02DD09 ReturnToCaller

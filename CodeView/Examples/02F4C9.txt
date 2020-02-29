@@ -1,0 +1,15 @@
+02F4C9 PushFlags
+02F4CA ClearImmediateFlags 30
+02F4CC SetAbsoluteAddressToZero 121D
+02F4CF CopyImmediateToAccumulator 0336
+02F4D2 CopyAccumulatorToAbsoluteAddress 121F
+02F4D5 CopyImmediateToYIndex 0046
+02F4D8 CopyAccumulatorToXIndex
+02F4D9 ClearCarryFlag
+02F4DA AddImmediateToAccumulator 0036
+02F4DD CopyAccumulatorToDirectAddressPlusXIndex 00
+02F4DF DecrementYIndex
+02F4E0 BranchToRelativeIfNotZero 02F4D8
+02F4E2 SetDirectAddressPlusXIndexToZero 00
+02F4E4 PullFlags
+02F4E5 ReturnToLongCaller

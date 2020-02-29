@@ -1,0 +1,23 @@
+03CBC1 PushFlags
+03CBC2 ClearImmediateFlags 30
+03CBC4 CopyDirectAddressToXIndex 02
+03CBC6 CopyDirectAddressToAccumulator 08
+03CBC8 ClearCarryFlag
+03CBC9 AddAbsoluteLongAddressPlusXIndexToAccumulator 03D69F
+03CBCD CopyAccumulatorToDirectAddress 08
+03CBCF CopyAbsoluteLongAddressPlusXIndexToAccumulator 03D69D
+03CBD3 TestSubtractImmediateFromAccumulator FFFF
+03CBD6 BranchToRelativeIfZero 03CBE5
+03CBD8 CopyAccumulatorToDirectAddress 0A
+03CBDA IncrementXIndex
+03CBDB IncrementXIndex
+03CBDC IncrementXIndex
+03CBDD IncrementXIndex
+03CBDE CopyXIndexToDirectAddress 02
+03CBE0 IncrementDirectAddress 04
+03CBE2 PullFlags
+03CBE3 ClearCarryFlag
+03CBE4 ReturnToCaller
+03CBE5 PullFlags
+03CBE6 SetCarryFlag
+03CBE7 ReturnToCaller

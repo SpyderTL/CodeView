@@ -1,0 +1,19 @@
+02EF65 CallAbsoluteAddress 02E8AC [02E8AC]
+02EF68 CopyImmediateToXIndex 0000
+02EF6B CopyAbsoluteLongAddressPlusXIndexToAccumulator 02EF8D
+02EF6F TestSubtractAbsoluteAddressFromAccumulator 14C5
+02EF72 BranchToRelativeIfZero 02EF7A
+02EF74 BranchToRelativeIfLessThan 02EF7A
+02EF76 IncrementXIndex
+02EF77 IncrementXIndex
+02EF78 JumpToRelative 02EF6B
+02EF7A TestSubtractDirectAddressFromAccumulator 22
+02EF7C BranchToRelativeIfZero 02EF86
+02EF7E BranchToRelativeIfNegative 02EF84
+02EF80 BranchToRelativeIfNotOverflow 02EF87
+02EF82 JumpToRelative 02EF86
+02EF84 BranchToRelativeIfOverflow 02EF87
+02EF86 ReturnToCaller
+02EF87 CopyImmediateToAccumulator 0014
+02EF8A CopyAccumulatorToDirectAddress 1A
+02EF8C ReturnToCaller

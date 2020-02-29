@@ -1,0 +1,43 @@
+03C913 PushFlags
+03C914 PushXIndex
+03C915 ClearImmediateFlags 10
+03C917 TestSubtractImmediateFromAccumulator 8000
+03C91A BranchToRelativeIfGreaterOrEqual 03C939
+03C91C CopyImmediateToXIndex FFFF
+03C91F IncrementXIndex
+03C920 SetCarryFlag
+03C921 SubtractDirectAddressFromAccumulator 1C
+03C923 BranchToRelativeIfGreaterOrEqual 03C91F
+03C925 ClearCarryFlag
+03C926 AddDirectAddressToAccumulator 1C
+03C928 ClearCarryFlag
+03C929 AddDirectAddressToAccumulator 22
+03C92B TestSubtractDirectAddressFromAccumulator 1C
+03C92D BranchToRelativeIfLessThan 03C933
+03C92F SetCarryFlag
+03C930 SubtractDirectAddressFromAccumulator 1C
+03C932 IncrementXIndex
+03C933 CopyAccumulatorToDirectAddress 22
+03C935 CopyXIndexToAccumulator
+03C936 PullXIndex
+03C937 PullFlags
+03C938 ReturnToCaller
+03C939 CopyImmediateToXIndex 0001
+03C93C DecrementXIndex
+03C93D ClearCarryFlag
+03C93E AddDirectAddressToAccumulator 1C
+03C940 BranchToRelativeIfLessThan 03C93C
+03C942 SetCarryFlag
+03C943 SubtractDirectAddressFromAccumulator 1C
+03C945 ClearCarryFlag
+03C946 AddDirectAddressToAccumulator 22
+03C948 TestSubtractDirectAddressFromAccumulator 1C
+03C94A BranchToRelativeIfLessThan 03C950
+03C94C SetCarryFlag
+03C94D SubtractDirectAddressFromAccumulator 1C
+03C94F DecrementXIndex
+03C950 CopyAccumulatorToDirectAddress 22
+03C952 CopyXIndexToAccumulator
+03C953 PullXIndex
+03C954 PullFlags
+03C955 ReturnToCaller

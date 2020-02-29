@@ -1,0 +1,2 @@
+02F6D5 CallAbsoluteAddress 02F6D9 [02F6D9]
+02F6D8 ReturnToLongCaller

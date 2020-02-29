@@ -1,0 +1,20 @@
+02F42F PushFlags
+02F430 SetImmediateFlags 20
+02F432 SetAbsoluteAddressToZero 210D
+02F435 SetAbsoluteAddressToZero 210D
+02F438 SetAbsoluteAddressToZero 210E
+02F43B SetAbsoluteAddressToZero 210E
+02F43E SetAbsoluteAddressToZero 210F
+02F441 SetAbsoluteAddressToZero 210F
+02F444 SetAbsoluteAddressToZero 2110
+02F447 SetAbsoluteAddressToZero 2110
+02F44A SetAbsoluteAddressToZero 2111
+02F44D SetAbsoluteAddressToZero 2111
+02F450 SetAbsoluteAddressToZero 2112
+02F453 SetAbsoluteAddressToZero 2112
+02F456 SetAbsoluteAddressToZero 2113
+02F459 SetAbsoluteAddressToZero 2113
+02F45C SetAbsoluteAddressToZero 2114
+02F45F SetAbsoluteAddressToZero 2114
+02F462 PullFlags
+02F463 ReturnToLongCaller

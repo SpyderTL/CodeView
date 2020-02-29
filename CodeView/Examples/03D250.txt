@@ -1,0 +1,113 @@
+03D250 PushFlags
+03D251 SetImmediateFlags 20
+03D253 CopyAbsoluteAddressToAccumulator 14D6
+03D256 AndAccumulatorWithImmediate 20
+03D258 BranchToRelativeIfZero 03D25E
+03D25A JumpToAbsoluteLongAddress 03D38F
+03D25E ClearImmediateFlags 30
+03D260 CopyImmediateToAccumulator 00B8
+03D263 CopyAccumulatorToAbsoluteLongAddress 700062
+03D267 CopyImmediateToAccumulator 000A
+03D26A CopyAccumulatorToAbsoluteLongAddress 70002C
+03D26E CopyAbsoluteLongAddressToAccumulator 7EF0DD
+03D272 AndAccumulatorWithImmediate 00FF
+03D275 CopyAccumulatorToAbsoluteLongAddress 70002E
+03D279 BranchToRelativeIfZero 03D2B0
+03D27B SetImmediateFlags 20
+03D27D CopyImmediateToAccumulator 01
+03D27F CopyImmediateToXIndex B6F8
+03D282 CallAbsoluteLongAddress 7E4EE9 [7E4EE9]
+03D286 ClearImmediateFlags 20
+03D288 ClearImmediateFlags 10
+03D28A CopyImmediateToAccumulator 00C0
+03D28D CopyAccumulatorToAbsoluteLongAddress 700062
+03D291 CopyImmediateToAccumulator 000A
+03D294 CopyAccumulatorToAbsoluteLongAddress 70002C
+03D298 CopyImmediateToAccumulator E81A
+03D29B CopyAccumulatorToAbsoluteLongAddress 7000A6
+03D29F SetImmediateFlags 20
+03D2A1 CopyImmediateToAccumulator 01
+03D2A3 CopyImmediateToXIndex B54B
+03D2A6 CallAbsoluteLongAddress 7E4EE9 [7E4EE9]
+03D2AA ClearImmediateFlags 20
+03D2AC ClearImmediateFlags 10
+03D2AE JumpToRelative 03D2D1
+03D2B0 CopyAbsoluteLongAddressToAccumulator 7EF0E0
+03D2B4 TestSubtractImmediateFromAccumulator 002C
+03D2B7 BranchToRelativeIfGreaterOrEqual 03D321
+03D2B9 TestSubtractImmediateFromAccumulator 0005
+03D2BC BranchToRelativeIfGreaterOrEqual 03D2D1
+03D2BE CopyAbsoluteLongAddressToAccumulator 7EF0DF
+03D2C2 AndAccumulatorWithImmediate 00FF
+03D2C5 BranchToRelativeIfNotZero 03D2D1
+03D2C7 SetImmediateFlags 20
+03D2C9 CopyImmediateToAccumulator 11
+03D2CB CallAbsoluteLongAddress 03B7F9 [03B7F9]
+03D2CF ClearImmediateFlags 20
+03D2D1 CopyImmediateToAccumulator 00C8
+03D2D4 CopyAccumulatorToAbsoluteLongAddress 700062
+03D2D8 CopyImmediateToAccumulator 000A
+03D2DB CopyAccumulatorToAbsoluteLongAddress 70002C
+03D2DF CopyAbsoluteLongAddressToAccumulator 7EF0DF
+03D2E3 AndAccumulatorWithImmediate 00FF
+03D2E6 CopyAccumulatorToAbsoluteLongAddress 70002E
+03D2EA SetImmediateFlags 20
+03D2EC CopyImmediateToAccumulator 01
+03D2EE CopyImmediateToXIndex B6F8
+03D2F1 CallAbsoluteLongAddress 7E4EE9 [7E4EE9]
+03D2F5 ClearImmediateFlags 20
+03D2F7 ClearImmediateFlags 10
+03D2F9 CopyImmediateToAccumulator 00D0
+03D2FC CopyAccumulatorToAbsoluteLongAddress 700062
+03D300 CopyImmediateToAccumulator 000A
+03D303 CopyAccumulatorToAbsoluteLongAddress 70002C
+03D307 CopyAbsoluteLongAddressToAccumulator 7EF0DE
+03D30B AndAccumulatorWithImmediate 00FF
+03D30E CopyAccumulatorToAbsoluteLongAddress 70002E
+03D312 SetImmediateFlags 20
+03D314 CopyImmediateToAccumulator 01
+03D316 CopyImmediateToXIndex B6F8
+03D319 CallAbsoluteLongAddress 7E4EE9 [7E4EE9]
+03D31D ClearImmediateFlags 20
+03D31F ClearImmediateFlags 10
+03D321 CopyImmediateToAccumulator 00D8
+03D324 CopyAccumulatorToAbsoluteLongAddress 700062
+03D328 CopyImmediateToAccumulator 000A
+03D32B CopyAccumulatorToAbsoluteLongAddress 70002C
+03D32F CopyImmediateToAccumulator E81D
+03D332 CopyAccumulatorToAbsoluteLongAddress 7000A6
+03D336 SetImmediateFlags 20
+03D338 CopyImmediateToAccumulator 01
+03D33A CopyImmediateToXIndex B54B
+03D33D CallAbsoluteLongAddress 7E4EE9 [7E4EE9]
+03D341 ClearImmediateFlags 20
+03D343 ClearImmediateFlags 10
+03D345 SetImmediateFlags 20
+03D347 CopyAbsoluteLongAddressToAccumulator 7EF0E0
+03D34B ClearCarryFlag
+03D34C AddAbsoluteAddressToAccumulator 16A3
+03D34F TestSubtractImmediateFromAccumulator 3C
+03D351 BranchToRelativeIfLessThan 03D38B
+03D353 SetCarryFlag
+03D354 SubtractImmediateFromAccumulator 3C
+03D356 CopyAccumulatorToAbsoluteLongAddress 7EF0E0
+03D35A CopyAbsoluteLongAddressToAccumulator 7EF0DE
+03D35E DecrementAccumulator
+03D35F BranchToRelativeIfPositive 03D383
+03D361 CopyAbsoluteLongAddressToAccumulator 7EF0DF
+03D365 DecrementAccumulator
+03D366 BranchToRelativeIfPositive 03D37D
+03D368 CopyAbsoluteLongAddressToAccumulator 7EF0DD
+03D36C BranchToRelativeIfNotZero 03D376
+03D36E CallAbsoluteLongAddress 02F907 [02F907]
+03D372 JumpToAbsoluteLongAddress 1FBDEE
+03D376 DecrementAccumulator
+03D377 CopyAccumulatorToAbsoluteLongAddress 7EF0DD
+03D37B CopyImmediateToAccumulator 05
+03D37D CopyAccumulatorToAbsoluteLongAddress 7EF0DF
+03D381 CopyImmediateToAccumulator 09
+03D383 CopyAccumulatorToAbsoluteLongAddress 7EF0DE
+03D387 CopyAbsoluteLongAddressToAccumulator 7EF0E0
+03D38B CopyAccumulatorToAbsoluteLongAddress 7EF0E0
+03D38F PullFlags
+03D390 ReturnToLongCaller

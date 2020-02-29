@@ -1,0 +1,72 @@
+03C484 PushFlags
+03C485 ClearImmediateFlags 30
+03C487 CopyDirectAddressToAccumulator 32
+03C489 TestSubtractDirectAddressFromAccumulator 38
+03C48B BranchToRelativeIfZero 03C490
+03C48D JumpToRelativeLong 03C50B
+03C490 SetImmediateFlags 20
+03C492 CopyDirectAddressToXIndex 02
+03C494 BranchToRelativeIfZero 03C49C
+03C496 CopyAbsoluteLongAddressPlusXIndexToAccumulator 03D69D
+03C49A BranchToRelativeIfPositive 03C4CC
+03C49C CallAbsoluteLongAddress 03CC3E [03CC3E]
+03C4A0 CopyAbsoluteAddressToAccumulator 16D9
+03C4A3 ClearImmediateFlags 20
+03C4A5 SetDirectAddressToZero 02
+03C4A7 ShiftAccumulatorLeft
+03C4A8 CopyAccumulatorToXIndex
+03C4A9 CopyAbsoluteLongAddressPlusXIndexToAccumulator 03D42A
+03C4AD CopyAccumulatorToDirectAddress 38
+03C4AF TestSubtractDirectAddressFromAccumulator 32
+03C4B1 BranchToRelativeIfZero 03C50E
+03C4B3 SetImmediateFlags 20
+03C4B5 CopyDirectAddressToAccumulator 39
+03C4B7 TestSubtractDirectAddressFromAccumulator 33
+03C4B9 BranchToRelativeIfNegative 03C50B
+03C4BB CopyDirectAddressToAccumulator 33
+03C4BD CopyAccumulatorToDirectAddress 39
+03C4BF ClearImmediateFlags 20
+03C4C1 CopyDirectAddressToAccumulator 32
+03C4C3 TestSubtractDirectAddressFromAccumulator 38
+03C4C5 BranchToRelativeIfZero 03C50E
+03C4C7 SetImmediateFlags 20
+03C4C9 JumpToAbsoluteAddress 03C50B
+03C4CC TestSubtractImmediateFromAccumulator 04
+03C4CE BranchToRelativeIfZero 03C4DC
+03C4D0 TestSubtractImmediateFromAccumulator 02
+03C4D2 BranchToRelativeIfZero 03C4D8
+03C4D4 CopyImmediateToAccumulator 02
+03C4D6 JumpToRelative 03C4DE
+03C4D8 CopyImmediateToAccumulator 01
+03C4DA JumpToRelative 03C4DE
+03C4DC CopyImmediateToAccumulator 00
+03C4DE CopyAccumulatorToDirectAddress 36
+03C4E0 ClearImmediateFlags 20
+03C4E2 CopyDirectAddressToYIndex 30
+03C4E4 CopyAbsoluteLongAddressPlusXIndexToAccumulator 03D69D
+03C4E8 CopyAccumulatorToAbsoluteAddressPlusYIndex 0002
+03C4EB CopyDirectAddressToAccumulator 08
+03C4ED CopyAccumulatorToAbsoluteAddressPlusYIndex 0000
+03C4F0 IncrementYIndex
+03C4F1 IncrementYIndex
+03C4F2 IncrementYIndex
+03C4F3 IncrementYIndex
+03C4F4 CopyYIndexToDirectAddress 30
+03C4F6 CopyDirectAddressToAccumulator 08
+03C4F8 ClearCarryFlag
+03C4F9 AddAbsoluteLongAddressPlusXIndexToAccumulator 03D69F
+03C4FD CopyAccumulatorToDirectAddress 08
+03C4FF SetCarryFlag
+03C500 SubtractImmediateFromAccumulator 0810
+03C503 CopyAccumulatorToDirectAddress 38
+03C505 IncrementXIndex
+03C506 IncrementXIndex
+03C507 IncrementXIndex
+03C508 IncrementXIndex
+03C509 CopyXIndexToDirectAddress 02
+03C50B PullFlags
+03C50C ClearCarryFlag
+03C50D ReturnToCaller
+03C50E PullFlags
+03C50F SetCarryFlag
+03C510 ReturnToCaller

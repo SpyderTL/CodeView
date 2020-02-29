@@ -1,0 +1,7 @@
+02DC3A ClearImmediateFlags 30
+02DC3C CopyAbsoluteAddressToAccumulator 1953
+02DC3F AndAccumulatorWithImmediate 00FF
+02DC42 BranchToRelativeIfNotZero 02DC45
+02DC44 ReturnToCaller
+02DC45 CopyAbsoluteAddressToXIndex 1FE2
+02DC48 JumpToAbsoluteAddressPlusXIndexPointer DC4B

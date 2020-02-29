@@ -1,0 +1,77 @@
+03CF4A CopyXIndexToAbsoluteAddress 2116
+03CF4D CopyAccumulatorToAbsoluteAddress 2118
+03CF50 ClearCarryFlag
+03CF51 AddImmediateToAccumulator 0010
+03CF54 CopyAccumulatorToAbsoluteAddress 2118
+03CF57 ClearCarryFlag
+03CF58 AddImmediateToAccumulator 0010
+03CF5B CopyAccumulatorToAbsoluteAddress 2118
+03CF5E ClearCarryFlag
+03CF5F AddImmediateToAccumulator 0010
+03CF62 CopyAccumulatorToAbsoluteAddress 2118
+03CF65 PushAccumulator
+03CF66 CopyXIndexToAccumulator
+03CF67 ClearCarryFlag
+03CF68 AddImmediateToAccumulator 0020
+03CF6B CopyAccumulatorToXIndex
+03CF6C PullAccumulator
+03CF6D SetCarryFlag
+03CF6E SubtractImmediateFromAccumulator 002F
+03CF71 CopyXIndexToAbsoluteAddress 2116
+03CF74 CopyAccumulatorToAbsoluteAddress 2118
+03CF77 ClearCarryFlag
+03CF78 AddImmediateToAccumulator 0010
+03CF7B CopyAccumulatorToAbsoluteAddress 2118
+03CF7E ClearCarryFlag
+03CF7F AddImmediateToAccumulator 0010
+03CF82 CopyAccumulatorToAbsoluteAddress 2118
+03CF85 ClearCarryFlag
+03CF86 AddImmediateToAccumulator 0010
+03CF89 CopyAccumulatorToAbsoluteAddress 2118
+03CF8C PushAccumulator
+03CF8D CopyXIndexToAccumulator
+03CF8E ClearCarryFlag
+03CF8F AddImmediateToAccumulator 0020
+03CF92 CopyAccumulatorToXIndex
+03CF93 PullAccumulator
+03CF94 SetCarryFlag
+03CF95 SubtractImmediateFromAccumulator 002F
+03CF98 CopyXIndexToAbsoluteAddress 2116
+03CF9B CopyAccumulatorToAbsoluteAddress 2118
+03CF9E ClearCarryFlag
+03CF9F AddImmediateToAccumulator 0010
+03CFA2 CopyAccumulatorToAbsoluteAddress 2118
+03CFA5 ClearCarryFlag
+03CFA6 AddImmediateToAccumulator 0010
+03CFA9 CopyAccumulatorToAbsoluteAddress 2118
+03CFAC ClearCarryFlag
+03CFAD AddImmediateToAccumulator 0010
+03CFB0 CopyAccumulatorToAbsoluteAddress 2118
+03CFB3 PushAccumulator
+03CFB4 CopyXIndexToAccumulator
+03CFB5 ClearCarryFlag
+03CFB6 AddImmediateToAccumulator 0020
+03CFB9 CopyAccumulatorToXIndex
+03CFBA PullAccumulator
+03CFBB SetCarryFlag
+03CFBC SubtractImmediateFromAccumulator 002F
+03CFBF CopyXIndexToAbsoluteAddress 2116
+03CFC2 CopyAccumulatorToAbsoluteAddress 2118
+03CFC5 ClearCarryFlag
+03CFC6 AddImmediateToAccumulator 0010
+03CFC9 CopyAccumulatorToAbsoluteAddress 2118
+03CFCC ClearCarryFlag
+03CFCD AddImmediateToAccumulator 0010
+03CFD0 CopyAccumulatorToAbsoluteAddress 2118
+03CFD3 ClearCarryFlag
+03CFD4 AddImmediateToAccumulator 0010
+03CFD7 CopyAccumulatorToAbsoluteAddress 2118
+03CFDA PushAccumulator
+03CFDB CopyXIndexToAccumulator
+03CFDC ClearCarryFlag
+03CFDD AddImmediateToAccumulator 0020
+03CFE0 CopyAccumulatorToXIndex
+03CFE1 PullAccumulator
+03CFE2 SetCarryFlag
+03CFE3 SubtractImmediateFromAccumulator 002F
+03CFE6 ReturnToCaller

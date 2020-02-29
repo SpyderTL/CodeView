@@ -1,0 +1,22 @@
+03E9A3 PushFlags
+03E9A4 SetImmediateFlags 20
+03E9A6 CopyAbsoluteLongAddressPlusXIndexToAccumulator 03E9A3
+03E9AA TestSubtractImmediateFromAccumulator FF
+03E9AC BranchToRelativeIfZero 03E9CD
+03E9AE CopyAccumulatorToAbsoluteAddressPlusYIndex 0000
+03E9B1 CopyAbsoluteLongAddressPlusXIndexToAccumulator 03E9A4
+03E9B5 CopyAccumulatorToAbsoluteAddressPlusYIndex 0001
+03E9B8 CopyAbsoluteLongAddressPlusXIndexToAccumulator 03E9A5
+03E9BC CopyAccumulatorToAbsoluteAddressPlusYIndex 0002
+03E9BF CopyImmediateToAccumulator 30
+03E9C1 CopyAccumulatorToAbsoluteAddressPlusYIndex 0003
+03E9C4 IncrementYIndex
+03E9C5 IncrementYIndex
+03E9C6 IncrementYIndex
+03E9C7 IncrementYIndex
+03E9C8 IncrementXIndex
+03E9C9 IncrementXIndex
+03E9CA IncrementXIndex
+03E9CB JumpToRelative 03E9A6
+03E9CD PullFlags
+03E9CE ReturnToCaller

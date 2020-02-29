@@ -1,0 +1,46 @@
+02EFA5 PushFlags
+02EFA6 SetImmediateFlags 20
+02EFA8 ClearImmediateFlags 10
+02EFAA CopyAbsoluteAddressToAccumulator 1FD1
+02EFAD BranchToRelativeIfNotZero 02F015
+02EFAF CopyAbsoluteAddressToAccumulator 1962
+02EFB2 TestSubtractImmediateFromAccumulator FF
+02EFB4 BranchToRelativeIfNotZero 02F015
+02EFB6 CopyImmediateToAccumulator 02
+02EFB8 CopyAccumulatorToAbsoluteAddress 1F52
+02EFBB CallAbsoluteLongAddress 02D956 [02D956]
+02EFBF CallAbsoluteAddress 02F017 [02F017]
+02EFC2 CallAbsoluteLongAddress 02D956 [02D956]
+02EFC6 SetImmediateFlags 20
+02EFC8 CopyImmediateToAccumulator 64
+02EFCA CopyAccumulatorToAbsoluteAddress 16DB
+02EFCD CallAbsoluteLongAddress 03BD8D
+02EFD1 SetImmediateFlags 20
+02EFD3 ClearImmediateFlags 10
+02EFD5 CopyAbsoluteAddressToAccumulator 4219
+02EFD8 TestAndAccumulatorWithImmediate 10
+02EFDA BranchToRelativeIfNotZero 02EFC8
+02EFDC CopyImmediateToAccumulator 64
+02EFDE CopyAccumulatorToAbsoluteAddress 16DB
+02EFE1 CallAbsoluteLongAddress 03BD8D
+02EFE5 SetImmediateFlags 20
+02EFE7 ClearImmediateFlags 10
+02EFE9 CopyAbsoluteAddressToAccumulator 4219
+02EFEC TestAndAccumulatorWithImmediate 10
+02EFEE BranchToRelativeIfZero 02EFDC
+02EFF0 CopyImmediateToAccumulator 64
+02EFF2 CopyAccumulatorToAbsoluteAddress 16DB
+02EFF5 CallAbsoluteLongAddress 03BD8D
+02EFF9 SetImmediateFlags 20
+02EFFB ClearImmediateFlags 10
+02EFFD CopyAbsoluteAddressToAccumulator 4219
+02F000 TestAndAccumulatorWithImmediate 10
+02F002 BranchToRelativeIfNotZero 02EFF0
+02F004 SetAbsoluteAddressToZero 1202
+02F007 SetAbsoluteAddressToZero 1204
+02F00A SetAbsoluteAddressToZero 1201
+02F00D SetAbsoluteAddressToZero 1203
+02F010 CopyImmediateToAccumulator 01
+02F012 CopyAccumulatorToAbsoluteAddress 1F52
+02F015 PullFlags
+02F016 ReturnToCaller

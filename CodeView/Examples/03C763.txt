@@ -1,0 +1,10 @@
+03C763 PushFlags
+03C764 SetImmediateFlags 20
+03C766 ClearImmediateFlags 10
+03C768 CopyAbsoluteAddressToAccumulator 1FE5
+03C76B BranchToRelativeIfNotZero 03C768
+03C76D IncrementAbsoluteAddress 1FE5
+03C770 CopyAbsoluteAddressToAccumulator 1FE5
+03C773 BranchToRelativeIfNotZero 03C770
+03C775 PullFlags
+03C776 ReturnToCaller

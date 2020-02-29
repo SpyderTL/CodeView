@@ -1,0 +1,13 @@
+03C58F PushFlags
+03C590 ClearImmediateFlags 30
+03C592 CopyImmediateToXIndex 0000
+03C595 CopyDirectAddressPlusXIndexToAccumulator 24
+03C597 ClearCarryFlag
+03C598 AddAbsoluteLongAddressPlusXIndexToAccumulator 03C5A7
+03C59C CopyAccumulatorToDirectAddressPlusXIndex 24
+03C59E IncrementXIndex
+03C59F IncrementXIndex
+03C5A0 TestSubtractImmediateFromXIndex 000C
+03C5A3 BranchToRelativeIfNotZero 03C595
+03C5A5 PullFlags
+03C5A6 ReturnToCaller

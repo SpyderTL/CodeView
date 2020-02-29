@@ -1,0 +1,8 @@
+03C7A3 PushFlags
+03C7A4 ClearImmediateFlags 20
+03C7A6 CopyAbsoluteAddressToAccumulator 15BB
+03C7A9 AndAccumulatorWithImmediate 0007
+03C7AC RotateAccumulatorLeft
+03C7AD CopyAccumulatorToXIndex
+03C7AE SetImmediateFlags 20
+03C7B0 JumpToAbsoluteAddressPlusXIndexPointer C7B3
